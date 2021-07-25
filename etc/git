@@ -1,3 +1,4 @@
 cd fabri/Documents/linux
+git init
 git remote add linux https://github.com/fabry76/linux
 git push --set-upstream linux main
