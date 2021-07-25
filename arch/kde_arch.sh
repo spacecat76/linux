@@ -42,5 +42,10 @@ systemctl enable ufw
 #tlp
 tlp start
 
+#kdewallet
+tee -a /home/fabri/.config/kwalletrc  << END
+Enabled=false
+END
+
 #setting permission to home folder
 chown -R fabri:fabri /home/fabri/
