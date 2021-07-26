@@ -1,2 +1,3 @@
+sudo su
 eval "$(ssh-agent -s)"
 ssh-add /home/fabri/.ssh/gitkey
