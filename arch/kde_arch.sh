@@ -44,6 +44,7 @@ tlp start
 
 #kdewallet
 tee -a /home/fabri/.config/kwalletrc  << END
+[Wallet]
 Enabled=false
 END
 
