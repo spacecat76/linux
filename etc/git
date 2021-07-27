@@ -1,5 +1,5 @@
 
-git config --global user.email "fabrizio.fabiani@gmail.com"
+git config --global user.email "EMAIL"
 git config --global user.name "fabry76"
 
 (locally initiated projects)
