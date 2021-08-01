@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install applications
-apt install ubuntu-restriced-extras code timeshift neofetch virtualbox tlp ufw curl wget htop transmission cheese chromium
+apt install ubuntu-restricted-extras code timeshift neofetch virtualbox tlp ufw curl wget htop transmission cheese google-chrome-stable
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
