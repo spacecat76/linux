@@ -14,7 +14,7 @@ localectl set-locale LANGUAGE=en_US:en LC_TIME=it_IT.UTF-8 LC_MONETARY=it_IT.UTF
 pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-software gnome-software-packagekit-plugin file-roller gedit nautilus gnome-tweaks nano firefox sane cups nss-mdns htop curl vim cheese gnome-calculator gnome-photos gnome-music totem gnome-screenshot gnome-logs gnome-system-monitor evince transmission-gtk simple-scan libreoffice tlp net-tools linux-firmware chromium base-devel ufw fuse gutenprint neofetch rust wget virtualbox gnome-keyring linux-headers --noconfirm
 
 #pulseaudio workaround
-#echo "options snd-hda-intel dmic_detect=0" | tee -a /etc/modprobe.d/alsa-base.conf
+echo "options snd-hda-intel dmic_detect=0" | tee -a /etc/modprobe.d/alsa-base.conf
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
