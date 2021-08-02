@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#user dirs
+xdg-user-dirs-update
+
 #paru
 git clone https://aur.archlinux.org/paru.git /home/fabri/Downloads/paru
 cd /home/fabri/Downloads/paru
