@@ -4,6 +4,11 @@ pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-sof
 #pulseaudio workaround
 echo "options snd-hda-intel dmic_detect=0" | tee -a /etc/modprobe.d/alsa-base.conf
 
+#set aliases
+tee -a /home/fabri/.bashrc  << END
+alias ls="ls -lha --color"
+END
+
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
