@@ -24,3 +24,6 @@ systemctl enable ufw
 
 #tlp
 tlp start
+
+#setting permission to home folder
+chown -R fabri:fabri /home/fabri/
