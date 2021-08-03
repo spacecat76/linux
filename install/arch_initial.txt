@@ -13,22 +13,25 @@ timedatectl set-ntp true
 #View disks and partition
 fdisk -l
 
-#Create 3 partitions (NO IF REINSTALLING)
+#Fdisk into physical disc (NOT IF REINSTALLING)
+fdisk /dev/nvme0n1
+
+#Create 3 partitions (NOT IF REINSTALLING)
 nvme0n1p1 512M	EFI
-nvme0n1p2 100G	ROOT
-nvme0n1p3 138	HOME
+nvme0n1p2 50G	HOME
+nvme0n1p3 188	ROOT
 
 #Format the partition
 mkfs.fat -F32 /dev/nvme0n1p1
-mkfs.ext4 /dev/nvme0n1p2
-mkfs.ext4 /dev/nvme0n1p3 (NO IF REINSTALLING)
+mkfs.ext4 /dev/nvme0n1p2 (NOT IF REINSTALLING)
+mkfs.ext4 /dev/nvme0n1p3 
 
 #Mount the partitions
-mount /dev/nvme0n1p2 /mnt
+mount /dev/nvme0n1p3 /mnt
 mkdir -p /mnt/boot/EFI
 mount /dev/nvme0n1p1 /mnt/boot/EFI
 mkdir /mnt/home
-mount /dev/nvme0n1p3 /mnt/home
+mount /dev/nvme0n1p2 /mnt/home
 
 #Install base system
 pacstrap /mnt base base-devel linux linux-firmware nano intel-ucode
