@@ -31,7 +31,7 @@ mkdir /mnt/home
 mount /dev/nvme0n1p3 /mnt/home
 
 #Install base system
-pacstrap /mnt base base-devel linux linux-firmware nano intel-ucode
+pacstrap /mnt base base-devel linux linux-firmware nano intel-ucode acpi acpi_call
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
