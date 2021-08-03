@@ -14,5 +14,4 @@ tlp start
 
 #services
 systemctl disable bluetooth
-systemctl enable cups
 systemctl enable ufw

@@ -31,7 +31,7 @@ mkdir /mnt/home
 mount /dev/nvme0n1p3 /mnt/home
 
 #Install base system
-pacstrap /mnt base base-devel linux linux-firmware nano intel-ucode
+pacstrap /mnt base base-devel linux linux-firmware nano
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -61,7 +61,7 @@ nano /etc/hosts
 127.0.1.1	arco.localdomain	arco
 
 #packages
-pacman -S grub efibootmgr networkmanager wireless_tools wpa_supplicant git appstream sof-firmware acpi acpi_call
+pacman -S grub efibootmgr networkmanager wireless_tools wpa_supplicant git appstream 
 
 #Netowrk Manager
 systemctl enable NetworkManager
@@ -76,7 +76,7 @@ passwd
 #create user
 useradd -m -G wheel fabri
 passwd fabri
-EDITOR=nano visudo (uncomment line %wheel ALL=(ALL))
+EDITOR=nano visudo "uncomment line %wheel ALL=(ALL) ALL"
 
 #exit and unmount
 exit
