@@ -2,7 +2,4 @@
 git config --global user.email "EMAIL"
 git config --global user.name "fabry76"
 
-(locally initiated projects)
-git init
-git remote add linux https://github.com/fabry76/linux
-git push --set-upstream linux main
+git config --global credential.helper store
