@@ -10,7 +10,7 @@ loadkeys it.map.gz
 #Update the system clock
 timedatectl set-ntp true
 
-#View disks and partition
+#View disks and partitions
 lsblk
 
 #Fdisk into physical disc (NOT IF REINSTALLING)
