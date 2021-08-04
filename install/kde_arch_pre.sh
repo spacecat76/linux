@@ -9,25 +9,19 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 #printer
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 
-#set aliases
-tee -a /home/fabri/.bashrc  << END
-alias ls="ls -lha --color"
-END
-
-#services
-systemctl disable bluetooth
-systemctl disable iptables.service
-systemctl enable sddm
-systemctl enable avahi-daemon.service
-systemctl enable cups
-
 #ufw
 ufw enable
-ufw allow 5353/udp
-systemctl enable ufw
 
 #tlp
 tlp start
+
+#services
+systemctl disable bluetooth
+systemctl disable iptables
+systemctl enable gdm
+systemctl enable avahi-daemon
+systemctl enable cups
+systemctl enable ufw
 
 #setting permission to home folder
 chown -R fabri:fabri /home/fabri/
