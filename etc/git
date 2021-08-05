@@ -2,4 +2,5 @@
 git config --global user.email "EMAIL"
 git config --global user.name "fabry76"
 
+#Windows only
 git config --global credential.helper store
