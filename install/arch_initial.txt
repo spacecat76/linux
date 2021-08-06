@@ -73,9 +73,6 @@ systemctl enable NetworkManager
 grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-#enable root
-passwd
-
 #create user
 useradd -m -G wheel fabri
 passwd fabri
