@@ -1,8 +1,3 @@
-#!/bin/bash
-
-#user dirs
-xdg-user-dirs-update
-
 #set x11 KB language (SDDM)
 localectl set-x11-keymap it
 

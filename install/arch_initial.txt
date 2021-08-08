@@ -64,7 +64,7 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub efibootmgr networkmanager wireless_tools wpa_supplicant git appstream sof-firmware
+pacman -S grub efibootmgr networkmanager xdg-user-dirs git appstream sof-firmware
 
 #Netowrk Manager
 systemctl enable NetworkManager
@@ -73,7 +73,8 @@ systemctl enable NetworkManager
 grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-#create user
+#users
+passwd
 useradd -m -G wheel fabri
 passwd fabri
 EDITOR=nano visudo (uncomment line %wheel ALL=(ALL) ALL)
