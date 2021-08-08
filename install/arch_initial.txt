@@ -58,9 +58,9 @@ echo "LANG=en_US.UTF-8" | tee -a /etc/locale.conf
 echo "arco" | tee -a /etc/hostname
 
 tee -a /etc/hosts  << END
-127.0.0.1    localhost
-::1    localhost
-127.0.1.1    arco.localdomain    arco
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   arco.localdomain    arco
 END
 
 #packages
