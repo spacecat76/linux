@@ -18,7 +18,7 @@ tlp start
 #services
 systemctl disable bluetooth
 systemctl disable iptables
-systemctl enable gdm
+systemctl enable sddm
 systemctl enable avahi-daemon
 systemctl enable cups
 systemctl enable ufw
