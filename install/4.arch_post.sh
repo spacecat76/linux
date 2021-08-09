@@ -1,4 +1,7 @@
-#set x11 KB language (SDDM)
+#setting permission to home folder
+chown -R fabri:fabri /home/fabri/
+
+#set x11 KB language (GDM)
 localectl set-x11-keymap it
 
 #paru
@@ -8,9 +11,3 @@ makepkg -sri
 
 #aur
 paru -S ttf-ms-fonts timeshift visual-studio-code-bin --noconfirm
-
-#kdewallet
-tee -a /home/fabri/.config/kwalletrc  << END
-[Wallet]
-Enabled=false
-END
