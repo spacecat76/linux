@@ -1,8 +1,11 @@
 #enable non-free
 sed -i 's/main/main contrib non-free/g' /etc/apt/sources.list
 
+#update repos
+apt update
+
 #install common app
-apt install flatpak libreoffice vlc sane cups htop curl vim simple-scan tlp net-tools chromium ufw neofetch printer-driver-all firmware-sof papirus-icon-theme timeshift ttf-mscorefonts-installer shotwell -y
+apt install flatpak libreoffice vlc sane cups htop curl vim simple-scan tlp net-tools chromium ufw neofetch printer-driver-all papirus-icon-theme timeshift ttf-mscorefonts-installer shotwell -y
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
