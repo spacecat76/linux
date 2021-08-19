@@ -1,5 +1,5 @@
 #install common app
-apt install libreoffice vlc sane cups printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools pavucontrol ufw neofetch printer-driver-all printer-driver-cups-pdf papirus-icon-theme timeshift ttf-mscorefonts-installer shotwell firmware-sof-signed apt-transport-https -y
+apt install libreoffice vlc sane cups printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools pavucontrol ufw neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer shotwell firmware-sof-signed apt-transport-https -y
 
 #add user to groups
 sudo usermod -a -G lpadmin fabri
