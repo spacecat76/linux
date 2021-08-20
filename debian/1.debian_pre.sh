@@ -1,10 +1,5 @@
 #install common app
-apt install libreoffice vlc sane cups printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools pavucontrol ufw neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer shotwell firmware-sof-signed apt-transport-https -y
-
-#chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
-rm /home/fabri/Downloads/*.deb
+apt install firefox-esr chromium libreoffice vlc sane cups printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools pavucontrol ufw neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer shotwell firmware-sof-signed apt-transport-https -y
 
 #add user to group
 sudo usermod -a -G lpadmin fabri
