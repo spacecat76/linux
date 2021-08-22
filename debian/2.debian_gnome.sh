@@ -1,6 +1,9 @@
 #install gnome
 apt install gnome-core avahi-daemon network-manager-gnome libreoffice-gnome cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
+#remove uneeded gnome applications
+sudo apt remove malcontent gnome-contacts termit
+
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
 
