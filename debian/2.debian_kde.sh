@@ -8,8 +8,8 @@ apt remove konqueror termit kdeconnect kwalletmanager -y
 apt autoremove -y
 
 #snap
-snap install firefox code libreoffice
-sudo ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
+snap install firefox libreoffice
+snap install --classic code
 
 #kdewallet
 tee -a /home/fabri/.config/kwalletrc  << END
