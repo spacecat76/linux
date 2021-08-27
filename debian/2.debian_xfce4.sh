@@ -1,12 +1,12 @@
 #install XFCE4
-apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskmanager xfce4-screenshooter xfce4-clipman xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-power-manager-plugins xfce4-clipman-plugin network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell vlc mugshot redshift -y
+apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskmanager xfce4-screenshooter xfce4-clipman xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-power-manager-plugins xfce4-clipman-plugin network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell vlc mugshot redshift chromium -y
 
 #cleanup
 apt autoremove -y
 
 #snap
-sudo ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
 snap install firefox code libreoffice
+sudo ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
 
 #touchpad X11
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
