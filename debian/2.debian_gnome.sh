@@ -1,5 +1,5 @@
 #install gnome
-apt install gnome-core network-manager-gnome libreoffice-writer libreoffice-impress libreoffice-calc libreoffice-gnome libreoffice-style-breeze cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
+apt install gnome-core network-manager-gnome libreoffice-gnome cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
 #remove uneeded gnome applications
 apt remove malcontent termit -y
