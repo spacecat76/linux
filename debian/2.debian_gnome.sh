@@ -1,5 +1,5 @@
 #install gnome
-apt install gnome-core avahi-daemon network-manager-gnome libreoffice-gnome cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos firefox-esr -y
+apt install gnome-core network-manager-gnome libreoffice-gnome cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos firefox-esr -y
 
 #remove uneeded gnome applications
 apt remove malcontent gnome-contacts termit -y

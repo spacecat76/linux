@@ -1,7 +1,7 @@
-#install KDE
+#install kde
 apt install kde-plasma-desktop libreoffice-kde5 kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc chromium -y
 
-#remove uneeded KDE applications
+#remove uneeded kde applications
 apt remove konqueror termit kdeconnect kwalletmanager -y
 
 #cleanup
