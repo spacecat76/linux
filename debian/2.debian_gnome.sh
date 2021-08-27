@@ -14,8 +14,8 @@ apt install gnome-shell-extension-dash-to-panel -y
 apt autoremove -y
 
 #snap
-snap install code libreoffice
-sudo ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
+snap install --classic code
+snap install libreoffice
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
