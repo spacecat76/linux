@@ -5,8 +5,9 @@ apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskman
 apt autoremove -y
 
 #snap
-snap install firefox code libreoffice
-sudo ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
+snap install firefox libreoffice
+snap install --classic code
+ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
 
 #touchpad X11
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
