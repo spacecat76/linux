@@ -1,8 +1,8 @@
 #install gnome
-apt install gnome-core network-manager-gnome libreoffice-gnome cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
+apt install gnome-core network-manager-gnome libreoffice-writer libreoffice-impress libreoffice-calc libreoffice-gnome libreoffice-style-breeze cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
 #remove uneeded gnome applications
-apt remove malcontent gnome-contacts termit -y
+apt remove malcontent termit -y
 
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -15,12 +15,14 @@ apt autoremove -y
 
 #snap
 snap install --classic code
-snap install libreoffice
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
 apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
+
+#network manager
+sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #setting permission to home folder
 chown -R fabri:fabri /home/fabri/

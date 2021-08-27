@@ -1,5 +1,5 @@
 #install kde
-apt install kde-plasma-desktop libreoffice-kde5 kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc chromium -y
+apt install kde-plasma-desktop libreoffice-writer libreoffice-impress libreoffice-calc libreoffice-plasma libreoffice-style-breeze kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc chromium -y
 
 #remove uneeded kde applications
 apt remove konqueror termit kdeconnect kwalletmanager -y
@@ -8,7 +8,7 @@ apt remove konqueror termit kdeconnect kwalletmanager -y
 apt autoremove -y
 
 #snap
-snap install firefox libreoffice
+snap install firefox
 snap install --classic code
 
 #kdewallet
