@@ -10,6 +10,10 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 #tlp
 tlp start
 
+#locale
+sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
+locale-gen
+
 #services
 systemctl disable bluetooth
 systemctl enable cups
