@@ -18,3 +18,4 @@ locale-gen
 systemctl disable bluetooth
 systemctl enable cups
 systemctl enable firewalld
+systemctl enable avahi-daemon
