@@ -1,5 +1,5 @@
 #install gnome applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese shotwell vlc simple-scan libreoffice tlp net-tools chromium ufw fuse gutenprint neofetch rust wget virtualbox linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese vlc simple-scan libreoffice tlp net-tools chromium ufw fuse gutenprint neofetch rust wget virtualbox linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream --noconfirm
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
