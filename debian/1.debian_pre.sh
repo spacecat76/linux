@@ -19,3 +19,6 @@ systemctl disable bluetooth
 systemctl enable cups
 systemctl enable firewalld
 systemctl enable avahi-daemon
+
+#firewall
+firewall-cmd --set-default-zone=home
