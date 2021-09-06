@@ -22,3 +22,12 @@ systemctl enable avahi-daemon
 
 #firewall
 firewall-cmd --set-default-zone=home
+
+#virtualbox
+tee -a /etc/apt/sources.list  << END
+deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib
+END
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -
+apt update
+apt install virtualbox-6.1 -y
