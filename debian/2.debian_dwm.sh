@@ -1,5 +1,5 @@
 #install xfce4
-apt install dwm slick-greeter thunar libreoffice-gtk3 xfce4-terminal network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell vlc redshift chromium lxappereance gnome-keyring -y
+apt install dwm slick-greeter thunar libreoffice-gtk3 xfce4-terminal network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell vlc redshift chromium lxappearance gnome-keyring -y
 
 #cleanup
 apt autoremove -y
