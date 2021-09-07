@@ -5,7 +5,7 @@ apt install xfce4 slick-greeter libreoffice-gtk3 xfce4-terminal xfce4-power-mana
 apt autoremove -y
 
 #snap
-snap install firefox
+snap install firefox libreoffice
 snap install --classic code
 ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
 

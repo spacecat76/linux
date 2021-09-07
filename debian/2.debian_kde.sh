@@ -8,7 +8,7 @@ apt remove konqueror termit kdeconnect kwalletmanager -y
 apt autoremove -y
 
 #snap
-snap install firefox
+snap install firefox libreoffice
 snap install --classic code
 
 #kdewallet

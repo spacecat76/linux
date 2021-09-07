@@ -5,7 +5,7 @@ apt install dwm slick-greeter thunar libreoffice-gtk3 xfce4-terminal network-man
 apt autoremove -y
 
 #snap
-snap install firefox
+snap install firefox libreoffice
 snap install --classic code
 ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
 
