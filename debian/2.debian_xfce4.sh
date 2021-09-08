@@ -19,5 +19,5 @@ END
 #setting permission to home folder
 chown -R fabri:fabri /home/fabri/
 
-#set x11 KB language (SDDM)
+#set x11 KB language (lightdm)
 localectl set-x11-keymap it
