@@ -1,6 +1,6 @@
 #add non free reps
-sed -i 's/deb http://deb.debian.org/debian/ bullseye main/deb/http://deb.debian.org/debian/ bullseye main non-free contrib/g' /etc/apt/sources.list
-sed -i 's/deb-src http://deb.debian.org/debian/ bullseye main/deb-src http://deb.debian.org/debian/ bullseye main non-free contrib/g' /etc/apt/sources.list
+sed -i 's/deb http://deb.debian.org/debian/ bullseye main/deb http://deb.debian.org/debian/ bullseye main contrib non-free/g' /etc/apt/sources.list
+sed -i 's/deb-src http://deb.debian.org/debian/ bullseye main/deb-src http://deb.debian.org/debian/ bullseye main contrib non-free/g' /etc/apt/sources.list
 
 #install common app
 apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make snapd -y
