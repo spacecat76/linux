@@ -2,7 +2,7 @@
 apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos libreoffice-gnome -y
 
 #remove uneeded gnome applications
-apt remove malcontent termit totem -y
+apt remove malcontent termit -y
 
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*

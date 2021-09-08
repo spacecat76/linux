@@ -1,5 +1,5 @@
 #install kde
-apt install kde-plasma-desktop kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol libreoffice-qt5 -y
+apt install kde-plasma-desktop kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol libreoffice-qt5 vlc -y
 
 #remove uneeded kde applications
 apt remove konqueror termit kdeconnect kwalletmanager -y
