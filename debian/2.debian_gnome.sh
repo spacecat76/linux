@@ -13,15 +13,6 @@ apt install gnome-shell-extension-dash-to-panel -y
 #cleanup
 apt autoremove -y
 
-#snap
-snap install --classic code
-snap install libreoffice
-
-#chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
-rm /home/fabri/Downloads/*.deb
-
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 

@@ -1,15 +1,11 @@
 #install kde
-apt install kde-plasma-desktop kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc chromium -y
+apt install kde-plasma-desktop kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc -y
 
 #remove uneeded kde applications
 apt remove konqueror termit kdeconnect kwalletmanager -y
 
 #cleanup
 apt autoremove -y
-
-#snap
-snap install firefox libreoffice
-snap install --classic code
 
 #kdewallet
 tee -a /home/fabri/.config/kwalletrc  << END
