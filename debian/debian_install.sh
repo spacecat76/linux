@@ -126,7 +126,7 @@ apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskman
 #libreoffice-gtk
 
 #redshift
-cp /home/fabri/Documents/git/linux/etc/dwm/redshift.conf ~/.config
+cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf ~/.config
 
 jumpto x11
 
@@ -138,7 +138,7 @@ apt install xorg picom dwm slick-greeter xfce4-terminal xfce4-power-manager xfce
 sed -i 's/0/1/g' .config/gtk-3.0/settings.ini
 
 #redshift
-cp /home/fabri/Documents/git/linux/etc/dwm/redshift.conf ~/.config
+cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf ~/.config
 
 jumpto x11
 
