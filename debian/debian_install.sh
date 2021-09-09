@@ -1,8 +1,11 @@
 #!/bin/bash
 
 #de selection
-echo "Which DE would you like to install? (gnome, dwm, kde, xfce4 or none)"
+echo "Which DE would you like to install? (gnome, dwm, kde, xfce4, none or exit)"
 read de
+if [[ $de == "exit" ]]; then
+   exit
+else
 
 #add non free reps
 sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/apt/sources.list
@@ -37,7 +40,7 @@ firewall-cmd --set-default-zone=home
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.libreoffice.LibreOffice
+flatpak install flathub org.libreoffice.LibreOffice -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
@@ -49,7 +52,7 @@ curl -1sLf \
    'https://dl.cloudsmith.io/public/balena/etcher/setup.deb.sh' \
    | sudo -E bash
 apt update
-apt install balena-etcher-electron
+apt install balena-etcher-electron -y
 
 #vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -57,7 +60,9 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 apt update
-apt install code
+apt install code -y
+
+fi
 
 #de install
 function jumpto
@@ -81,7 +86,7 @@ elif [[ $de == "dwm" ]]; then
 elif [[ $de == "xfce4" ]]; then
    jumpto xfce4
 elif [[ $de == "none" ]]; then
-   exit
+   jumpto final
 else
    jumpto start
 fi
@@ -90,7 +95,8 @@ gnome:
 #install gnome
 apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
-#libreoffice-gnome
+#flatpak
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 
 #remove uneeded gnome applications
 apt remove malcontent termit -y
@@ -125,7 +131,8 @@ jumpto x11
 xfce4:
 apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskmanager xfce4-screenshooter xfce4-clipman xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-power-manager-plugins xfce4-clipman-plugin network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell mugshot redshift vlc firefox-esr -y
 
-#libreoffice-gtk
+#flatpak
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 
 #redshift
 cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf ~/.config
@@ -135,6 +142,9 @@ jumpto x11
 dwm:
 #install xfce4
 apt install xorg picom dwm slick-greeter xfce4-terminal xfce4-power-manager xfce4-screenshooter network-manager galculator transmission xarchiver thunar thunar-archive-plugin mousepad shotwell redshift libreoffice-gtk vlc nitrogen lxappearance firefox-esr -y
+
+#flatpak
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 
 #dark theme
 sed -i 's/0/1/g' .config/gtk-3.0/settings.ini
