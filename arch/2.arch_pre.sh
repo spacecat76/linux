@@ -1,4 +1,4 @@
-#install gnome applications
+#install applications
 pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese vlc simple-scan libreoffice tlp net-tools chromium ufw fuse gutenprint neofetch rust wget virtualbox linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream --noconfirm
 
 #scanner
