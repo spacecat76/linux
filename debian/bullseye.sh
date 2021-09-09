@@ -1,9 +1,25 @@
 #!/bin/bash
 
+#jumpto
+function jumpto
+{
+    label=$1
+    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
+    eval "$cmd"
+    exit
+}
+start=${1:-"start"}
+
 #de selection
+selection:
 echo "Which DE would you like to install? (gnome, dwm, kde, xfce4 or none)"
 read de
-
+if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]]; then
+   jumpto start
+else
+   jumpto selection
+fi
+start:
 #add non free reps
 sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/apt/sources.list
 apt update
@@ -66,20 +82,9 @@ install -o root -g root -m 644 package2.oracle.gpg /etc/apt/trusted.gpg.d/
 rm -f package*.oracle.gpg
 apt update
 apt install virtualbox-6.1 -y
+apt remove zathura
 
 #de install
-function jumpto
-{
-    label=$1
-    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
-    eval "$cmd"
-    exit
-}
-start=${1:-"start"}
-
-jumpto $start
-
-start:
 if [[ $de == "gnome" ]]; then
    jumpto gnome
 elif [[ $de == "kde" ]]; then
@@ -117,7 +122,8 @@ kde:
 #install kde
 apt install kde-plasma-desktop kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc firefox-esr -y
 
-#libreoffice-qt5 
+#flatpak
+flatpak override --user --env=GTK_THEME=Adwaita:dark org.libreoffice.LibreOffice
 
 #remove uneeded kde applications
 apt remove konqueror termit kdeconnect kwalletmanager -y
@@ -170,6 +176,8 @@ END
 
 #set x11 KB language (SDDM)
 localectl set-x11-keymap it
+
+jumpto final
 
 final:
 #cleanup
