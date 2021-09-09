@@ -3,8 +3,8 @@ echo "Which DE would you like to install? (gnome, dwm, kde, xfce4 or none)"
 read de
 
 #add non free reps
-sed -i 's/deb http://deb.debian.org/debian/ bullseye main/deb http://deb.debian.org/debian/ bullseye main contrib non-free/g' /etc/apt/sources.list
-sed -i 's/deb-src http://deb.debian.org/debian/ bullseye main/deb-src http://deb.debian.org/debian/ bullseye main contrib non-free/g' /etc/apt/sources.list
+sed -i 's/"deb http://deb.debian.org/debian/ bullseye main"/"deb http://deb.debian.org/debian/ bullseye main contrib non-free"/g' /etc/apt/sources.list
+sed -i 's/"deb-src http://deb.debian.org/debian/ bullseye main"/"deb-src http://deb.debian.org/debian/ bullseye main contrib non-free"/g' /etc/apt/sources.list
 
 #install common app
 apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak -y
