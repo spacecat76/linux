@@ -1,5 +1,7 @@
 #install gnome
-apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos libreoffice-gnome -y
+apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
+
+#libreoffice-gnome
 
 #remove uneeded gnome applications
 apt remove malcontent termit -y

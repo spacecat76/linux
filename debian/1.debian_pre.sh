@@ -3,7 +3,9 @@ sed -i 's/deb http://deb.debian.org/debian/ bullseye main/deb http://deb.debian.
 sed -i 's/deb-src http://deb.debian.org/debian/ bullseye main/deb-src http://deb.debian.org/debian/ bullseye main contrib non-free/g' /etc/apt/sources.list
 
 #install common app
-apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make libreoffice-calc libreoffice-impress libreoffice-writer libreoffice-style-breeze -y
+apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make -y
+
+#libreoffice-calc libreoffice-impress libreoffice-writer libreoffice-style-breeze
 
 #add user to group
 sudo usermod -a -G lpadmin fabri
@@ -31,3 +33,18 @@ firewall-cmd --set-default-zone=home
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
 apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
+
+#etcher
+curl -1sLf \
+   'https://dl.cloudsmith.io/public/balena/etcher/setup.deb.sh' \
+   | sudo -E bash
+apt update
+apt install balena-etcher-electron
+
+#vscode
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update
+apt install code

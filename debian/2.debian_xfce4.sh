@@ -1,9 +1,6 @@
 #install xfce4
 apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskmanager xfce4-screenshooter xfce4-clipman xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-power-manager-plugins xfce4-clipman-plugin network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell mugshot redshift libreoffice-gtk vlc -y
 
-#snap
-ln -s /var/lib/snapd/desktop/applications /usr/share/applications/snapd
-
 #touchpad X11
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
 Section "InputClass"
@@ -16,8 +13,13 @@ Driver "libinput"
 EndSection
 END
 
-#setting permission to home folder
-chown -R fabri:fabri /home/fabri/
-
 #set x11 KB language (lightdm)
 localectl set-x11-keymap it
+
+#redshift
+cp /home/fabri/Documents/git/linux/etc/dwm/redshift.conf ~/.config
+
+
+
+#setting permission to home folder
+chown -R fabri:fabri /home/fabri/

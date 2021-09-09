@@ -24,8 +24,10 @@ Driver "libinput"
 EndSection
 END
 
-#setting permission to home folder
-chown -R fabri:fabri /home/fabri/
-
 #set x11 KB language (SDDM)
 localectl set-x11-keymap it
+
+
+
+#setting permission to home folder
+chown -R fabri:fabri /home/fabri/
