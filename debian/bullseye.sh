@@ -60,9 +60,9 @@ apt update
 apt install code -y
 
 #virtualbox
-echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | /etc/apt/sources.list
-wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc -P /home/fabri/Downloads | gpg --dearmor > package1.oracle.gpg
-wget -qO- https://www.virtualbox.org/download/oracle_vbox.asc -P /home/fabri/Downloads | gpg -dearmor > package2.oracle.gpg
+echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | tee -a /etc/apt/sources.list
+wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor > package1.oracle.gpg
+wget -qO- https://www.virtualbox.org/download/oracle_vbox.asc | gpg -dearmor > package2.oracle.gpg
 sudo install -o root -g root -m 644 package1.oracle.gpg /etc/apt/trusted.gpg.d/
 sudo install -o root -g root -m 644 package2.oracle.gpg /etc/apt/trusted.gpg.d/
 rm -f package*.oracle.gpg
