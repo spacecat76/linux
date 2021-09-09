@@ -14,10 +14,12 @@ jumpto $start
 
 #de selection
 start:
-echo "Which DE would you like to install? (gnome, dwm, kde, xfce4 or none)"
+echo "Which DE would you like to install? (gnome, dwm, kde, xfce4, none or exit)"
 read de
-if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]]; then
+if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]] || [[ $de == "none" ]];; then
    jumpto install
+elif if [[ $de == "exit" ]]
+   exit
 else
    jumpto start
 fi
