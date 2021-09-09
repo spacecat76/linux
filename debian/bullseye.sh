@@ -10,14 +10,16 @@ function jumpto
 }
 start=${1:-"start"}
 
+jumpto $start
+
 #de selection
-selection:
+start:
 echo "Which DE would you like to install? (gnome, dwm, kde, xfce4 or none)"
 read de
 if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]]; then
-   jumpto start
+   jumpto install
 else
-   jumpto selection
+   jumpto start
 fi
 start:
 #add non free reps
