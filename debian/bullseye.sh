@@ -21,7 +21,7 @@ if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de ==
 else
    jumpto start
 fi
-start:
+install:
 #add non free reps
 sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/apt/sources.list
 apt update
