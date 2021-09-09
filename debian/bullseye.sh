@@ -16,7 +16,7 @@ jumpto $start
 start:
 echo "Which DE would you like to install? (gnome, dwm, kde, xfce4, none or exit)"
 read de
-if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]] || [[ $de == "none" ]];; then
+if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]];; then
    jumpto install
 elif if [[ $de == "exit" ]]
    exit
@@ -86,7 +86,7 @@ install -o root -g root -m 644 package2.oracle.gpg /etc/apt/trusted.gpg.d/
 rm -f package*.oracle.gpg
 apt update
 apt install virtualbox-6.1 -y
-apt remove zathura
+apt remove zathura -y
 
 #de install
 if [[ $de == "gnome" ]]; then
