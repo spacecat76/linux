@@ -11,8 +11,6 @@ apt update
 #install common app
 apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak -y
 
-#libreoffice-calc libreoffice-impress libreoffice-writer libreoffice-style-breeze
-
 #add user to group
 sudo usermod -a -G lpadmin fabri
 
@@ -53,8 +51,8 @@ apt install balena-etcher-electron -y
 
 #vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 apt update
 apt install code -y
@@ -63,8 +61,8 @@ apt install code -y
 echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | tee -a /etc/apt/sources.list
 wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor > package1.oracle.gpg
 wget -qO- https://www.virtualbox.org/download/oracle_vbox.asc | gpg -dearmor > package2.oracle.gpg
-sudo install -o root -g root -m 644 package1.oracle.gpg /etc/apt/trusted.gpg.d/
-sudo install -o root -g root -m 644 package2.oracle.gpg /etc/apt/trusted.gpg.d/
+install -o root -g root -m 644 package1.oracle.gpg /etc/apt/trusted.gpg.d/
+install -o root -g root -m 644 package2.oracle.gpg /etc/apt/trusted.gpg.d/
 rm -f package*.oracle.gpg
 apt update
 apt install virtualbox-6.1 -y
@@ -90,8 +88,6 @@ elif [[ $de == "dwm" ]]; then
    jumpto dwm
 elif [[ $de == "xfce4" ]]; then
    jumpto xfce4
-else [[ $de == "none" ]]; then
-   jumpto final
 else
    jumpto final
 fi
