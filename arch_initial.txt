@@ -1,0 +1,85 @@
+##Enable SSH from remote if needed
+#Set root password
+passwd
+#Enable SSH service
+systemctl start sshd.service
+
+#Set KB language
+loadkeys it.map.gz
+
+#Update the system clock
+timedatectl set-ntp true
+
+#View disks and partitions
+lsblk
+
+#Fdisk into physical disc (NOT IF REINSTALLING)
+fdisk /dev/nvme0n1
+
+#Create 3 partitions (NOT IF REINSTALLING)
+Device             Start       End   Sectors  Size Type
+/dev/nvme0n1p1      2048   1050623   1048576  512M EFI System
+/dev/nvme0n1p2   1050624 105908223 104857600  100G Linux filesystem
+/dev/nvme0n1p3 105908224 500118158 394209935  138G Linux filesystem
+
+#Format the partition
+mkfs.fat -F32 /dev/nvme0n1p1
+mkfs.ext4 /dev/nvme0n1p2 (NOT IF REINSTALLING)
+mkfs.ext4 /dev/nvme0n1p3 
+
+#Mount the partitions
+mount /dev/nvme0n1p3 /mnt
+mkdir -p /mnt/boot/EFI
+mount /dev/nvme0n1p1 /mnt/boot/EFI
+mkdir /mnt/home
+mount /dev/nvme0n1p2 /mnt/home
+
+#Install base system
+pacstrap /mnt base base-devel linux-lts linux-firmware nano intel-ucode
+
+#Generate fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+
+#Change root into the new system:
+arch-chroot /mnt /bin/bash
+
+#Set the time zone
+ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+
+#synch hw clock to system clock
+hwclock --systohc
+
+#Locale 
+nano /etc/locale.gen (uncomment US and IT)
+locale-gen
+echo "LANG=en_US.UTF-8" | tee -a /etc/locale.conf
+
+#hostname
+echo "arco" | tee -a /etc/hostname
+
+tee -a /etc/hosts  << END
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   arco.localdomain    arco
+END
+
+#packages
+pacman -S grub efibootmgr networkmanager xdg-user-dirs git
+
+#Netowrk Manager
+systemctl enable NetworkManager
+
+#grub
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+#users
+passwd
+useradd -m -G wheel fabri
+passwd fabri
+EDITOR=nano visudo (uncomment line %wheel ALL=(ALL) ALL)
+
+#exit and unmount
+exit
+umount -a
+reboot
