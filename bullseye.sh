@@ -98,7 +98,7 @@ elif [[ $de == "dwm" ]]; then
 elif [[ $de == "xfce4" ]]; then
    jumpto xfce4
 else
-   jumpto final
+   jumpto x11
 fi
 
 gnome:
