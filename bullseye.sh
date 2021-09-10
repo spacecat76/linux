@@ -146,7 +146,7 @@ apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskman
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 
 #redshift
-cp /home/fabri/Documents/git/linux/dot/redshift.conf /home/fabri/.config
+cp /home/fabri/Documents/git/linux/conf/redshift.conf /home/fabri/.config
 
 jumpto x11
 
@@ -161,7 +161,7 @@ flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 sed -i 's/0/1/g' .config/gtk-3.0/settings.ini
 
 #redshift
-cp /home/fabri/Documents/git/linux/dot/redshift.conf /home/fabri/.config
+cp /home/fabri/Documents/git/linux/conf/redshift.conf /home/fabri/.config
 
 jumpto x11
 
