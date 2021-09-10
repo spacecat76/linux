@@ -14,7 +14,7 @@ jumpto $start
 
 #de selection
 start:
-echo "Which DE would you like to install? (gnome, dwm, kde, xfce4, none or exit)"
+echo "Which DE would you like to install? (gnome, kde, xfce4, dwm, none or exit)"
 read de
 if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]]; then
    jumpto install
@@ -24,11 +24,11 @@ else
    jumpto start
 fi
 install:
-#add non free reps
+#add contrib and non-free repositories
 sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/apt/sources.list
 apt update
 
-#install common app
+#install common apps
 apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak -y
 
 #add user to group
@@ -146,7 +146,7 @@ apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskman
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 
 #redshift
-cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf ~/.config
+cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf /home/fabri/.config
 
 jumpto x11
 
@@ -161,7 +161,7 @@ flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 sed -i 's/0/1/g' .config/gtk-3.0/settings.ini
 
 #redshift
-cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf ~/.config
+cp /home/fabri/Documents/git/linux/etc/dot/redshift.conf /home/fabri/.config
 
 jumpto x11
 
@@ -178,7 +178,7 @@ Driver "libinput"
 EndSection
 END
 
-#set x11 KB language (SDDM)
+#set x11 KB language (login manager)
 localectl set-x11-keymap it
 
 jumpto final
