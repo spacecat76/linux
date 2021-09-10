@@ -120,7 +120,7 @@ apt install gnome-shell-extension-dash-to-panel -y
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
-jumpto final
+jumpto x11
 
 kde:
 #install kde
