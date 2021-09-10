@@ -157,7 +157,7 @@ apt install xorg picom dwm slick-greeter xfce4-terminal xfce4-power-manager xfce
 #flatpak
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
 
-#dark theme
+#dark theme 
 sed -i 's/0/1/g' .config/gtk-3.0/settings.ini
 
 #redshift
