@@ -152,7 +152,7 @@ jumpto x11
 
 dwm:
 #install xfce4
-apt install xorg picom dwm slick-greeter xfce4-terminal xfce4-power-manager xfce4-screenshooter network-manager galculator transmission xarchiver thunar thunar-archive-plugin mousepad shotwell redshift libreoffice-gtk vlc nitrogen lxappearance firefox-esr -y
+apt install xorg picom dwm slick-greeter xfce4-terminal xfce4-power-manager xfce4-screenshooter network-manager galculator transmission xarchiver thunar thunar-archive-plugin mousepad shotwell redshift vlc nitrogen lxappearance firefox-esr -y
 
 #flatpak
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
