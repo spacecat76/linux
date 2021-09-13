@@ -14,9 +14,9 @@ jumpto $start
 
 #de selection
 start:
-echo "Which DE would you like to install? (gnome, kde, xfce4, dwm, none or exit)"
+echo "Which DE would you like to install? (gnome, kde, none or exit)"
 read de
-if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "dwm" ]] || [[ $de == "xfce4" ]] || [[ $de == "none" ]]; then
+if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "none" ]]; then
    jumpto install
 elif [[ $de == "exit" ]]; then
    exit
@@ -93,10 +93,6 @@ if [[ $de == "gnome" ]]; then
    jumpto gnome
 elif [[ $de == "kde" ]]; then
    jumpto kde
-elif [[ $de == "dwm" ]]; then
-   jumpto dwm
-elif [[ $de == "xfce4" ]]; then
-   jumpto xfce4
 else
    jumpto x11
 fi
@@ -136,32 +132,6 @@ apt remove konqueror termit kdeconnect kwalletmanager -y
 tee -a /home/fabri/.config/kwalletrc  << END
 Enabled=false
 END
-
-jumpto x11
-
-xfce4:
-apt install xfce4 slick-greeter xfce4-terminal xfce4-power-manager xfce4-taskmanager xfce4-screenshooter xfce4-clipman xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-power-manager-plugins xfce4-clipman-plugin network-manager galculator transmission xarchiver thunar-archive-plugin mousepad shotwell mugshot redshift vlc firefox-esr -y
-
-#flatpak
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
-
-#redshift
-cp /home/fabri/Documents/git/linux/conf/redshift.conf /home/fabri/.config
-
-jumpto x11
-
-dwm:
-#install xfce4
-apt install xorg picom dwm slick-greeter xfce4-terminal xfce4-power-manager xfce4-screenshooter network-manager galculator transmission xarchiver thunar thunar-archive-plugin mousepad shotwell redshift vlc nitrogen lxappearance firefox-esr -y
-
-#flatpak
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
-
-#dark theme 
-sed -i 's/0/1/g' .config/gtk-3.0/settings.ini
-
-#redshift
-cp /home/fabri/Documents/git/linux/conf/redshift.conf /home/fabri/.config
 
 jumpto x11
 
