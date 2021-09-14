@@ -29,7 +29,7 @@ sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/a
 apt update
 
 #install common apps
-apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak -y
+apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak python3-pip -y
 
 #add user to group
 sudo usermod -a -G lpadmin fabri
