@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #remove applications
-sudo apt remove gnome-shell-extension-appindicator gnome-shell-extension-ubuntu-dock thunderbird shotwell aisleriot deja-dup gnome-mahjongg gnome-mines gnome-sudoku remmina -y
+apt remove gnome-shell-extension-appindicator gnome-shell-extension-ubuntu-dock thunderbird shotwell aisleriot deja-dup gnome-mahjongg gnome-mines gnome-sudoku remmina -y
 
 #install applications
-apt install ubuntu-restricted-extras gnome-shell-extension-dash-to-panel timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https stacer make ython3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate -y
+apt install ubuntu-restricted-extras gnome-shell-extension-dash-to-panel timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https stacer make python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate -y
 
 #snaps
 snap install code --classic

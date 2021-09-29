@@ -32,7 +32,7 @@ apt update
 apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate -y
 
 #add user to group
-sudo usermod -a -G lpadmin fabri
+usermod -a -G lpadmin fabri
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -61,13 +61,6 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
 apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
-
-#etcher
-curl -1sLf \
-   'https://dl.cloudsmith.io/public/balena/etcher/setup.deb.sh' \
-   | sudo -E bash
-apt update
-apt install balena-etcher-electron -y
 
 #vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
