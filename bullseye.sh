@@ -59,6 +59,7 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+chmod 777 /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
 apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
 
