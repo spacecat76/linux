@@ -105,7 +105,7 @@ apt remove malcontent termit -y
 rm -rf /usr/share/gnome-shell/extensions/*
 
 #install dash-to-panel
-apt install gnome-shell-extension-dash-to-panel -y
+apt install gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons gnome-shell-extension-arc-menu -y
 
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
