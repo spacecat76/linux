@@ -1,0 +1,10 @@
+[/]
+distro-icon=0
+dtp-dtd-state=[true, false]
+hot-corners='Default'
+menu-button-color='rgb(165,29,45)'
+menu-button-icon='Distro_Icon'
+menu-hotkey='Super_L'
+menu-layout='Redmond'
+override-hot-corners=false
+pinned-app-list=['Google Chrome', '', 'google-chrome.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop', 'Arc Menu Settings', 'ArcMenu_ArcMenuIcon', 'gnome-extensions prefs arc-menu@linxgem33.com']

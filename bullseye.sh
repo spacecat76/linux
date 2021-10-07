@@ -29,7 +29,7 @@ sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/a
 apt update
 
 #install common apps
-apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch papirus-icon-theme timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate -y
+apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim simple-scan tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode stacer make flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate -y
 
 #add user to group
 usermod -a -G lpadmin fabri
@@ -59,7 +59,6 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-chmod 777 /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
 apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
 
@@ -105,7 +104,7 @@ apt remove malcontent termit -y
 rm -rf /usr/share/gnome-shell/extensions/*
 
 #install dash-to-panel
-apt install gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons gnome-shell-extension-arc-menu -y
+#apt install gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons gnome-shell-extension-arc-menu -y
 
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
