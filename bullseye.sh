@@ -103,6 +103,10 @@ apt remove malcontent termit -y
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
 
+#themes and icons
+cp -r /home/fabri/Documents/git/linux/conf/.icons /home/fabri/
+cp -r /home/fabri/Documents/git/linux/conf/.themes /home/fabri/
+
 #install dash-to-panel
 #apt install gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons gnome-shell-extension-arc-menu -y
 
