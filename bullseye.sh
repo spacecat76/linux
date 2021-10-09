@@ -1,29 +1,3 @@
-#!/bin/bash
-
-#jumpto
-function jumpto
-{
-    label=$1
-    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
-    eval "$cmd"
-    exit
-}
-start=${1:-"start"}
-
-jumpto $start
-
-#de selection
-start:
-echo "Which DE would you like to install? (gnome, kde, none or exit)"
-read de
-if [[ $de == "gnome" ]] || [[ $de == "kde" ]] || [[ $de == "none" ]]; then
-   jumpto install
-elif [[ $de == "exit" ]]; then
-   exit
-else
-   jumpto start
-fi
-install:
 #add contrib and non-free repositories
 sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/apt/sources.list
 apt update
@@ -43,6 +17,16 @@ tlp start
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
+
+#grub
+sed -i 's/quiet/splash/g' /etc/default/grub
+sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
+update-grub
+
+#iwlwifi
+tee -a /etc/modprobe.d/iwlwifi.conf  << END
+options iwlwifi enable_ini=N
+END
 
 #services
 systemctl disable bluetooth
@@ -70,29 +54,8 @@ rm -f packages.microsoft.gpg
 apt update
 apt install code -y
 
-#virtualbox
-echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | tee -a /etc/apt/sources.list
-wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor > package1.oracle.gpg
-wget -qO- https://www.virtualbox.org/download/oracle_vbox.asc | gpg -dearmor > package2.oracle.gpg
-install -o root -g root -m 644 package1.oracle.gpg /etc/apt/trusted.gpg.d/
-install -o root -g root -m 644 package2.oracle.gpg /etc/apt/trusted.gpg.d/
-rm -f package*.oracle.gpg
-apt update
-apt install virtualbox-6.1 -y
-apt remove zathura -y
-
-#de install
-if [[ $de == "gnome" ]]; then
-   jumpto gnome
-elif [[ $de == "kde" ]]; then
-   jumpto kde
-else
-   jumpto x11
-fi
-
-gnome:
 #install gnome
-apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
+apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak gnome-boxes -y
 
 #flatpak
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
@@ -107,32 +70,9 @@ rm -rf /usr/share/gnome-shell/extensions/*
 cp -r /home/fabri/Documents/git/linux/conf/.icons /home/fabri/
 cp -r /home/fabri/Documents/git/linux/conf/.themes /home/fabri/
 
-#install dash-to-panel
-#apt install gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons gnome-shell-extension-arc-menu -y
-
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
-jumpto x11
-
-kde:
-#install kde
-apt install kde-plasma-desktop kamoso okular galculator transmission-qt ark kde-spectacle print-manager ksystemlog kolourpaint gnome-keyring plasma-nm shotwell pavucontrol vlc firefox-esr -y
-
-#flatpak
-flatpak override --user --env=GTK_THEME=Adwaita:dark org.libreoffice.LibreOffice
-
-#remove uneeded kde applications
-apt remove konqueror termit kdeconnect kwalletmanager -y
-
-#kdewallet
-tee -a /home/fabri/.config/kwalletrc  << END
-Enabled=false
-END
-
-jumpto x11
-
-x11:
 #touchpad X11
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
 Section "InputClass"
@@ -148,9 +88,6 @@ END
 #set x11 KB language (login manager)
 localectl set-x11-keymap it
 
-jumpto final
-
-final:
 #cleanup
 apt autoremove -y
 
