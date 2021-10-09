@@ -11,8 +11,7 @@ snap install code --classic
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-chmod 777 /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
-apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
+dpkg -i /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
 rm /home/fabri/Downloads/*.deb
 
 #scanner
