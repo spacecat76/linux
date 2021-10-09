@@ -19,7 +19,7 @@ sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
 #grub
-sed -i 's/quiet/splash/g' /etc/default/grub
+sed -i 's/quiet//g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 update-grub
 
