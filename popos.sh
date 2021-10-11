@@ -4,7 +4,7 @@
 apt remove geary -y
 
 #install applications
-apt install ttf-mscorefonts-installer gnome-shell-extension-dash-to-panel timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https stacer make python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate code transmission cheese google-chrome-stable -y
+apt install ttf-mscorefonts-installer timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https stacer make python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate code transmission cheese google-chrome-stable -y
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf

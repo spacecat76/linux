@@ -64,7 +64,7 @@ apt remove malcontent termit -y
 rm -rf /usr/share/gnome-shell/extensions/*
 
 #icons
-cp -r /home/fabri/Documents/git/linux/conf/.icons /home/fabri/
+cp -r /home/fabri/Documents/git/linux/conf/kora /usr/share/icons/
 
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
