@@ -39,7 +39,7 @@ firewall-cmd --set-default-zone=home
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.libreoffice.LibreOffice org.gnome.Boxes -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
@@ -57,18 +57,14 @@ apt install code -y
 #install gnome
 apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
-#flatpak
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark -y
-
 #remove uneeded gnome applications
 apt remove malcontent termit -y
 
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
 
-#themes and icons
+#icons
 cp -r /home/fabri/Documents/git/linux/conf/.icons /home/fabri/
-cp -r /home/fabri/Documents/git/linux/conf/.themes /home/fabri/
 
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
