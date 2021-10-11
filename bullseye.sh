@@ -81,7 +81,7 @@ Driver "libinput"
 EndSection
 END
 
-#set x11 KB language (login manager)
+#set x11 KB language (GDM)
 localectl set-x11-keymap it
 
 #cleanup

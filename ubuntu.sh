@@ -4,7 +4,7 @@
 apt remove gnome-shell-extension-appindicator gnome-shell-extension-ubuntu-dock -y
 
 #install applications
-apt install ubuntu-restricted-extras gnome-shell-extension-dash-to-panel timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https stacer make python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate virtualbox libreoffice -y
+apt install ubuntu-restricted-extras timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https stacer make python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate gnome-boxes libreoffice -y
 
 #snaps
 snap install code --classic
