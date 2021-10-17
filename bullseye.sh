@@ -58,7 +58,7 @@ apt install code -y
 apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
 #remove uneeded gnome applications
-apt remove malcontent termit -y
+apt purge malcontent termit avahi-autoipd -y
 
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -68,11 +68,6 @@ cp -r /home/fabri/Documents/git/linux/etc/kora /usr/share/icons/
 
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-
-#netowrk interfaces
-tee -a /etc/network/interfaces  << END
-iface wlp0s20f3 inet dhcp
-END
 
 #touchpad X11
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
