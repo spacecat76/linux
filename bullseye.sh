@@ -63,9 +63,6 @@ apt purge malcontent termit avahi-autoipd -y
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
 
-#icons
-cp -r /home/fabri/Documents/git/linux/etc/kora /usr/share/icons/
-
 #network manager
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
