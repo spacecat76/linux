@@ -58,7 +58,7 @@ apt install code -y
 apt install gnome-core cheese transmission-gtk file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
 #remove uneeded gnome applications
-apt purge malcontent termit avahi-autoipd -y
+apt purge malcontent termit -y*
 
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
