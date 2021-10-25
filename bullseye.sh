@@ -58,7 +58,7 @@ rm /home/fabri/Downloads/*.deb
 apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
 #remove uneeded gnome applications
-apt remove --purge malcontent termit -y
+apt remove --purge malcontent termit gnome-contacts -y
 
 #delete gnome extensions
 rm -rf /usr/share/gnome-shell/extensions/*
