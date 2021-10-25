@@ -39,7 +39,7 @@ firewall-cmd --set-default-zone=home
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Cheese org.gimp.GIMP com.transmissionbt.Transmission -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gimp.GIMP -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
@@ -47,15 +47,15 @@ apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
 
 #vscode
-#wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-#install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-#sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-#rm -f packages.microsoft.gpg
-#apt update
-#apt install code -y
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update
+apt install code -y
 
 #install gnome
-apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
+apt install gnome-core simple-scan file-roller transmission-gtk cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
 #remove uneeded gnome applications
 apt remove --purge malcontent termit gnome-contacts -y
