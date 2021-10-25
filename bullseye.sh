@@ -39,7 +39,7 @@ firewall-cmd --set-default-zone=home
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Cheese org.gimp.GIMP com.transmissionbt.Transmission org.mozilla.firefox -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Cheese org.gimp.GIMP com.transmissionbt.Transmission -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
@@ -58,11 +58,10 @@ rm /home/fabri/Downloads/*.deb
 apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos gnome-software-plugin-flatpak -y
 
 #remove uneeded gnome applications
-apt remove --purge firefox-esr malcontent termit gnome-contacts -y
+apt remove --purge malcontent termit gnome-contacts -y
 
-#cleanup
+#cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
-rm -rf /home/fabri/.mozilla
 
 #dashtopanel
 apt install gnome-shell-extension-dash-to-panel -y
