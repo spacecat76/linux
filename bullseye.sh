@@ -3,7 +3,7 @@ sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/a
 apt update
 
 #install common apps
-apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi papirus-icon-theme -y
+apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi papirus-icon-theme gimp -y
 
 #add user to group
 usermod -a -G lpadmin fabri
@@ -39,7 +39,7 @@ firewall-cmd --set-default-zone=home
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gimp.GIMP -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
