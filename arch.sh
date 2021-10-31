@@ -34,9 +34,6 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 #printer
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 
-#firewall
-firewall-cmd --set-default-zone=home
-
 #tlp
 tlp start
 
@@ -45,6 +42,9 @@ systemctl disable bluetooth
 systemctl enable firewalld
 systemctl enable avahi-daemon
 systemctl enable cups
+
+#firewall
+firewall-cmd --set-default-zone=home
 
 #de install
 if [[ $de == "gnome" ]]; then
