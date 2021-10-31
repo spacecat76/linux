@@ -26,7 +26,7 @@ fi
 install:
 
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese vlc simple-scan libreoffice tlp net-tools chromium ufw fuse gutenprint neofetch rust wget virtualbox linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese vlc simple-scan libreoffice tlp net-tools chromium firewalld fuse gutenprint neofetch rust wget virtualbox linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream gimp --noconfirm
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -34,18 +34,17 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 #printer
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 
-#ufw
-ufw enable
+#firewall
+firewall-cmd --set-default-zone=home
 
 #tlp
 tlp start
 
 #services
 systemctl disable bluetooth
-systemctl disable iptables
+systemctl enable firewalld
 systemctl enable avahi-daemon
 systemctl enable cups
-systemctl enable ufw
 
 #de install
 if [[ $de == "gnome" ]]; then
@@ -58,23 +57,17 @@ fi
 
 gnome:
 #install gnome applications
-pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-software gnome-software-packagekit-plugin file-roller gedit nautilus gnome-tweaks gnome-calculator gnome-screenshot gnome-logs tracker gnome-system-monitor evince transmission-gtk gnome-weather gnome-photos --noconfirm
+pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-software gnome-software-packagekit-plugin file-roller gedit nautilus gnome-tweaks gnome-calculator gnome-screenshot gnome-logs tracker gnome-system-monitor evince transmission-gtk gnome-weather gnome-photos builder --noconfirm
 
 #enable gdm
 systemctl enable gdm
 
 kde:
 #install kde applications
-pacman -S --needed plasma plasma-wayland-session sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog gnome-keyring shotwell --noconfirm
+pacman -S --needed plasma plasma-wayland-session sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop shotwell --noconfirm
 
 #enable sddm
 systemctl enable sddm
-
-#kdewallet
-tee -a /home/fabri/.config/kwalletrc  << END
-[Wallet]
-Enabled=false
-END
 
 final:
 #set x11 KB language (login manager)
