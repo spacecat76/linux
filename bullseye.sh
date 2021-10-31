@@ -38,7 +38,7 @@ systemctl enable avahi-daemon
 firewall-cmd --set-default-zone=home
 
 #install gnome
-apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-software-plugin-flatpak com.system76.Popsicle -y
+apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-software-plugin-flatpak gnome-photos -y
 
 #remove uneeded gnome applications
 apt remove --purge malcontent termit gnome-contacts -y
@@ -54,7 +54,7 @@ sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Builder org.gimp.GIMP org.gnome.Photos org.gnome.Cheese com.transmissionbt.Transmission -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Builder org.gimp.GIMP org.gnome.Cheese com.transmissionbt.Transmission com.system76.Popsicle -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
