@@ -38,7 +38,7 @@ systemctl enable avahi-daemon
 firewall-cmd --set-default-zone=home
 
 #install gnome
-apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-software-plugin-flatpak -y
+apt install gnome-core simple-scan file-roller gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-software-plugin-flatpak com.system76.Popsicle -y
 
 #remove uneeded gnome applications
 apt remove --purge malcontent termit gnome-contacts -y
