@@ -37,6 +37,11 @@ systemctl enable avahi-daemon
 #firewall
 firewall-cmd --set-default-zone=home
 
+#swappiness
+tee -a /etc/sysctl.conf  << END
+vm.swappiness=1
+END
+
 #install gnome
 apt install gnome-core simple-scan file-roller gnome-software-plugin-flatpak gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
