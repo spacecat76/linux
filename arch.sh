@@ -57,7 +57,7 @@ fi
 
 gnome:
 #install gnome applications
-pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-software gnome-software-packagekit-plugin file-roller gedit nautilus gnome-tweaks gnome-calculator gnome-screenshot gnome-logs tracker gnome-system-monitor evince transmission-gtk gnome-weather gnome-photos builder --noconfirm
+pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-software gnome-software-packagekit-plugin file-roller gedit nautilus gnome-tweaks gnome-calculator gnome-screenshot gnome-logs tracker gnome-system-monitor evince transmission-gtk gnome-weather gnome-photos gnome-builder --noconfirm
 
 #enable gdm
 systemctl enable gdm
