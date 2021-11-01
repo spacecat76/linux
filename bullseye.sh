@@ -39,7 +39,7 @@ firewall-cmd --set-default-zone=home
 
 #swappiness
 tee -a /etc/sysctl.conf  << END
-vm.swappiness=1
+vm.swappiness=10
 END
 
 #install gnome
