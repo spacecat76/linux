@@ -62,6 +62,8 @@ pacman -S --needed gnome-shell gdm gnome-control-center gnome-terminal gnome-sof
 #enable gdm
 systemctl enable gdm
 
+jumpto final
+
 kde:
 #install kde applications
 pacman -S --needed plasma plasma-wayland-session sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop shotwell --noconfirm
