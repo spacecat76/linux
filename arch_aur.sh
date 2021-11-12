@@ -4,4 +4,4 @@ cd /home/fabri/Downloads/paru
 makepkg -sri
 
 #aur
-paru -S ttf-ms-fonts timeshift visual-studio-code-bin --noconfirm
+paru -S ttf-ms-fonts --noconfirm

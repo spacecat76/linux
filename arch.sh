@@ -20,7 +20,7 @@ systemctl enable cups
 firewall-cmd --set-default-zone=home
 
 #install kde applications
-pacman -S --needed plasma sddm thunar alacritty okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop shotwell --noconfirm
+pacman -S --needed plasma sddm thunar konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop shotwell partitionmanager --noconfirm
 
 #enable sddm
 systemctl enable sddm
