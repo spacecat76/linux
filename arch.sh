@@ -1,5 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese vlc simple-scan libreoffice tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream gimp --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim cheese vlc simple-scan libreoffice tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream gimp shotwell --noconfirm
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -20,7 +20,7 @@ systemctl enable cups
 firewall-cmd --set-default-zone=home
 
 #install kde applications
-pacman -S --needed plasma sddm thunar konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop shotwell partitionmanager --noconfirm
+pacman -S --needed plasma sddm thunar konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop partitionmanager --noconfirm
 
 #enable sddm
 systemctl enable sddm
