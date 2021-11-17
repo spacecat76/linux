@@ -33,7 +33,7 @@ pacman -S --needed plasma sddm dolphin konsole okular galculator transmission-qt
 pacman -R plasma-browser-integration plasma-firewall -y
 
 #install flatpak
-flatpak install flathub io.gitlab.librewolf-community -y
+flatpak install flathub org.gtk.Gtk3theme.Breeze-Dark io.gitlab.librewolf-community -y
 
 #enable sddm
 systemctl enable sddm
