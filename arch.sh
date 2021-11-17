@@ -1,5 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice tlp net-tools ufw fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family papirus-icon-theme bash-completion sof-firmware appstream gimp virtualbox flatpak --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family bash-completion sof-firmware appstream gimp virtualbox flatpak --noconfirm
 
 #simple-scan shotwell
 
@@ -19,15 +19,18 @@ tlp start
 
 #services
 systemctl disable bluetooth
+systemctl enable cups
 systemctl enable firewalld
 systemctl enable avahi-daemon
-systemctl enable cups
 
 #firewall
-ufw enable
+firewall-cmd --set-default-zone=home
 
 #install kde applications
 pacman -S --needed plasma sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog kdevelop partitionmanager kamoso --noconfirm
+
+#remove kde application
+pacman -R plasma-browser-integration plasma-firewall -y
 
 #install flatpak
 flatpak install flathub io.gitlab.librewolf-community -y
@@ -39,5 +42,5 @@ systemctl enable sddm
 localectl set-x11-keymap it
 
 #setting permission to home folder
-chown -R $USER:$USER /home/fabri/
+chown -R fabri:fabri /home/fabri/
 
