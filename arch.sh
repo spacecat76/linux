@@ -1,7 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family bash-completion sof-firmware appstream gimp virtualbox flatpak --noconfirm
-
-#simple-scan shotwell
+pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family bash-completion sof-firmware appstream gimp virtualbox flatpak simple-scan --noconfirm
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
