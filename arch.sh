@@ -1,5 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family ttf-carlito ttf-caladea bash-completion sof-firmware appstream gimp virtualbox flatpak simple-scan mlocate unrar --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans bash-completion sof-firmware appstream gimp virtualbox flatpak simple-scan mlocate unrar inetutils --noconfirm
 
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -25,7 +25,7 @@ systemctl enable avahi-daemon
 firewall-cmd --set-default-zone=home
 
 #install kde applications
-pacman -S --needed plasma sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog atom partitionmanager kamoso gwenview --noconfirm
+pacman -S --needed plasma sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
 
 #remove kde application
 pacman -R plasma-browser-integration plasma-firewall --noconfirm
