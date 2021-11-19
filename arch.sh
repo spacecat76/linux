@@ -1,5 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream gimp virtualbox flatpak simple-scan mlocate unrar inetutils atom --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream gimp virtualbox flatpak simple-scan mlocate unrar inetutils --noconfirm
 
 #install fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
@@ -28,7 +28,7 @@ systemctl enable avahi-daemon
 firewall-cmd --set-default-zone=home
 
 #install kde
-pacman -S --needed plasma sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager kdevelop --noconfirm
 
 #remove kde applications
 pacman -R plasma-browser-integration plasma-firewall --noconfirm
