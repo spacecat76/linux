@@ -1,4 +1,4 @@
-ousewheel.default.delta_multiplier_x	30
+mousewheel.default.delta_multiplier_x	30
 browser.uidensity			1
 apz.gtk.kinetic_scroll.enabled		false
 
