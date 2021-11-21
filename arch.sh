@@ -28,7 +28,7 @@ systemctl enable avahi-daemon
 firewall-cmd --set-default-zone=home
 
 #install kde
-pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager kdevelop --noconfirm
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
 
 #remove kde applications
 pacman -R plasma-browser-integration plasma-firewall --noconfirm
