@@ -1,7 +1,7 @@
 apt update
 
 #install common apps
-apt install firefox sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi simple-scan -y
+apt install firefox sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi simple-scan gimp -y
 
 #add user to group
 usermod -a -G lpadmin fabri
@@ -28,7 +28,7 @@ firewall-cmd --set-default-zone=home
 
 
 #install gnome
-apt install gnome-core file-roller gnome-software-plugin-flatpak gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
+apt install gnome-core file-roller transmission-gtk gnome-photos cheese gnome-builder gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
 #remove uneeded gnome applications
 apt remove --purge malcontent termit gnome-contacts xterm firefox-esr -y
