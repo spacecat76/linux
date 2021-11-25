@@ -55,6 +55,11 @@ Driver "libinput"
 EndSection
 END
 
+#paru
+git clone https://aur.archlinux.org/paru.git /home/fabri/Downloads/paru
+cd /home/fabri/Downloads/paru
+makepkg -sri
+
 #setting permission to home folder
 chown -R fabri:fabri /home/fabri/
 
