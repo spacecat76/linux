@@ -1,5 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream gimp virtualbox flatpak simple-scan mlocate unrar inetutils pipewire wireplumber --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream gimp virtualbox simple-scan mlocate unrar inetutils pipewire wireplumber --noconfirm
 
 #install fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
@@ -34,8 +34,8 @@ pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm d
 pacman -R plasma-browser-integration plasma-firewall --noconfirm
 
 #install flatpak
-flatpak install flathub org.gtk.Gtk3theme.Breeze-Dark io.gitlab.librewolf-community -y
-flatpak override --env=GTK_THEME=Breeze-Dark
+#flatpak install flathub org.gtk.Gtk3theme.Breeze-Dark io.gitlab.librewolf-community -y
+#flatpak override --env=GTK_THEME=Breeze-Dark
 
 #enable sddm
 systemctl enable sddm
