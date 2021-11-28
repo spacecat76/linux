@@ -3,7 +3,7 @@ sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/a
 apt update
 
 #install common apps
-apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi simple-scan -y
+apt install sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf htop curl vim tlp net-tools firewalld firewall-config neofetch timeshift ttf-mscorefonts-installer ttf-ubuntu-font-family firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential flatpak python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi simple-scan vlc -y
 
 #add user to group
 usermod -a -G lpadmin fabri
@@ -46,7 +46,7 @@ END
 apt install gnome-core file-roller gnome-software-plugin-flatpak gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
 #remove uneeded gnome applications
-apt remove --purge malcontent termit gnome-contacts xterm firefox-esr -y
+apt remove --purge malcontent termit gnome-contacts xterm firefox-esr totem -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -59,12 +59,12 @@ sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Builder org.gimp.GIMP org.gnome.Cheese com.transmissionbt.Transmission com.system76.Popsicle io.gitlab.librewolf-community -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.mozilla.firefox org.libreoffice.LibreOffice org.gnome.Boxes org.gnome.Builder org.gimp.GIMP org.gnome.Cheese com.transmissionbt.Transmission com.system76.Popsicle io.gitlab.librewolf-community -y
 
-chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
-rm /home/fabri/Downloads/*.deb
+#chrome
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+#apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
+#rm /home/fabri/Downloads/*.deb
 
 #touchpad X11
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
