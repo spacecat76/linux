@@ -1,5 +1,4 @@
-#add contrib and non-free repositories
-sed -i 's+debian/ bullseye main+debian/ bullseye main contrib non-free+g' /etc/apt/sources.list
+#update repositories
 apt update
 
 #install common apps
