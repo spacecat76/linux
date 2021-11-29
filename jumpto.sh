@@ -10,6 +10,7 @@ start=${1:-"start"}
 
 jumpto $start
 
+
 #de selection
 start:
 echo "Which DE would you like to install? (gnome, kde, none or exit)"
@@ -21,9 +22,12 @@ elif [[ $de == "exit" ]]; then
 else
    jumpto start
 fi
-install:
+install
+
+
 
 #de install
+install:
 if [[ $de == "gnome" ]]; then
    jumpto gnome
 elif [[ $de == "kde" ]]; then
@@ -32,11 +36,14 @@ else
    jumpto final
 fi
 
+
 gnome:
 
 jumpto final
 
+
 kde:
+
 
 final:
 
