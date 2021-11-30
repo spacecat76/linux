@@ -47,7 +47,7 @@ localectl set-x11-keymap it
 tee -a /etc/X11/xorg.conf.d/30-touchpad.conf  << END
 Section "InputClass"
 Identifier "touchpad"
-Driver "libinput"
+Driver "synaptics"
   MatchIsTouchpad "on"
   Option "Tapping" "on"
   Option "NaturalScrolling" "on"
