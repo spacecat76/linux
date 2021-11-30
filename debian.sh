@@ -14,12 +14,12 @@ apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice li
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 #install flatpaks
-apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.gnome.Boxes com.system76.Popsicle io.gitlab.librewolf-community -y
+#apt install flatpak gnome-software-plugin-flatpak -y
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.gnome.Boxes com.system76.Popsicle io.gitlab.librewolf-community -y
 
 #remove uneeded gnome applications
-apt remove malcontent termit firefox-esr pulseaudio-module-bluetooth -y
+#apt remove malcontent termit firefox-esr -y
 
 #cleanup extensions
 #rm -rf /usr/share/gnome-shell/extensions/*
@@ -27,18 +27,18 @@ apt remove malcontent termit firefox-esr pulseaudio-module-bluetooth -y
 #dashtopanel
 #apt install gnome-shell-extension-dash-to-panel -y
 
-#chrome
-#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-#apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
-#rm /home/fabri/Downloads/*.deb
+#install chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+apt install /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
+rm /home/fabri/Downloads/*.deb
 
 #install vcode
-#wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-#install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-#sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-#rm -f packages.microsoft.gpg
-#apt update
-#apt install code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update
+apt install code
 
 #cleanup packages
 apt autoremove -y
