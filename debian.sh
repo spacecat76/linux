@@ -2,7 +2,7 @@
 apt update
 
 #install DE and extras
-apt install gnome-core sane cups curl tlp net-tools avahi-daemon xserver-xorg-input-synaptic printer-driver-all printer-driver-cups-pdf firewalld firewall-config firmware-sof-signed firmware-realtek intel-microcode build-essential apt-transport-https python3-pip mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
+apt install gnome-core sane cups curl tlp net-tools avahi-daemon xserver-xorg-input-synaptics printer-driver-all printer-driver-cups-pdf firewalld firewall-config firmware-sof-signed firmware-realtek intel-microcode build-essential apt-transport-https python3-pip mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
 
 #install gnome applications
 apt install file-roller simple-scan gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos cheese -y
