@@ -84,4 +84,4 @@ END
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #setting permission to home folder
-chown -R fabri:fabri /home/fabri/
+#chown -R fabri:fabri /home/fabri/
