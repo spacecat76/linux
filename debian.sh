@@ -2,13 +2,13 @@
 apt update
 
 #install DE and extras
-apt install gnome-core sane cups avahi-daemon printer-driver-all printer-driver-cups-pdf curl tlp net-tools firmware-sof-signed apt-transport-https firmware-realtek intel-microcode build-essential python3-pip mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
+apt install gnome-core sane cups curl tlp net-tools avahi-daemon printer-driver-all printer-driver-cups-pdf firewalld firewall-config firmware-sof-signed firmware-realtek intel-microcode build-essential apt-transport-https python3-pip mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
 
 #install gnome applications
 apt install file-roller simple-scan gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos cheese -y
 
 #install common applications
-apt install firewalld firewall-config vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-gnome -y
+apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-gnome -y
 
 #install fonts
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
@@ -16,7 +16,7 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 #install flatpaks
 #apt install flatpak gnome-software-plugin-flatpak -y
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.mozilla.firefox com.system76.Popsicle io.gitlab.librewolf-community -y
+#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.mozilla.firefox org.gnome.Boxes com.system76.Popsicle io.gitlab.librewolf-community -y
 
 #remove uneeded gnome applications
 #apt remove --purge malcontent termit gnome-contacts xterm firefox-esr totem -y
