@@ -37,7 +37,6 @@ systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
-
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
 
