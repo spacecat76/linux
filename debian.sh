@@ -1,14 +1,14 @@
 #update repositories
 apt update && apt upgrade -y
 
-#firmware & drivers
-apt install firmware-sof-signed firmware-realtek intel-microcode printer-driver-all printer-driver-cups-pdf -y
+#firmware
+apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 #desktop environment
 apt install gnome-core file-roller cheese simple-scan gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
 #utilities
-apt install curl tlp build-essential apt-transport-https python3-pip mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
+apt install net-tools curl tlp build-essential apt-transport-https python3-pip mlocate unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
 
 #fonts
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
@@ -17,8 +17,7 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-gnome libreoffice-style-breeze -y
 
 #network
-apt install net-tools avahi-daemon -y
-apt purge avahi-autoipd -y
+apt install avahi-daemon --no-install-recommends -y
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
@@ -33,7 +32,7 @@ systemctl enable firewalld
 firewall-cmd --set-default-zone=home
 
 #printing and scanning
-apt install cups sane -y
+apt install sane cups printer-driver-all printer-driver-cups-pdf -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
