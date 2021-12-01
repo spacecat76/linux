@@ -18,6 +18,7 @@ apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice li
 
 #network
 apt install net-tools avahi-daemon -y
+apt purge avahi-autoipd
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
