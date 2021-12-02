@@ -22,7 +22,7 @@ systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #virt manager
-apt install virt-manager -y
+apt install virt-manager --no-install-recommends -y
 adduser fabri libvirt
 virsh net-autostart default
 
@@ -54,7 +54,7 @@ install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 apt update
-apt install code
+apt install code -y
 
 #cleanup packages
 apt autoremove -y
@@ -81,5 +81,3 @@ END
 #various
 systemctl disable bluetooth
 tlp start
-
-
