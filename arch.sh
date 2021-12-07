@@ -1,5 +1,5 @@
 #install applications
-pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream gimp virtualbox simple-scan mlocate unrar inetutils pipewire wireplumber --noconfirm
+pacman -S --needed firefox sane cups nss-mdns htop curl vim vlc libreoffice-fresh tlp net-tools firewalld fuse gutenprint neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream gimp simple-scan mlocate unrar inetutils pipewire wireplumber --noconfirm
 
 #install fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
