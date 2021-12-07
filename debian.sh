@@ -17,12 +17,12 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-gnome libreoffice-style-breeze -y
 
 #network
-apt install avahi-daemon --no-install-recommends -y
+apt install avahi-daemon -y
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #virt manager
-apt install virt-manager --no-install-recommends -y
+apt install virt-manager -y
 adduser fabri libvirt
 virsh net-autostart default
 

@@ -5,7 +5,7 @@ apt install timeshift neofetch htop gnome-photos printer-driver-cups-pdf apt-tra
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 #virt manager
-apt install virt-manager --no-install-recommends -y
+apt install virt-manager -y
 adduser fabri libvirt
 virsh net-autostart default
 
