@@ -1,5 +1,5 @@
 #desktop environment
-pacman -S xfce4 xfce4-dev-tools lighdm lightdm-gtk-greeter lightdm-slick-greeter xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad qpdfview gparted redshift gvfs --noconfirm
+pacman -S xfce4 xfce4-dev-tools lighdm lightdm-gtk-greeter lightdm-slick-greeter xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad gparted redshift gvfs --noconfirm
 
 #utilities
 pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse --noconfirm
