@@ -1,8 +1,8 @@
 #desktop environment
-pacman -S xfce4 xfce4-dev-tools lighdm lightdm-gtk-greeter lightdm-slick-greeter xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad qpdfview gparted redshift --noconfirm
+pacman -S xfce4 xfce4-dev-tools lighdm lightdm-gtk-greeter lightdm-slick-greeter xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad qpdfview gparted redshift gvfs --noconfirm
 
 #utilities
-pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip fuse --noconfirm
+pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse --noconfirm
 
 #fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
