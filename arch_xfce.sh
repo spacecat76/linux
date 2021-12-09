@@ -16,9 +16,8 @@ systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #firewall
-pacman -S --needed firewalld --noconfirm
-systemctl enable firewalld
-firewall-cmd --set-default-zone=home
+pacman -S --needed gufw --noconfirm
+systemctl enable ufw
 
 #printing and scanning
 pacman -S --needed sane cups gutenprint --noconfirm
