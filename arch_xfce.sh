@@ -11,7 +11,7 @@ pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea t
 pacman -S --needed firefox vim vlc libreoffice-fresh gimp simple-scan --noconfirm
 
 #network
-pacman -S --needed nss-mdns inetutils net-tools avahi-daemon --noconfirm
+pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi-daemon --noconfirm
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
