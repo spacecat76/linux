@@ -1,5 +1,5 @@
 #desktop environment
-pacman -S xfce4 xarchiver thunar-archive-plugin transmission-gtk  --noconfirm
+pacman -S xfce4 xfce4-dev-tools lightdm-gtk-greeter lightdm-slick-greeter xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad webcamoid qpdfview --noconfirm
 
 #utilities
 pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip fuse --noconfirm
