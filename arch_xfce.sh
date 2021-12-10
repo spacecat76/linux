@@ -1,6 +1,11 @@
 #desktop environment
 pacman -S xfce4 xfce4-dev-tools xorg-server-xephyr xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad gparted redshift gvfs --noconfirm
 
+#lightdm
+pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
+systemctl enable lightdm
+sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
+
 #utilities
 pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg nano --noconfirm
 
@@ -11,7 +16,7 @@ pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea t
 pacman -S --needed firefox vim vlc libreoffice-fresh gimp simple-scan --noconfirm
 
 #network
-pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi-daemon --noconfirm
+pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
@@ -36,11 +41,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 #set x11 KB language (login manager)
 localectl set-x11-keymap it
-
-#lightdm
-pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
-systemctl enable lightdm
-sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 
 #various
 systemctl disable bluetooth
