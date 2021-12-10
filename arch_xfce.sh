@@ -40,7 +40,7 @@ localectl set-x11-keymap it
 #lightdm
 pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
 systemctl enable lightdm
-sed -i 's/# greeter-session/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
+sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 
 #various
 systemctl disable bluetooth
