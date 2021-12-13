@@ -30,6 +30,3 @@ firewall-cmd --set-default-zone=home
 
 #cleanup
 apt autoremove -y
-
-#setting permission to home folder
-chown -R fabri:fabri /home/fabri/
