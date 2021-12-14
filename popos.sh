@@ -1,5 +1,5 @@
 #install applications
-apt install neofetch htop gnome-photos printer-driver-cups-pdf apt-transport-https python3-pip mlocate code transmission cheese gimp vim ffmpeg vlc -y
+apt install neofetch htop gnome-photos printer-driver-cups-pdf apt-transport-https python3-pip mlocate code transmission cheese gimp vim ffmpeg gnome-tweaks virtualbox -y
 
 #install fonts
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
