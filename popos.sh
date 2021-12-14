@@ -1,13 +1,8 @@
 #install applications
-apt install timeshift neofetch htop gnome-photos printer-driver-cups-pdf apt-transport-https python3-pip mlocate code transmission cheese gimp vim ffmpeg vlc -y
+apt install neofetch htop gnome-photos printer-driver-cups-pdf apt-transport-https python3-pip mlocate code transmission cheese gimp vim ffmpeg vlc -y
 
 #install fonts
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
-
-#virt manager
-apt install virt-manager -y
-adduser fabri libvirt
-virsh net-autostart default
 
 #firewall
 apt install firewalld firewall-config -y
