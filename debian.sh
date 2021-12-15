@@ -4,8 +4,11 @@ apt update && apt upgrade -y
 #firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
+#
+apt install kde-plasma-desktop -y
+
 #desktop environment
-apt install gnome-core file-roller cheese simple-scan gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
+#apt install gnome-core file-roller cheese simple-scan gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
 
 #utilities
 apt install net-tools curl tlp build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
@@ -27,9 +30,9 @@ adduser fabri libvirt
 virsh net-autostart default
 
 #firewall
-apt install firewalld firewall-config -y
-systemctl enable firewalld
-firewall-cmd --set-default-zone=home
+#apt install firewalld firewall-config -y
+#systemctl enable firewalld
+#firewall-cmd --set-default-zone=home
 
 #printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf -y
@@ -38,10 +41,10 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #cleanup extensions
-rm -rf /usr/share/gnome-shell/extensions/*
+#rm -rf /usr/share/gnome-shell/extensions/*
 
 #gnome extensions
-apt install gnome-shell-extension-dash-to-panel -y
+#apt install gnome-shell-extension-dash-to-panel -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
