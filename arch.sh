@@ -1,5 +1,8 @@
 #xfce4
-pacman -S xfce4 xfce4-dev-tools xorg-server-xephyr xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad gparted redshift gvfs --noconfirm
+#pacman -S xfce4 xfce4-dev-tools xorg-server-xephyr xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad gparted redshift gvfs --noconfirm
+
+#deepin
+pacman -S deepin deepin-extra --no-confirm
 
 #lightdm
 pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
@@ -37,8 +40,8 @@ sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #virt-manager
-pacman -S --needed virt-manager virtlib --noconfirm
-systemctl enable virtlibd
+#pacman -S --needed virt-manager virtlib --noconfirm
+#systemctl enable virtlibd
 
 #grub
 sed -i 's/loglevel=3 //g' /etc/default/grub
