@@ -1,13 +1,18 @@
-#!/bin/bash
-
-#remove applications
+#remove extensions
 apt remove gnome-shell-extension-appindicator gnome-shell-extension-ubuntu-dock -y
 
+#install extension
+apt install gnome-shell-extension-dash-to-panel -y
+
 #install applications
-apt install ubuntu-restricted-extras timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools firewalld firewall-config apt-transport-https make python3-pip fonts-crosextra-carlito fonts-crosextra-caladea mlocate gnome-boxes libreoffice -y
+apt install geary ubuntu-restricted-extras timeshift neofetch tlp curl wget htop gnome-photos printer-driver-cups-pdf net-tools apt-transport-https make python3-pip mlocate gimp vim gnome-tweaks cheese virtualbox -y
+
+#install fonts
+apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #snaps
 snap install code --classic
+snap install libreoffice
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
@@ -17,16 +22,14 @@ rm /home/fabri/Downloads/*.deb
 #scanner
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
-#tlp
-tlp start
+#firewall
+apt install firewalld firewall-config -y
+systemctl enable firewalld
+firewall-cmd --set-default-zone=home
 
 #services
 systemctl disable bluetooth
-systemctl enable cups
-systemctl enable firewalld
-
-#firewall
-firewall-cmd --set-default-zone=home
+tlp start
 
 #cleanup
 apt autoremove -y
