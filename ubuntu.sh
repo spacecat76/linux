@@ -1,7 +1,7 @@
 #remove extensions
 apt remove gnome-shell-extension-appindicator gnome-shell-extension-ubuntu-dock -y
 
-#install extension
+#install extensions
 apt install gnome-shell-extension-dash-to-panel -y
 
 #install applications

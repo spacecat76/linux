@@ -7,7 +7,7 @@ systemctl enable lightdm
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 
 #kde
-#pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 #print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
+#pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm dolphin konsole okular galculator transmission-qt ark kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
 
 #kde unneeded apps
 #pacman -R plasma-browser-integration plasma-firewall --noconfirm
