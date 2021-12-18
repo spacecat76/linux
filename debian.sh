@@ -17,7 +17,7 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-style-breeze libreoffice-gnome simple-scan -y
 
 #network
-apt install --no-install-recommends avahi-daemon -y
+apt install avahi-daemon -y
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
@@ -38,7 +38,7 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #purge components
-apt purge bluez -y
+apt purge bluez avahi-autoipd -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
