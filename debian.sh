@@ -22,7 +22,7 @@ systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #virt manager
-apt install --no-install-recommends virt-manager -y
+apt install virt-manager -y
 adduser fabri libvirt
 virsh net-autostart default
 
