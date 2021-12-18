@@ -14,7 +14,8 @@ apt install net-tools curl tlp build-essential apt-transport-https python3-pip m
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #applications
-apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-style-breeze libreoffice-gnome simple-scan -y
+apt install vlc vim htop neofetch timeshift gimp transmission-gtk simple-scan -y
+# libreoffice libreoffice-style-breeze libreoffice-gnome
 
 #network
 apt install avahi-daemon -y
@@ -65,7 +66,7 @@ apt autoremove -y
 #flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.system76.Popsicle io.gitlab.librewolf-community org.gtk.Gtk3theme.Adwaita-dark -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice -y
 
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
