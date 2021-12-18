@@ -17,12 +17,12 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-style-breeze libreoffice-gnome simple-scan -y
 
 #network
-apt install avahi-daemon -y
+apt install --no-install-recommends avahi-daemon -y
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #virt manager
-apt install virt-manager -y
+apt install --no-install-recommends virt-manager -y
 adduser fabri libvirt
 virsh net-autostart default
 
@@ -36,6 +36,9 @@ apt install sane cups printer-driver-all printer-driver-cups-pdf -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
+
+#purge components
+apt purge bluez -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -63,6 +66,10 @@ apt autoremove -y
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
+#disable pipewire
+systemctl disable --global pipewire
+rm -rf /home/fabri/.config/pulse
+
 #grub
 sed -i 's/quiet//g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
@@ -79,5 +86,4 @@ vm.swappiness=10
 END
 
 #various
-systemctl disable bluetooth
 tlp start
