@@ -49,7 +49,7 @@ apt install gnome-shell-extension-dash-to-panel -y
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
 apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
-rm /home/fabri/google-chrome-stable_current_amd64.deb
+rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 #vs code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
