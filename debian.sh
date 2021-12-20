@@ -38,7 +38,7 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #purge components
-apt purge bluez avahi-autoipd -y
+apt purge bluez avahi-autoipd firefox-esr -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -62,7 +62,7 @@ apt install code -y
 #flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.system76.Popsicle -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle flathub io.gitlab.librewolf-community -y
 
 #cleanup packages
 apt autoremove -y
