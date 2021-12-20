@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 #desktop environment
-apt install gnome-core geary file-roller cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks gnome-photos -y
+apt install gnome-core geary file-roller cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks shotwell -y
 
 #utilities
 apt install net-tools curl tlp build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
@@ -58,6 +58,11 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt update
 apt install code -y
+
+#flatpak
+apt install flatpak gnome-software-plugin-flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.system76.Popsicle -y
 
 #cleanup packages
 apt autoremove -y
