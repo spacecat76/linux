@@ -5,13 +5,13 @@ pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm d
 pacman -R plasma-browser-integration plasma-firewall --noconfirm
 
 #utilities
-pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg nano --noconfirm
+pacman -S --needed htop curl tlp neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg --noconfirm
 
 #fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 #applications
-pacman -S --needed firefox vim vlc libreoffice-fresh gimp simple-scan --noconfirm
+pacman -S --needed firefox vim nano vlc libreoffice-fresh gimp simple-scan --noconfirm
 
 #network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
