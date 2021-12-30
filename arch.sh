@@ -37,8 +37,8 @@ sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #virt-manager
-#pacman -S --needed virt-manager virtlib --noconfirm
-#systemctl enable virtlibd
+pacman -S --needed virt-manager libvirt --noconfirm
+systemctl enable libvirtd
 
 #grub
 sed -i 's/loglevel=3 //g' /etc/default/grub
@@ -50,4 +50,5 @@ localectl set-x11-keymap it
 
 #various
 systemctl disable bluetooth
+systemctl enable sddm
 tlp start

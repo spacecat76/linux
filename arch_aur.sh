@@ -4,7 +4,7 @@ cd /home/fabri/Downloads/paru
 makepkg -sri
 
 #install aur applications
-paru -S ttf-ms-fonts librewolf-bin pamac-aur --noconfirm
+paru -S ttf-ms-fonts librewolf-bin --noconfirm
 
 #xfce4 aur applications
-#paru -S webcamoid mugshot xfce4-docklike-plugin lightdm-settings visual-studio-code-bin  --noconfirm
+#paru -S webcamoid mugshot xfce4-docklike-plugin lightdm-settings visual-studio-code-bin pamac-aur --noconfirm
