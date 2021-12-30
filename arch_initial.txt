@@ -78,6 +78,9 @@ useradd -m -G wheel fabri
 passwd fabri
 EDITOR=nano visudo (uncomment line %wheel ALL=(ALL) ALL)
 
+#verify kernel modules
+mkinitcpio -p linux
+
 #exit and unmount
 exit
 umount -a
