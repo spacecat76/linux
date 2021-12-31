@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 #desktop environment
-apt install gnome-core geary file-roller cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks shotwell -y
+apt install gnome-core geary file-roller gedit-plugin-terminal cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks shotwell -y
 
 #utilities
 apt install net-tools curl tlp build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
