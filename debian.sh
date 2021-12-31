@@ -38,7 +38,7 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #purge components
-apt purge bluez avahi-autoipd firefox-esr -y
+apt purge bluez avahi-autoipd -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -52,17 +52,17 @@ apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
 rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 #vs code
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-apt update
-apt install code -y
+#wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+#install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+#sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+#rm -f packages.microsoft.gpg
+#apt update
+#apt install code -y
 
 #flatpak
-apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle flathub io.gitlab.librewolf-community -y
+#apt install flatpak gnome-software-plugin-flatpak -y
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle flathub io.gitlab.librewolf-community -y
 
 #cleanup packages
 apt autoremove -y
