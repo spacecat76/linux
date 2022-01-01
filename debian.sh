@@ -38,7 +38,7 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #purge components
-apt purge bluez avahi-autoipd -y
+apt purge bluez avahi-autoipd totem malcontent gnome-contacts -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
