@@ -37,9 +37,6 @@ systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
-#purge components
-apt purge bluez avahi-autoipd totem malcontent gnome-contacts -y
-
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
 
@@ -63,6 +60,9 @@ rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 #apt install flatpak gnome-software-plugin-flatpak -y
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle flathub io.gitlab.librewolf-community -y
+
+#purge components
+apt purge bluez avahi-autoipd totem malcontent gnome-contacts virt-viewer -y
 
 #cleanup packages
 apt autoremove -y
