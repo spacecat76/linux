@@ -59,3 +59,11 @@ pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
 systemctl enable lightdm
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 
+_______________________
+
+Debian gnome SW center error
+
+fwupdmgr --force refresh
+
+
+
