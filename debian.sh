@@ -59,7 +59,7 @@ rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 #flatpak
 #apt install flatpak gnome-software-plugin-flatpak -y
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle flathub io.gitlab.librewolf-community -y
+#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle -y
 
 #purge components
 apt purge bluez avahi-autoipd totem malcontent gnome-contacts virt-viewer -y
