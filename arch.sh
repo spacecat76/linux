@@ -30,7 +30,7 @@ sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #virt-manager
-pacman -S --needed virt-manager libvirt --noconfirm
+pacman -S --needed virt-manager libvirt dnsmasq bridge-utils openbsd-netcat --noconfirm
 systemctl enable libvirtd
 
 #grub
