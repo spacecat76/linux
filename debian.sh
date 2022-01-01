@@ -14,7 +14,7 @@ apt install net-tools curl tlp build-essential apt-transport-https python3-pip m
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #applications
-apt install vlc vim htop neofetch timeshift gimp transmission-gtk simple-scan libreoffice libreoffice-style-breeze libreoffice-gnome -y
+apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-style-breeze libreoffice-gnome -y
 
 #network
 apt install avahi-daemon -y
@@ -32,7 +32,7 @@ systemctl enable firewalld
 firewall-cmd --set-default-zone=home
 
 #printing and scanning
-apt install sane cups printer-driver-all printer-driver-cups-pdf -y
+apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
