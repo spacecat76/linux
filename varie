@@ -47,7 +47,7 @@ kde:
 
 final:
 
-__________________________
+________________________
 
 #Arch extra
 
@@ -59,11 +59,19 @@ pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
 systemctl enable lightdm
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 
-_______________________
+________________________
 
 Debian gnome SW center error
 
 fwupdmgr --force refresh
 
+________________________
 
+#vs code
+#wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+#install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+#sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+#rm -f packages.microsoft.gpg
+#apt update
+#apt install code -y
 
