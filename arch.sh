@@ -1,5 +1,11 @@
-#kde
-pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm xarchiver thunar thunar-archive-plugin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
+#gnome
+pacman -S --needed baobab cheese eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-tweaks gnome-menus gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-user-share gnome-video-effects gnome-weather grilo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus rygel sushi tracker tracker-miners tracker3-miners xdg-user-dirs-gtk shotwell geary gedit-plugins --noconfirm
+
+#remove components
+pacman -Rd --nodeps pulseaudio-bluetooth bluez --noconfirm
+
+#gdm
+systemctl enable gdm
 
 #utilities
 pacman -S --needed htop curl tlp neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg --noconfirm
@@ -26,14 +32,9 @@ systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
-#remove components
-pacman -R bluez bluedevil plasma-browser-integration plasma-firewall --noconfirm 
-
 #grub
-sed -i 's/loglevel=3 //g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #various
-systemctl enable sddm
 tlp start
