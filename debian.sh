@@ -1,11 +1,17 @@
 #update repositories
 apt update && apt upgrade -y
 
-#firmware
-apt install firmware-sof-signed firmware-realtek intel-microcode -y
-
 #desktop environment
 apt install gnome-core geary file-roller gedit-plugin-terminal cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks shotwell -y
+
+#cleanup extensions
+rm -rf /usr/share/gnome-shell/extensions/*
+
+#gnome extensions
+apt install gnome-shell-extension-dash-to-panel -y
+
+#firmware
+apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 #utilities
 apt install net-tools curl tlp build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi -y
@@ -36,12 +42,6 @@ apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
-
-#cleanup extensions
-rm -rf /usr/share/gnome-shell/extensions/*
-
-#gnome extensions
-apt install gnome-shell-extension-dash-to-panel -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
