@@ -1,5 +1,5 @@
 #kde
-pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm xarchiver thunar thunar-archive-plugin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm xarchiver thunar thunar-archive-plugin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview gnome-keyring --noconfirm
 
 #remove components
 pacman -Rd --nodeps bluez plasma-browser-integration plasma-firewall --noconfirm
