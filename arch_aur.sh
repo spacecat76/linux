@@ -13,4 +13,4 @@ paru -S ttf-ms-fonts --noconfirm
 #paru -S webcamoid mugshot xfce4-docklike-plugin lightdm-settings visual-studio-code-bin pamac-aur --noconfirm
 
 #gnome aur apps
-#paru -S ttf-ms-fonts chrome-gnome-shell --noconfirm
+#paru -S chrome-gnome-shell --noconfirm
