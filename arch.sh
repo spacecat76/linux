@@ -1,11 +1,13 @@
-#gnome
-pacman -S --needed baobab cheese eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-tweaks gnome-menus gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-user-share gnome-video-effects gnome-weather grilo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus rygel sushi tracker tracker-miners tracker3-miners xdg-user-dirs-gtk shotwell geary gedit-plugins --noconfirm
+#arch kde
+
+#kde
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm xarchiver thunar thunar-archive-plugin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
 
 #remove components
-pacman -Rd --nodeps pulseaudio-bluetooth bluez --noconfirm
+pacman -Rd --nodeps bluez plasma-browser-integration plasma-firewall --noconfirm
 
-#gdm
-systemctl enable gdm
+#sddm
+systemctl enable sddm
 
 #utilities
 pacman -S --needed htop curl tlp neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg --noconfirm

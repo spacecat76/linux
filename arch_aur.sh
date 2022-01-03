@@ -4,7 +4,13 @@ cd /home/fabri/Downloads/paru
 makepkg -sri
 
 #install aur applications
-paru -S ttf-ms-fonts chrome-gnome-shell --noconfirm
+paru -S ttf-ms-fonts --noconfirm
 
-#xfce4 aur applications
+#kde aur apps
+#paru -S --noconfirm
+
+#xfce4 aur apps
 #paru -S webcamoid mugshot xfce4-docklike-plugin lightdm-settings visual-studio-code-bin pamac-aur --noconfirm
+
+#gnome aur apps
+#paru -S ttf-ms-fonts chrome-gnome-shell --noconfirm
