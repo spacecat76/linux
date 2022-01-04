@@ -1,10 +1,11 @@
-#xfce4
-pacman -S xfce4 xfce4-dev-tools xorg-server-xephyr xfce4-screenshooter xfce4-terminal xarchiver thunar-archive-plugin transmission-gtk xfce4-battery-plugin xfce4-datetime-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-whiskermenu-plugin gthumb galculator mousepad gparted redshift gvfs gnome-keyring geary --noconfirm
+#kde
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm xarchiver thunar thunar-archive-plugin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
 
-#lightdm
-pacman -S --needed lightdm lightdm-gtk-greeter lightdm-slick-greeter --noconfirm
-systemctl enable lightdm
-sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
+#remove components
+pacman -Rd --nodeps bluez plasma-browser-integration plasma-firewall --noconfirm
+
+#sddm
+systemctl enable sddm
 
 #utilities
 pacman -S --needed htop curl tlp neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg --noconfirm
