@@ -49,7 +49,7 @@ apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
 rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 #purge components
-apt purge bluez avahi-autoipd totem malcontent gnome-contacts virt-viewer -y
+apt purge bluez avahi-autoipd totem malcontent gnome-contacts virt-viewer firefox-esr -y
 
 #cleanup packages
 apt autoremove -y
@@ -57,7 +57,7 @@ apt autoremove -y
 #flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice io.gitlab.librewolf-community -y
 
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
