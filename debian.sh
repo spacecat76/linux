@@ -20,7 +20,7 @@ apt install net-tools curl tlp build-essential apt-transport-https python3-pip m
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #applications
-apt install vlc vim htop neofetch timeshift gimp transmission-gtk libreoffice libreoffice-style-breeze libreoffice-gnome -y
+apt install vlc vim htop neofetch timeshift gimp transmission-gtk -y
 
 #network
 apt install avahi-daemon -y
