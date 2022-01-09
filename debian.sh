@@ -57,7 +57,7 @@ apt update
 apt install code -y
 
 #purge components
-apt purge bluez avahi-autoipd totem malcontent gnome-contacts virt-viewer firefox-esr -y
+apt purge bluez avahi-autoipd -y
 
 #cleanup packages
 apt autoremove -y
