@@ -64,8 +64,12 @@ apt autoremove -y
 
 #flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
+
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice io.gitlab.librewolf-community org.gnome.Shotwell org.gimp.GIMP org.videolan.VLC com.transmissionbt.Transmission -y
+
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice io.gitlab.librewolf-community org.gnome.Shotwell org.gimp.GIMP org.videolan.VLC com.transmissionbt.Transmission com.github.tchx84.Flatseal -y
+
+echo X-GNOME-UsesNotifications=true | tee -a /var/lib/flatpak/exports/share/applications/org.gnome.Geary.desktop
 
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
