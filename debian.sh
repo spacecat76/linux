@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 #desktop environment
-apt install gnome-core geary file-roller gedit-plugin-terminal cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks shotwell -y
+apt install gnome-core file-roller gedit-plugin-terminal cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks -y
 
 #cleanup extensions
 rm -rf /usr/share/gnome-shell/extensions/*
@@ -20,7 +20,7 @@ apt install papirus-icon-theme net-tools curl tlp build-essential apt-transport-
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #applications
-apt install vlc vim htop neofetch timeshift gimp transmission-gtk -y
+apt install vim htop neofetch timeshift -y
 
 #network
 apt install avahi-daemon -y
@@ -65,7 +65,7 @@ apt autoremove -y
 #flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice io.gitlab.librewolf-community -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice io.gitlab.librewolf-community org.gnome.Geary org.gnome.Shotwell org.gimp.GIMP org.videolan.VLC com.transmissionbt.Transmission -y
 
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
