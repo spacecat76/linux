@@ -34,7 +34,7 @@ virsh net-autostart default
 
 #firewall
 apt install firewalld firewall-config -y
-systemctl enable firewalld
+systemctl enable firewalld --now
 firewall-cmd --set-default-zone=home
 
 #printing and scanning

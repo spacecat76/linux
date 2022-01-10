@@ -22,13 +22,13 @@ systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #virt manager
-pacman -S --needed virt-manager libvirt --noconfirm
+pacman -S --needed virt-manager libvirt iptables-nft qemu dnsmasq --noconfirm
 systemctl enable libvirtd
 usermod -aG libvirt fabri
 
 #firewall
 pacman -S firewalld --noconfirm
-systemctl enable firewalld
+systemctl enable firewalld --now
 firewall-cmd --set-default-zone=home
 
 #printing and scanning
