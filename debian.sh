@@ -20,7 +20,7 @@ apt install papirus-icon-theme net-tools curl tlp build-essential apt-transport-
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #applications
-apt install vim htop neofetch timeshift transmission-gtk vlc shotwell -y
+apt install vim htop neofetch timeshift transmission-gtk vlc shotwell gimp -y
 
 #network
 apt install avahi-daemon -y
