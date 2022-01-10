@@ -4,7 +4,7 @@ cd /home/fabri/Downloads/paru
 makepkg -sri
 
 #install aur applications
-paru -S ttf-ms-fonts chrome-gnome-shell adwaita-dark visual-studio-code-bin librewolf-bin --noconfirm
+paru -S ttf-ms-fonts chrome-gnome-shell visual-studio-code-bin librewolf-bin --noconfirm
 
 #kde aur apps
 #paru -S --noconfirm
