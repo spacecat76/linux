@@ -25,6 +25,8 @@ apt install vim htop neofetch timeshift transmission-gtk vlc shotwell gimp -y
 #network
 apt install avahi-daemon ufw -y
 systemctl enable avahi-daemon
+systemctl enable ufw
+ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 #virt manager
@@ -87,4 +89,3 @@ END
 
 #various
 tlp start
-systemctl enable ufw
