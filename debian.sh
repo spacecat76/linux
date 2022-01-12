@@ -23,12 +23,12 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vim htop neofetch timeshift transmission-gtk vlc shotwell gimp -y
 
 #network
-apt install avahi-daemon ufw -y
+apt install avahi-daemon gufw -y
 systemctl enable avahi-daemon
 sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system/ufw.service
 sed -i 's/Before=network.target/Before=network-pre.target/g' /lib/systemd/system/ufw.service
-systemctl enable ufw
+systemctl enable ufw --now
 ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
