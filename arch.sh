@@ -28,8 +28,9 @@ usermod -aG libvirt fabri
 
 #firewall
 pacman -S firewalld --noconfirm
-systemctl enable firewalld --now
-firewall-cmd --set-default-zone=home
+systemctl enable ufw
+sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
+ufw allow mdns
 
 #printing and scanning
 pacman -S --needed sane cups gutenprint simple-scan --noconfirm

@@ -83,10 +83,5 @@ tee -a /etc/modprobe.d/iwlwifi.conf  << END
 options iwlwifi enable_ini=N
 END
 
-#swappiness
-#tee -a /etc/sysctl.conf  << END
-#vm.swappiness=10
-#END
-
 #various
 tlp start
