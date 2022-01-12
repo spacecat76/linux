@@ -23,7 +23,7 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vim htop neofetch timeshift transmission-gtk vlc shotwell gimp -y
 
 #network
-apt install avahi-daemon -y
+apt install avahi-daemon ufw -y
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
@@ -31,11 +31,6 @@ sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 apt install virt-manager -y
 adduser fabri libvirt
 virsh net-autostart default
-
-#firewall
-apt install firewalld firewall-config -y
-systemctl enable firewalld --now
-firewall-cmd --set-default-zone=home
 
 #printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
@@ -92,3 +87,4 @@ END
 
 #various
 tlp start
+systemctl enable ufw
