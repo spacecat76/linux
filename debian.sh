@@ -2,13 +2,7 @@
 apt update && apt upgrade -y
 
 #desktop environment
-apt install gnome-core file-roller gedit-plugin-terminal cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary -y
-
-#cleanup extensions
-rm -rf /usr/share/gnome-shell/extensions/*
-
-#gnome extensions
-apt install gnome-shell-extension-dash-to-panel -y
+apt install gnome-core file-roller gedit-plugin-terminal cheese gnome-screenshot gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary gnome-shell-extension-dash-to-panel -y
 
 #firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
