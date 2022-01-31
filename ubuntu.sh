@@ -1,5 +1,5 @@
 #install applications
-apt install geary ubuntu-restricted-extras timeshift neofetch tlp curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate gimp vim gnome-tweaks cheese transmission -y
+apt install geary ubuntu-restricted-extras timeshift neofetch tlp curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate gimp vim gnome-tweaks cheese transmission papirus-icons-theme -y
 
 #install fonts
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
