@@ -1,15 +1,15 @@
 #install applications
-apt install geary ubuntu-restricted-extras timeshift neofetch tlp curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate gimp vim gnome-tweaks cheese transmission papirus-icons-theme -y
+apt install geary ubuntu-restricted-extras timeshift neofetch tlp curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate vim gnome-tweaks cheese transmission papirus-icons-theme -y
 
 #install fonts
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #snaps
 snap install code --classic
-snap install libreoffice
+snap install libreoffice gimp
 
 #gnome extensions
-apt purge gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-shell-extension-ubuntu-dock -yes
+apt purge gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-shell-extension-ubuntu-dock -y
 #apt install gnome-shell-extension-dashtodock -y
 
 #chrome
