@@ -1,5 +1,5 @@
 #kde
-pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm xarchiver thunar thunar-archive-plugin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview kwallet-pam kwalletmanager --noconfirm
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm ark dolphin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview gnome-keyring --noconfirm
 
 #remove components
 pacman -Rd --nodeps bluez plasma-browser-integration plasma-firewall --noconfirm
@@ -14,7 +14,7 @@ pacman -S --needed papirus-icon-theme htop curl neofetch rust wget linux-headers
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 #applications
-pacman -S --needed firefox chromium vim nano vlc libreoffice-fresh gimp transmission-gtk --noconfirm
+pacman -S --needed firefox chromium vim nano vlc gimp transmission-qt --noconfirm
 
 #network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
@@ -27,7 +27,7 @@ systemctl enable libvirtd
 usermod -aG libvirt fabri
 
 #firewall
-pacman -S firewalld --noconfirm
+pacman -S gufw --noconfirm
 systemctl enable ufw
 sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 ufw allow mdns
