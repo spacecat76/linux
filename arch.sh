@@ -38,6 +38,11 @@ systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
+#flatpak
+pacman -S flatpak --noconfirm
+flatpak install flathub org.gtk.Gtk3theme.Breeze-Dark io.gitlab.librewolf-community org.gnome.Geary org.onlyoffice.desktopeditors
+flatpak override --user --env=GTK_THEME=Breeze-Dark
+
 #disable pipewire
 systemctl disable --global pipewire
 rm -rf /home/fabri/.config/pulse
