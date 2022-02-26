@@ -41,4 +41,3 @@ update-grub
 # purge components
 apt purge bluez -y
 apt autoremove -y
-
