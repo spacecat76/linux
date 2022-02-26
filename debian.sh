@@ -14,7 +14,7 @@ apt install papirus-icon-theme net-tools curl tlp build-essential apt-transport-
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 # applications
-apt install vim htop neofetch timeshift transmission-gtk vlc shotwell gimp -y
+apt install vim htop neofetch timeshift transmission-gtk vlc shotwell -y
 
 # network
 apt install avahi-daemon gufw -y
@@ -53,7 +53,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle com.mattjakeman.ExtensionManager org.onlyoffice.desktopeditors -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle com.mattjakeman.ExtensionManager org.onlyoffice.desktopeditors org.gimp.GIMP -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
