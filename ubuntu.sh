@@ -1,5 +1,5 @@
 #install applications
-apt install geary ubuntu-restricted-extras timeshift neofetch tlp curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate vim gnome-tweaks cheese transmission -y
+apt install geary ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate vim gnome-tweaks cheese transmission geary vlc -y
 
 #install fonts
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
@@ -42,5 +42,3 @@ update-grub
 apt purge bluez -y
 apt autoremove -y
 
-# various
-tlp start
