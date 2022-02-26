@@ -6,7 +6,7 @@ apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-ca
 
 #snaps
 snap install code --classic
-snap install libreoffice gimp
+snap install onlyoffice-desktopeditors gimp
 
 #gnome extensions
 apt purge gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-shell-extension-ubuntu-dock -y
