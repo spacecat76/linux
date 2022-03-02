@@ -1,5 +1,5 @@
 #install applications
-apt install geary ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate vim gnome-tweaks cheese transmission geary vlc -y
+apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate vim gnome-tweaks cheese transmission geary vlc -y
 
 #install fonts
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
@@ -10,7 +10,7 @@ snap install onlyoffice-desktopeditors gimp
 
 #gnome extensions
 apt purge gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-shell-extension-ubuntu-dock -y
-#apt install gnome-shell-extension-dashtodock -y
+apt install gnome-shell-extension-dash-to-panel -y
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
