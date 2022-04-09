@@ -20,7 +20,7 @@ dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
 
 # install package
-dnf install google-chrome-stable gimp vlc timeshift neofetch htop shotwell python3-pip vim gnome-tweaks transmission geary -y
+dnf install google-chrome-stable gimp vlc neofetch htop shotwell python3-pip vim gnome-tweaks transmission geary -y
 
 # flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
