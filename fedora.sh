@@ -24,7 +24,7 @@ dnf install google-chrome-stable gimp vlc timeshift neofetch htop shotwell pytho
 
 # flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle com.mattjakeman.ExtensionManager -y
+flatpak install flathub com.mattjakeman.ExtensionManager -y
 
 # vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
