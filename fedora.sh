@@ -32,8 +32,8 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf update -y
 dnf install code -y
 
-#firewall
-
+# firewall
+dnf install firewall-config -y
 
 # virt manager
 dnf install virt-manager -y
