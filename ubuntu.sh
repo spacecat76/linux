@@ -8,10 +8,6 @@ apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-ca
 snap install code --classic
 snap install onlyoffice-desktopeditors gimp
 
-#gnome extensions
-apt purge gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-shell-extension-ubuntu-dock -y
-apt install gnome-shell-extension-dash-to-panel -y
-
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
 dpkg -i /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
