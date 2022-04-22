@@ -17,7 +17,6 @@ pacman -Rd --nodeps pulseaudio-bluetooth bluez --noconfirm
 
 #gdm
 systemctl enable gdm
-
 __
 
 #kde
