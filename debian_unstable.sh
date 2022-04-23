@@ -18,7 +18,6 @@ apt install avahi-daemon gufw -y
 systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
-#sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
