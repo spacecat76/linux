@@ -14,12 +14,12 @@ apt install gimp vim htop neofetch timeshift vlc papirus-icon-theme net-tools cu
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 # network
-apt install init-system-helpers adduser bind9-host dbus  libavahi-common3 libavahi-core7 libc6 libcap2 libdaemon0 libdbus-1-3 libexpat1 lsb-base libnss-mdns gufw -y
-#systemctl enable avahi-daemon
-#systemctl enable ufw --now
+apt install avahi-daemon ufw -y
+systemctl enable avahi-daemon
+systemctl enable ufw --now
 ufw enable
 ufw allow mdns
-#sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
 apt install virt-manager -y
