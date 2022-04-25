@@ -2,5 +2,5 @@ mousewheel.default.delta_multiplier_x	10
 browser.uidensity			            1
 apz.gtk.kinetic_scroll.enabled		    false
 media.ffmpeg.vaapi.enabled              true
-
+media.ffvpx.enabled                     false
 
