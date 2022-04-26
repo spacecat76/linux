@@ -1,7 +1,7 @@
 # update repositories
 apt update && apt full-upgrade -y
 
-# firmware & kernel
+# firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 # desktop environment
