@@ -1,3 +1,14 @@
+# apt sources
+mv /etc/apt/sources.list /etc/apt/sources.list.old
+cp /home/fabri/Git/linux/conf/sources.list /etc/apt/sources.list
+
+# apt preferences
+tee -a /etc/apt/preferences  << END
+Package: rsync
+Pin: release n=bullseye
+Pin-Priority: 900
+END
+
 # update repositories
 apt update && apt full-upgrade -y
 
@@ -5,7 +16,7 @@ apt update && apt full-upgrade -y
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 # desktop environment
-apt install adwaita-icon-theme at-spi2-core baobab caribou dconf-cli dconf-gsettings-backend eog evince evolution-data-server fonts-cantarell gdm3 gkbd-capplet glib-networking gnome-backgrounds gnome-bluetooth gnome-calculator gnome-characters gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-menus gnome-online-accounts gnome-online-miners gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-sushi gnome-system-monitor gnome-terminal gnome-text-editor gnome-themes-extra gnome-user-docs gnome-user-share gsettings-desktop-schemas gstreamer1.0-packagekit gstreamer1.0-plugins-base gstreamer1.0-plugins-good gvfs-backends gvfs-fuse libatk-adaptor libcanberra-pulse libglib2.0-bin libpam-gnome-keyring libproxy1-plugin-gsettings libproxy1-plugin-webkit librsvg2-common nautilus pipewire-pulse sound-theme-freedesktop system-config-printer-common system-config-printer-udev tracker xdg-desktop-portal-gnome yelp zenity libproxy1-plugin-networkmanager network-manager-gnome file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem -y
+apt install adwaita-icon-theme at-spi2-core baobab caribou dconf-cli dconf-gsettings-backend eog evince evolution-data-server fonts-cantarell gdm3 gkbd-capplet glib-networking gnome-backgrounds gnome-bluetooth gnome-calculator gnome-characters gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-menus gnome-online-accounts gnome-online-miners gnome-session gnome-settings-daemon gnome-shell gnome-software gnome-sushi gnome-system-monitor gnome-terminal gnome-text-editor gnome-themes-extra gnome-user-docs gnome-user-share gsettings-desktop-schemas gstreamer1.0-packagekit gstreamer1.0-plugins-base gstreamer1.0-plugins-good gvfs-backends gvfs-fuse libatk-adaptor libcanberra-pulse libglib2.0-bin libpam-gnome-keyring libproxy1-plugin-gsettings libproxy1-plugin-webkit librsvg2-common nautilus pipewire-pulse sound-theme-freedesktop system-config-printer-common system-config-printer-udev tracker xdg-desktop-portal-gnome yelp zenity libproxy1-plugin-networkmanager network-manager-gnome file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift vlc papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
@@ -61,7 +72,7 @@ update-grub
 apt install cifs-utils smbclient -y
 tee -a /etc/fstab  << END
 # map fastgate usb storage
-//192.168.1.254/samba/usb1_1 /home/fabri/Documents cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
 
 ## optional
