@@ -80,7 +80,7 @@ END
 apt purge bluez avahi-autoipd -y
 apt autoremove -y
 
-#swappiness
+# swappiness
 tee -a /etc/sysctl.conf  << END
 vm.swappiness=10
 END
@@ -89,3 +89,7 @@ END
 tee -a /etc/modprobe.d/iwlwifi.conf  << END
 options iwlwifi enable_ini=N
 END
+
+# mdevctl fix
+mkdir /etc/mdevctl.d
+
