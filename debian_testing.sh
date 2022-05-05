@@ -79,3 +79,8 @@ END
 # purge components
 apt purge bluez avahi-autoipd -y
 apt autoremove -y
+
+#swappiness
+tee -a /etc/sysctl.conf  << END
+vm.swappiness=10
+END
