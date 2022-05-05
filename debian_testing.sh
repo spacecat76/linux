@@ -16,7 +16,7 @@ apt update && apt full-upgrade -y
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
 
 # desktop environment
-apt install adwaita-icon-theme at-spi2-core baobab caribou dconf-cli dconf-gsettings-backend eog evince evolution-data-server fonts-cantarell gdm3 gkbd-capplet glib-networking gnome-backgrounds gnome-bluetooth gnome-calculator gnome-characters gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-menus gnome-online-accounts gnome-online-miners gnome-session gnome-settings-daemon gnome-shell gnome-software gnome-sushi gnome-system-monitor gnome-terminal gnome-text-editor gnome-themes-extra gnome-user-docs gnome-user-share gsettings-desktop-schemas gstreamer1.0-packagekit gstreamer1.0-plugins-base gstreamer1.0-plugins-good gvfs-backends gvfs-fuse libatk-adaptor libcanberra-pulse libglib2.0-bin libpam-gnome-keyring libproxy1-plugin-gsettings libproxy1-plugin-webkit librsvg2-common nautilus pipewire-pulse sound-theme-freedesktop system-config-printer-common system-config-printer-udev tracker xdg-desktop-portal-gnome yelp zenity libproxy1-plugin-networkmanager network-manager-gnome file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem -y
+apt install adwaita-icon-theme at-spi2-core baobab caribou dconf-cli dconf-gsettings-backend eog evince evolution-data-server fonts-cantarell gdm3 gkbd-capplet glib-networking gnome-backgrounds gnome-bluetooth gnome-calculator gnome-characters gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-menus gnome-online-accounts gnome-online-miners gnome-session gnome-settings-daemon gnome-shell gnome-software gnome-sushi gnome-system-monitor gnome-terminal gnome-text-editor gnome-themes-extra gnome-user-docs gnome-user-share gsettings-desktop-schemas gstreamer1.0-packagekit gstreamer1.0-plugins-base gstreamer1.0-plugins-good gvfs-backends gvfs-fuse libatk-adaptor libcanberra-pulse libglib2.0-bin libpam-gnome-keyring libproxy1-plugin-gsettings libproxy1-plugin-webkit librsvg2-common nautilus pipewire-pulse sound-theme-freedesktop system-config-printer-common system-config-printer-udev tracker xdg-desktop-portal-gnome yelp zenity libproxy1-plugin-networkmanager network-manager-gnome file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem cheese -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift vlc papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
@@ -57,7 +57,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.onlyoffice.desktopeditors com.system76.Popsicle io.gitlab.librewolf-community org.gnome.Cheese -y
+flatpak install flathub org.onlyoffice.desktopeditors com.system76.Popsicle io.gitlab.librewolf-community -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
@@ -69,14 +69,12 @@ sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 update-grub
 
 # fastgate
-apt install cifs-utils smbclient -y
-tee -a /etc/fstab  << END
-# map fastgate usb storage
-//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
-END
+#apt install cifs-utils smbclient -y
+#tee -a /etc/fstab  << END
+#//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
+#END
 
 ## optional
-
 # purge components
 apt purge bluez avahi-autoipd -y
 apt autoremove -y
