@@ -84,3 +84,8 @@ apt autoremove -y
 tee -a /etc/sysctl.conf  << END
 vm.swappiness=10
 END
+
+# iwlwifi
+tee -a /etc/modprobe.d/iwlwifi.conf  << END
+options iwlwifi enable_ini=N
+END
