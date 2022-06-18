@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 # desktop environment
-apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal -y
+apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal xfce4-taskmanager xfce4-screenshooter xfwm4-themes xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-power-manager-plugins xfce4-datetime-plugin xarchiver thunar-archive-plugin galculator gparted -y
 
 # firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
@@ -14,7 +14,7 @@ apt install papirus-icon-theme net-tools curl tlp build-essential apt-transport-
 apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 # applications
-apt install vim htop neofetch timeshift transmission-gtk vlc -y
+apt install vim htop neofetch timeshift transmission-gtk vlc shotwell  geary -y
 
 # network
 apt install avahi-daemon ufw -y
@@ -53,7 +53,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.onlyoffice.desktopeditors org.gimp.GIMP -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.onlyoffice.desktopeditors org.gimp.GIMP io.gitlab.librewolf-community -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
