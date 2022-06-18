@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 # desktop environment
-apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal xfce4-taskmanager xfce4-screenshooter xfwm4-themes xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-power-manager-plugins xfce4-datetime-plugin xarchiver thunar-archive-plugin galculator gparted mugshot -y
+apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal xfce4-taskmanager xfce4-screenshooter xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-power-manager-plugins xfce4-datetime-plugin xarchiver thunar-archive-plugin galculator gparted mugshot -y
 
 # firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
@@ -73,18 +73,14 @@ END
 
 ## optional
 
-# purge components
-#apt purge bluez avahi-autoipd -y
-#apt autoremove -y
-
 # disable pipewire
-#systemctl disable --global pipewire
-#rm -rf /home/fabri/.config/pulse
+systemctl disable --global pipewire
+rm -rf /home/fabri/.config/pulse
 
 # iwlwifi
-#tee -a /etc/modprobe.d/iwlwifi.conf  << END
-#options iwlwifi enable_ini=N
-#END
+tee -a /etc/modprobe.d/iwlwifi.conf  << END
+options iwlwifi enable_ini=N
+END
 
 # various
 tlp start
