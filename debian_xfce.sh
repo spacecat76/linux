@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 # desktop environment
-apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal xfce4-taskmanager xfce4-screenshooter xfwm4-themes xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-power-manager-plugins xfce4-datetime-plugin xarchiver thunar-archive-plugin galculator gparted -y
+apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal xfce4-taskmanager xfce4-screenshooter xfwm4-themes xfce4-whiskermenu-plugin xfce4-indicator-plugin xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-power-manager-plugins xfce4-datetime-plugin xarchiver thunar-archive-plugin galculator gparted mugshot -y
 
 # firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
