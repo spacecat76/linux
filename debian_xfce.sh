@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 # desktop environment
-apt install xfce4 xfce4-power-manager -y
+apt install xfce4 xfce4-power-manager slick-greeter xfce4-terminal -y
 
 # firmware
 apt install firmware-sof-signed firmware-realtek intel-microcode -y
@@ -17,7 +17,7 @@ apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-car
 apt install vim htop neofetch timeshift transmission-gtk vlc -y
 
 # network
-apt install avahi-daemon gufw -y
+apt install avahi-daemon ufw -y
 systemctl enable avahi-daemon
 sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system/ufw.service
@@ -63,6 +63,13 @@ locale-gen
 sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 update-grub
+
+# fastgate
+apt install cifs-utils smbclient -y
+tee -a /etc/fstab  << END
+# map fastgate usb storage
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
+END
 
 ## optional
 
