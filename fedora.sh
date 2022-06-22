@@ -23,8 +23,8 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install google-chrome-stable gimp vlc neofetch htop shotwell python3-pip vim gnome-tweaks transmission geary -y
 
 # flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.mattjakeman.ExtensionManager -y
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#flatpak install flathub com.mattjakeman.ExtensionManager -y
 
 # vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -36,7 +36,7 @@ dnf install code -y
 dnf install firewall-config -y
 
 # virt manager
-dnf install virt-manager -y
+#dnf install virt-manager -y
 
 # printing and scanning
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
