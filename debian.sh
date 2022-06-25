@@ -31,9 +31,9 @@ systemctl enable ufw --now
 ufw enable
 ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-tee -a /etc/resolv.conf << END
-nameserver 8.8.8.8
-END
+#tee -a /etc/resolv.conf << END
+#nameserver 8.8.8.8
+#END
 
 # virt manager
 apt install virt-manager -y
@@ -60,7 +60,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.onlyoffice.desktopeditors com.system76.Popsicle -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.onlyoffice.desktopeditors com.system76.Popsicle org.gimp.GIMP -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
