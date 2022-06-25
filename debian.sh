@@ -19,7 +19,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install xorg firefox-esr gedit adwaita-icon-theme at-spi2-core baobab caribou dconf-cli dconf-gsettings-backend eog evince evolution-data-server fonts-cantarell gdm3 gkbd-capplet glib-networking gnome-backgrounds gnome-bluetooth gnome-calculator gnome-characters gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-menus gnome-online-accounts gnome-online-miners gnome-session gnome-settings-daemon gnome-shell gnome-software gnome-sushi gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gsettings-desktop-schemas gstreamer1.0-packagekit gstreamer1.0-plugins-base gstreamer1.0-plugins-good gvfs-backends gvfs-fuse libatk-adaptor libcanberra-pulse libglib2.0-bin libpam-gnome-keyring libproxy1-plugin-gsettings libproxy1-plugin-webkit librsvg2-common nautilus pulseaudio sound-theme-freedesktop system-config-printer-common system-config-printer-udev tracker xdg-desktop-portal yelp zenity libproxy1-plugin-networkmanager network-manager-gnome file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem cheese gnome-screenshot -y
 
 # apps & utilities
-apt install tlp gimp vim htop neofetch timeshift vlc papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly apt-file -y
+apt install tlp vim htop neofetch timeshift vlc papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly apt-file -y
 
 # fonts
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
@@ -57,7 +57,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.onlyoffice.desktopeditors com.system76.Popsicle io.gitlab.librewolf-community -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.onlyoffice.desktopeditors com.system76.Popsicle -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
