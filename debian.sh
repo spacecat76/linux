@@ -31,6 +31,9 @@ systemctl enable ufw --now
 ufw enable
 ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+tee -a /etc/resolv.conf << END
+nameserver 8.8.8.8
+END
 
 # virt manager
 apt install virt-manager -y
