@@ -37,6 +37,7 @@ sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system
 # virt manager
 apt install virt-manager -y
 adduser fabri libvirt
+virsh net-autostart default
 
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
