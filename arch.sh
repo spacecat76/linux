@@ -1,5 +1,5 @@
 #kde
-pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm ark dolphin konsole okular galculator transmission-qt kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview gnome-keyring --noconfirm
+pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm ark dolphin konsole okular galculator kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
 
 #remove components
 pacman -Rd --nodeps bluez plasma-browser-integration plasma-firewall --noconfirm
@@ -27,7 +27,7 @@ systemctl enable libvirtd
 usermod -aG libvirt fabri
 
 #firewall
-pacman -S gufw --noconfirm
+pacman -S ufw --noconfirm
 systemctl enable ufw
 sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 ufw allow mdns
@@ -40,7 +40,7 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 #flatpak
 pacman -S flatpak --noconfirm
-flatpak install flathub org.gtk.Gtk3theme.Breeze-Dark io.gitlab.librewolf-community org.gnome.Geary org.onlyoffice.desktopeditors
+flatpak install flathub org.gtk.Gtk3theme.Breeze-Dark org.onlyoffice.desktopeditors -y
 flatpak override --user --env=GTK_THEME=Breeze-Dark
 
 #disable pipewire
