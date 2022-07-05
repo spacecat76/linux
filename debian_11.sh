@@ -19,10 +19,10 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install xorg gnome-core file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem cheese gnome-screenshot -y
 
 # apps & utilities
-apt install tlp vim htop neofetch timeshift vlc papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly apt-file gimp -y
+apt install tlp vim htop neofetch timeshift vlc unrar papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly apt-file gimp -y
 
 # fonts
-apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode fonts-noto -y
+apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 # network
 apt install avahi-daemon ufw -y
