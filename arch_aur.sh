@@ -4,4 +4,4 @@ cd /home/fabri/Downloads/paru
 makepkg -sri
 
 #kde aur apps
-paru -S ttf-ms-fonts timeshift-autosnap --noconfirm
+paru -S ttf-ms-fonts timeshift --noconfirm
