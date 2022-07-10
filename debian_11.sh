@@ -9,7 +9,7 @@
 #Pin-Priority: 900
 #END
 
-# update repositorie
+# update repositories
 apt update && apt full-upgrade -y
 
 # firmware
