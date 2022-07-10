@@ -20,7 +20,7 @@ dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
 
 # install package
-dnf install google-chrome-stable gimp neofetch htop shotwell python3-pip vim gnome-tweaks transmission -y
+dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission -y
 
 # flatpak
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
