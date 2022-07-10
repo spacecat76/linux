@@ -16,7 +16,7 @@ apt update && apt full-upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install xorg gnome-core file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks geary transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem cheese gnome-screenshot -y
+apt install xorg gnome-core file-roller gnome-tweaks gnome-weather gnome-calendar gnome-clocks transmission-gtk shotwell gnome-shell-extension-dash-to-panel totem cheese gnome-screenshot -y
 
 # apps & utilities
 apt install tlp vlc vim htop neofetch timeshift unrar papirus-icon-theme net-tools curl build-essential apt-transport-https python3-pip mlocate ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly apt-file gimp -y
