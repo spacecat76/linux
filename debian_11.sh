@@ -19,7 +19,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install xorg gnome-core gnome-weather gnome-calendar gnome-clocks gnome-screenshot gnome-shell-extension-dash-to-panel gnome-tweaks file-roller transmission-gtk shotwell cheese -y
 
 # apps & utilities
-apt install tlp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https mlocate apt-file gimp -y
+apt install tlp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file gimp -y
 
 # multimedia
 apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
@@ -102,4 +102,3 @@ END
 
 # various
 tlp start
-updatedb
