@@ -16,7 +16,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install xorg xorg-dev gnome-core gnome-weather gnome-calendar gnome-clocks gnome-screenshot gnome-shell-extension-dash-to-panel gnome-tweaks file-roller transmission-gtk shotwell cheese -y
+apt install gnome-core gnome-weather gnome-calendar gnome-clocks gnome-screenshot gnome-shell-extension-dash-to-panel gnome-tweaks file-roller transmission-gtk shotwell cheese -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
