@@ -9,7 +9,6 @@
 #Pin-Priority: 900
 #END
 
-
 # update repositories
 apt update && apt upgrade -y
 
