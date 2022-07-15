@@ -1,14 +1,3 @@
-# apt sources TESTING
-#mv /etc/apt/sources.list /etc/apt/sources.list.old
-#cp /home/fabri/Git/linux/conf/sources.list /etc/apt/sources.list
-
-# apt preferences TESTING
-#tee -a /etc/apt/preferences  << END
-#Package: rsync
-#Pin: release n=bullseye
-#Pin-Priority: 900
-#END
-
 # update repositories
 apt update && apt upgrade -y
 
