@@ -1,12 +1,12 @@
 #install applications
-apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make python3-pip mlocate vim gnome-tweaks cheese transmission geary vlc gnome-shell-extensions fuse -y
+apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make vim gnome-tweaks cheese transmission vlc gnome-shell-extensions fuse gimp -y
 
 #install fonts
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 #snaps
 snap install code --classic
-snap install onlyoffice-desktopeditors gimp
+snap install libreoffice
 
 #chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
