@@ -1,5 +1,5 @@
 #install applications
-apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make vim gnome-tweaks cheese transmission vlc gnome-shell-extensions fuse gimp -y
+apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager fuse gimp -y
 
 #install fonts
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
