@@ -19,8 +19,12 @@ dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 
 dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
 
-# install package
-dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app -y
+# install packages
+dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
+
+# fonts & icons
+dnf install papirus-icon-theme cabextract xorg-x11-font-utils -y
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
