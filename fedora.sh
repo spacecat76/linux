@@ -20,11 +20,10 @@ dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
 
 # install package
-dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission -y
+dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app -y
 
 # flatpak
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#flatpak install flathub com.mattjakeman.ExtensionManager -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -34,6 +33,9 @@ dnf install code -y
 
 # firewall
 dnf install firewall-config -y
+cp /home/fabri/Git/linux/conf/FedoraFW.xml /usr/lib/firewalld/zones
+firewall-cmd --reload
+firewall-cmd --set-default-zone FedoraFW
 
 # virt manager
 #dnf install virt-manager -y
