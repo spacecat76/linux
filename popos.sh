@@ -1,8 +1,8 @@
 #install applications
 apt install neofetch htop shotwell printer-driver-cups-pdf apt-transport-https code transmission cheese gimp vim ffmpeg gnome-tweaks libreoffice-style-breeze -y
 
-#install fonts
-apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea -y
+#install fonts & icons
+apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea papirus-icon-theme -y
 
 #firewall
 apt install gufw -y
