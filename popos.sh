@@ -1,13 +1,13 @@
-#install applications
-apt install neofetch htop shotwell printer-driver-cups-pdf apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze -y
+# applications
+apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze -y
 
 # multimedia
 apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
 
-#install fonts & icons
+# install fonts & icons
 apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea papirus-icon-theme -y
 
-#firewall
+# firewall
 apt install gufw -y
 sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 systemctl enable ufw --now
@@ -18,7 +18,8 @@ ufw allow mdns
 apt install virt-manager -y
 virsh net-autostart default
 
-#scanner
+# printing and scanning
+apt install printer-driver-cups-pdf -y
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # fastgate
