@@ -1,11 +1,8 @@
 # applications
-apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze -y
+apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze unrar -y
 
 # multimedia
-apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
-
-# install fonts & icons
-apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea papirus-icon-theme -y
+apt install vlc ffmpeg ubuntu-restricted-extras -y
 
 # firewall
 apt install gufw -y
