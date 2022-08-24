@@ -2,7 +2,7 @@
 apt install neofetch htop shotwell printer-driver-cups-pdf apt-transport-https code transmission cheese gimp vim ffmpeg gnome-tweaks libreoffice-style-breeze -y
 
 #install fonts
-apt install ttf-mscorefonts-installer ttf-ubuntu-font-family fonts-crosextra-carlito fonts-crosextra-caladea -y
+apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 #firewall
 apt install gufw -y
@@ -29,9 +29,6 @@ END
 sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 update-grub
-
-# purge components
-apt purge bluez -y
 
 #cleanup
 apt autoremove -y
