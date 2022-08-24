@@ -30,5 +30,6 @@ sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 update-grub
 
-#cleanup
+# varie
+systemctl disable bluetooth
 apt autoremove -y
