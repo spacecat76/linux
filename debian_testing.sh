@@ -1,6 +1,6 @@
 # apt sources TESTING
-mv /etc/apt/sources.list /etc/apt/sources.list.old
-cp /home/fabri/Git/linux/conf/sources.list /etc/apt/sources.list
+# mv /etc/apt/sources.list /etc/apt/sources.list.old
+# cp /home/fabri/Git/linux/conf/sources.list /etc/apt/sources.list
 
 # apt preferences TESTING
 # tee -a /etc/apt/preferences  << END
