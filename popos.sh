@@ -1,5 +1,5 @@
 # applications
-apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze -y
+apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze google-chrome-stable gnome-screenshot -y
 
 # multimedia
 apt install vlc ubuntu-restricted-extras -y
@@ -25,11 +25,6 @@ tee -a /etc/fstab  << END
 # map fastgate usb storage
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
-
-# grub
-sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
-sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
-update-grub
 
 # varie
 systemctl disable bluetooth
