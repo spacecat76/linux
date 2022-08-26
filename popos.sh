@@ -1,8 +1,8 @@
 # applications
-apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze unrar -y
+apt install neofetch htop shotwell apt-transport-https code transmission cheese gimp vim gnome-tweaks libreoffice-style-breeze -y
 
 # multimedia
-apt install vlc ffmpeg ubuntu-restricted-extras -y
+apt install vlc ubuntu-restricted-extras -y
 
 # firewall
 apt install gufw -y
