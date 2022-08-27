@@ -2,7 +2,7 @@
 apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager fuse3 gimp ffmpegthumbnailer -y
 
 # install fonts
-apt install ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
+apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode -y
 
 # snaps
 snap install code --classic
