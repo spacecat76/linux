@@ -41,10 +41,6 @@ sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 update-grub
 
-# disable pipewire
-systemctl disable --global pipewire
+# disable services
+systemctl disable pipewire bluetooth
 rm -rf /home/fabri/.config/pulse
-
-# purge components
-apt purge bluez -y
-apt autoremove -y
