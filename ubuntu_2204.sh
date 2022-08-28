@@ -38,7 +38,9 @@ END
 
 # grub
 sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
-sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
+tee -a /etc/default/grub << END
+GRUB_RECORDFAIL_TIMEOUT=5
+END
 update-grub
 
 # disable services
