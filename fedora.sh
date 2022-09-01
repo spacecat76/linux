@@ -18,6 +18,7 @@ dnf install \
 dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
+dnf install ffmpeg-devel -y
 
 # install packages
 dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
@@ -46,3 +47,9 @@ firewall-cmd --set-default-zone FedoraFW
 
 # printing and scanning
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
+
+# fastgate
+tee -a /etc/fstab  << END
+# map fastgate usb storage
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
+END
