@@ -29,6 +29,7 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 # flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.mattjakeman.ExtensionManager -y
 
 # vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
