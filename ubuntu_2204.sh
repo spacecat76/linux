@@ -6,7 +6,6 @@ apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode libre
 
 # snaps
 snap install code --classic
-snap install libreoffice
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
