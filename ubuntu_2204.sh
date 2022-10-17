@@ -2,7 +2,7 @@
 apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https make vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager fuse3 libfuse2 gimp ffmpegthumbnailer gnome-weather gnome-calendar gnome-clocks gnome-screenshot libreoffice -y
 
 # install fonts
-apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode libreoffice-style-breeze -y
+apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode libreoffice-style-breeze papirus-icon-theme libreoffice-style-breeze -y
 
 # snaps
 snap install code --classic
