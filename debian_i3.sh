@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-#apt install -y
+apt install i3 polybar slick-greeter thunar xfce4-terminal redshift transmission-gtk nitrogen -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -32,7 +32,7 @@ adduser fabri libvirt
 virsh net-autostart default
 
 # printing and scanning
-apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
+apt install sane cups printer-driver-all printer-driver-cups-pdf -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
