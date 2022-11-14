@@ -184,6 +184,9 @@ bindsym $mod+r mode "resize"
 #Polybar
 exec_always --no-startup-id /home/fabri/.config/polybar/launch.sh &
 
+#Redshift
+exec_always --no-startup-id redshift &
+
 #No Title Bar
 default_border pixel 1
 default_floating_border pixel 1
