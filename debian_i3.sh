@@ -5,13 +5,13 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 polybar slick-greeter thunar kitty redshift transmission-gtk nitrogen -y
+apt install i3 polybar slick-greeter thunar kitty redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
 
 # multimedia
-apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
+apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad -y
 
 # fonts & icons
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
@@ -32,7 +32,7 @@ adduser fabri libvirt
 virsh net-autostart default
 
 # printing and scanning
-apt install sane cups printer-driver-all printer-driver-cups-pdf -y
+apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
