@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 polybar slick-greeter thunar xfce4-terminal redshift transmission-gtk nitrogen -y
+apt install i3 polybar slick-greeter thunar kitty redshift transmission-gtk nitrogen -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -50,9 +50,9 @@ rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
 # flatpak
-apt install flatpak gnome-software-plugin-flatpak -y
+apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
