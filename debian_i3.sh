@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 polybar slick-greeter thunar kitty redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell -y
+apt install i3 polybar slick-greeter thunar thunar-archive-plugin kitty redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
