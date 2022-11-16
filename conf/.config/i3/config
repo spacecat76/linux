@@ -194,6 +194,8 @@ exec_always --no-startup-id nitrogen --restore &
 default_border pixel 1
 default_floating_border pixel 1
 
+#Floating
+for_window [class="Yad" title="yad-calendar"] floating enable
 
 
 
