@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell galculator -y
+apt install i3 picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell galculator pulseaudio pavucontrol -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -95,4 +95,4 @@ tlp start
 mv /usr/bin/xfce4-terminal /usr/bin/terminal
 mv /usr/bin/xfce4-screenshooter /usr/bin/screenshooter
 mv /usr/bin/galculator /usr/bin/calculator
-mv /usr/bin/google-chrome /usr/bin/chrome
+

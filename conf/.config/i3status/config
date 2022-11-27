@@ -13,15 +13,16 @@ general {
 
 #order += "ipv6"
 order += "wireless _first_"
-order += "ethernet _first_"
+#order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
 #order += "load"
 order += "memory"
+order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
+        format_up = "WIFI: (%quality at %essid) %ip"
         format_down = "W: down"
 }
 
@@ -35,7 +36,7 @@ battery all {
 }
 
 disk "/" {
-        format = "%avail"
+        format = "DISK %avail"
 }
 
 load {
@@ -48,6 +49,16 @@ memory {
         format_degraded = "MEMORY < %available"
 }
 
+volume master {
+
+format = "V: %volume"
+
+format_muted = "V: muted (%volume)"
+
+device = "pulse"
+
+}
+
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%d-%m-%Y %H:%M"
 }
