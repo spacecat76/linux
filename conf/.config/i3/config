@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,6 +204,9 @@ for_window [window_role="About"] floating enable
 # Handle backlight.
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
+
+# TLP
+exec tlp start
 
 
 
