@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell galculator pavucontrol -y
+apt install i3 picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring mousepad shotwell galculator pavucontrol light -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -72,8 +72,22 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
 
+# touchpad
+tee -a /etc/X11/xorg.conf.d/90-touchpad.conf << END
+Section "InputClass"
+        Identifier "touchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "Tapping" "on"
+        Option "TappingButtonMap" "lrm"
+        Option "NaturalScrolling" "on"
+        Option "ScrollMethod" "twofinger"
+EndSection
+END
+
+
 # purge components
-apt purge avahi-autoipd -y
+apt purge avahi-autoipd bluez -y
 apt autoremove -y
 
 # disable pipewire
