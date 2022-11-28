@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring shotwell galculator pavucontrol light firefox-esr -y
+apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring shotwell galculator pulseaudio pavucontrol light firefox-esr -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -54,7 +54,6 @@ apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice -y
 ln -s /var/lib/flatpak/exports/bin/org.libreoffice.LibreOffice /usr/bin/libreoffice
-
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
