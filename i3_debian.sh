@@ -84,6 +84,13 @@ Section "InputClass"
 EndSection
 END
 
+# greeter
+sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=slick-greeter/g' /etc/lightdm/lightdm.conf
+tee -a /etc/lightdm/slick-greeter.conf << END
+[Greeter]
+background=/home/fabri/Git/linux/img/greeter.png
+END
+
 # purge components
 apt purge avahi-autoipd bluez -y
 apt autoremove -y
