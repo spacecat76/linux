@@ -114,3 +114,4 @@ tlp start
 cp /usr/bin/xfce4-terminal /usr/local/bin/terminal
 cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
 cp /usr/bin/galculator /usr/local/bin/calculator
+cp /usr/bin/virt-manager /usr/local/bin/vm
