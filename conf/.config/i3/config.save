@@ -100,10 +100,10 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1_CHR"
-set $ws2 "2_THU"
-set $ws3 "3_TER"
-set $ws4 "4_VLC"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -212,7 +212,3 @@ bindsym XF86AudioMute exec amixer sset 'Master' toggle
 bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
-assign [class="Google-chrome"] 1_CHR
-assign [class="Thunar"] 2_THU
-assign [class="Terminal"] 3_TER
-assign [class="vlc"] 4_VLC
