@@ -5,13 +5,13 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr alsa-utils xbindkeys -y
+apt install xorg i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr xbindkeys -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
 
-# multimedia
-apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad ffmpegthumbnailer -y
+# audio
+apt install pulseaudio pavucontrol vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse ffmpegthumbnailer -y
 
 # fonts & icons
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme fonts-font-awesome -y
