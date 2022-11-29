@@ -86,7 +86,7 @@ color=#00FF00
 interval=10
 #separator=false
 
-[wifi]
+#[wifi]
 #instance=wlp0s20f3
 #interval=10
 #separator=false
