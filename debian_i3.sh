@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr pavucontrol xbindkeys -y
+apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr alsa-utils xbindkeys -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -105,5 +105,5 @@ END
 # various
 tlp start
 cp /usr/bin/xfce4-terminal /usr/local/bin/terminal
-mv /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
-mv /usr/bin/galculator /usr/local/bin/calculator
+cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
+cp /usr/bin/galculator /usr/local/bin/calculator
