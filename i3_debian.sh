@@ -90,7 +90,18 @@ tee -a /etc/lightdm/slick-greeter.conf << END
 [Greeter]
 background=/home/fabri/Git/linux/img/greeter.png
 END
+sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.socket
+sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.service
 
+# power management
+tlp start
+
+# various
+cp /usr/bin/xfce4-terminal /usr/local/bin/terminal
+cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
+cp /usr/bin/galculator /usr/local/bin/calculator
+
+## Debian 11
 # purge components
 apt purge avahi-autoipd bluez -y
 apt autoremove -y
@@ -108,9 +119,3 @@ END
 tee -a /etc/modprobe.d/iwlwifi.conf  << END
 options iwlwifi enable_ini=N
 END
-
-# various
-tlp start
-cp /usr/bin/xfce4-terminal /usr/local/bin/terminal
-cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
-cp /usr/bin/galculator /usr/local/bin/calculator
