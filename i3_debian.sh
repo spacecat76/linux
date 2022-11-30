@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install xorg i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr xbindkeys -y
+apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr xbindkeys -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
