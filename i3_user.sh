@@ -1,5 +1,5 @@
 # create directories
-mkdir -p ~/.config/{i3,i3blocks,xfce4/terminal,gtk-3-0,systemd/user}
+mkdir -p ~/.config/{i3,i3blocks,xfce4/terminal,gtk-3.0,systemd/user}
 
 # copy files
 cp ~/Git/linux/.config/i3/config ~/.config/i3/config
