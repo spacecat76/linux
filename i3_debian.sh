@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr xbindkeys gvfs-backends tumbler tumbler-plugins-extra -y
+apt install i3 i3blocks picom slick-greeter thunar thunar-archive-plugin xfce4-terminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light firefox-esr xbindkeys gvfs-backends tumbler tumbler-plugins-extra upower xss-lock -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
@@ -17,7 +17,7 @@ apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreame
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme fonts-font-awesome -y
 
 # network
-apt install avahi-daemon ufw -y
+apt install network-manager-gnome avahi-daemon ufw -y
 systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
@@ -105,7 +105,10 @@ sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pu
 # power management
 tlp start
 
-# various
+# i915
+echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
+
+# dmenu
 cp /usr/bin/xfce4-terminal /usr/local/bin/terminal
 cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
 cp /usr/bin/galculator /usr/local/bin/calculator
