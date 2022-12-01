@@ -177,9 +177,6 @@ bar {
 
 #exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
-# Redshift
-#exec_always --no-startup-id redshift &
-
 # Resolution
 exec --no-startup-id xrandr -s 1920x1080 &
 
@@ -196,7 +193,6 @@ default_floating_border none
 # Floating
 for_window [title="galculator"] floating enable
 for_window [window_role="About"] floating enable
-for_window [title="balena-etcher"] floating enable
 
 # Handle backlight.
 bindsym XF86MonBrightnessUp exec light -A 5
