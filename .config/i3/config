@@ -208,7 +208,5 @@ assign [class="Google-chrome"] 1_CHR
 assign [class="Thunar"] 2_THU
 assign [class="Terminal"] 3_TER
 assign [class="Code"] 4_COD
-assign [class="Firefox-esr"] 5_FIR
+assign [class="firefox"] 5_FIR
 assign [class="libreoffice-startcenter"] 6_LIB
-
-
