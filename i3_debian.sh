@@ -87,9 +87,12 @@ END
 # x11
 tee -a /etc/X11/xorg.conf.d/20-intel-gpu.conf << END
 Section "Device"
-   Identifier  "Intel Graphics"
-   Driver      "intel"
-   Option      "TearFree"  "true"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "TearFree"  "true"
+        Option      "DRI" "2"             # DRI3 is now default 
+	Option      "AccelMethod"  "sna" # default
+#	Option      "AccelMethod"  "uxa" # fallback
 EndSection
 END
 
