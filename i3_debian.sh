@@ -110,7 +110,7 @@ tlp start
 echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
 
 # dmenu
-cp /usr/bin/xfce4-terminal /usr/local/bin/terminal
+cp /usr/bin/lxterminal /usr/local/bin/terminal
 cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
 cp /usr/bin/galculator /usr/local/bin/calculator
 cp /usr/bin/virt-manager /usr/local/bin/virtual
