@@ -13,9 +13,5 @@ cp ~/Git/linux/.config/redshift.conf ~/.config/redshift.conf
 # start redshift user service
 systemctl --user enable redshift
 
-# gnome network manager
-gsettings set org.gnome.nm-applet disable-connected-notifications "true"
-gsettings set org.gnome.nm-applet disable-disconnected-notifications "true"
-
 # polybar
 chmod +x ~/.config/polybar/launch.sh
