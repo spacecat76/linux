@@ -179,7 +179,6 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-
 #[module/mpd]
 #type = internal/mpd
 #format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -197,7 +196,7 @@ label-urgent-padding = 2
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = BLG
 
 bar-width = 10
 bar-indicator = |
@@ -353,7 +352,7 @@ format-discharging = BAT <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = "BAT "
-format-full-prefix-foreground = #${colors.foreground-alt}
+#format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
@@ -377,13 +376,14 @@ animation-discharging-framerate = 750
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
+hwmon-path = /sys/class/thermal/thermal_zone9/temp
 
 format = <ramp> <label>
 format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature-c%
+label = TEMP %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
