@@ -85,7 +85,7 @@ Section "InputClass"
 EndSection
 END
 
-# x11
+# Intel Graphics
 tee -a /etc/X11/xorg.conf.d/20-intel-gpu.conf << END
 Section "Device"
         Identifier  "Intel Graphics"
@@ -93,6 +93,7 @@ Section "Device"
         Option      "TearFree"  "true"
 EndSection
 END
+echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
 
 # greeter
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=slick-greeter/g' /etc/lightdm/lightdm.conf
@@ -105,9 +106,6 @@ sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pu
 
 # power management
 tlp start
-
-# i915 kernel
-echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
 
 # dmenu
 cp /usr/bin/lxterminal /usr/local/bin/terminal
