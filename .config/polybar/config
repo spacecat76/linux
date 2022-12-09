@@ -198,7 +198,7 @@ type = custom/script
 tail = true
 exec = ~/.config/polybar/scripts/updates.sh
 interval = 3600
-label = "UPD %output%"
+label = %{F#0a81f5}UPD%{F-} %output%
 
 [module/filesystem]
 type = internal/fs
@@ -206,24 +206,24 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = HD %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5}HD%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "MEM "
+format-prefix = %{F#0a81f5}MEM %{F-}
 #format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+#format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
+format-prefix = %{F#0a81f5}CPU %{F-}
 #format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+#format-underline = #f90000
 label = %percentage:2%%
 
 [module/temperature]
@@ -233,11 +233,11 @@ warn-temperature = 60
 hwmon-path = /sys/class/thermal/thermal_zone9/temp
 
 format = <ramp> <label>
-format-underline = #f50a4d
+#format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = TEMP %temperature-c%
+label = %{F#0a81f5}TMP%{F-} %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
@@ -252,13 +252,13 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = BAT <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging = %{F#0a81f5}BAT%{F-} <animation-charging> <label-charging>
+#format-charging-underline = #ffb52a
 
-format-discharging = BAT <animation-discharging> <label-discharging>
+format-discharging = %{F#0a81f5}BAT%{F-} <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "BAT "
+format-full-prefix = %{F#0a81f5}BAT%{F-}
 #format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -285,8 +285,8 @@ interface = wlp0s20f3
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid% %local_ip%
+#format-connected-underline = #9f78e1
+label-connected = %{F#0a81f5}%essid%%{F-} %signal%% %{F#6aa84f}%local_ip%%{F-}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -323,21 +323,21 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+#format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+#label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+#label-indicator-underline = ${colors.secondary}
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = " %d-%m-%Y"
+date = "%d/%m/%Y"
 date-alt = 
 
 time = %H:%M
@@ -345,24 +345,24 @@ time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+#format-underline = #0a6cf5
 
-label = %date% | %time%
+label = %date% %{F#0a81f5}|%{F-} %time%
 
 [module/menu-apps]
 type = custom/menu
 expand-right = true
 
-label-open = PWR
+label-open = %{F#f44336}PWR%{F-} 
 label-close = X
 label-separator = |
 format-spacing = 1
 
-menu-0-0 = Reboot
+menu-0-0 = %{F#f44336}reboot%{F-}
 menu-0-0-exec = systemctl reboot
-menu-0-1 = Shutdown
+menu-0-1 = %{F#f44336}stutdown%{F-}
 menu-0-1-exec = systemctl poweroff
-menu-0-2 = Logout
+menu-0-2 = %{F#f44336}logout%{F-}
 menu-0-2-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
 
 #label-open = Menu
