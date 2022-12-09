@@ -15,6 +15,7 @@ systemctl --user enable redshift
 
 # polybar
 chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/polybar/scripts/*.sh
 
 # user dirs
 xdg-user-dirs-update
