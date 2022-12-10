@@ -71,7 +71,7 @@ font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio xbacklight updates cpu temperature battery wlan xkeyboard date menu-apps
+modules-right = pulseaudio xbacklight screenshot updates cpu temperature battery wlan xkeyboard date menu-apps
 
 tray-position = right
 tray-padding = 2
@@ -196,12 +196,19 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
+[module/screenshot]
+type = custom/text
+content =  %{F#ffa500}%{F-}
+tail = true
+click-left = xfce4-screenshooter
+
 [module/updates]
 type = custom/script
 tail = true
 exec = ~/.config/polybar/scripts/updates.sh
 interval = 3600
 label = %{F#0a81f5}%{F-} %output%
+click-left = lxterminal -e "bash -c \"apt list --upgradable; exec bash\""
 
 [module/filesystem]
 type = internal/fs
