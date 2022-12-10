@@ -71,7 +71,7 @@ font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio xbacklight screenshot updates cpu temperature battery wlan xkeyboard date menu-apps
+modules-right = pulseaudio xbacklight screenshot updates cpu temperature battery wlan xkeyboard clickdate menu-apps
 
 tray-position = right
 tray-padding = 2
@@ -343,15 +343,25 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 #label-indicator-underline = ${colors.secondary}
 
+[module/clickdate]
+type = custom/script
+format-prefix = %{F#0a81f5}%{F-}
+format-prefix-foreground = ${colors.accent}
+exec = date +'  %a. %d %b. %Y | %H:%M'
+tail = false
+interval = 5
+click-left = google-chrome https://calendar.google.com
+click-right = 
+
 [module/date]
 type = internal/date
 interval = 5
 
 date = "%d/%m/%Y"
-date-alt = 
+#date-alt =
 
 time = %H:%M
-time-alt = %H:%M
+#time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
