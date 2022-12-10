@@ -108,7 +108,6 @@ sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pu
 tlp start
 
 # dmenu
-cp /usr/bin/xfce4-screenshooter /usr/local/bin/screenshooter
 cp /usr/bin/galculator /usr/local/bin/calculator
 
 ## Debian 11
