@@ -14,7 +14,7 @@ apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-esse
 apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse -y
 
 # fonts & icons
-apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
+apt install fonts-font-awesome ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
 # network
 apt install network-manager avahi-daemon ufw -y

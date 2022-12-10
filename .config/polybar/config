@@ -67,10 +67,11 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio xbacklight updates filesystem memory cpu temperature battery wlan xkeyboard date menu-apps
+modules-right = pulseaudio xbacklight updates cpu temperature battery wlan xkeyboard date menu-apps
 
 tray-position = right
 tray-padding = 2
@@ -148,11 +149,13 @@ label = %title:0:30:...%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =%{F#0a81f5} %{F-} %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted =  muted
+label-muted =  %{F#faff99}muted%{F-}
 label-muted-foreground = #666
+
+click-right = exec pavucontrol &
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -175,7 +178,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BLG
+label = %{F#0a81f5}%{F-}
 
 bar-width = 10
 bar-indicator = |
@@ -198,7 +201,7 @@ type = custom/script
 tail = true
 exec = ~/.config/polybar/scripts/updates.sh
 interval = 3600
-label = %{F#0a81f5}UPD%{F-} %output%
+label = %{F#0a81f5}%{F-} %output%
 
 [module/filesystem]
 type = internal/fs
@@ -206,14 +209,14 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}HD%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5} %mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = %{F#0a81f5}MEM %{F-}
+format-prefix = %{F#0a81f5} %{F-}
 #format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #4bffdc
 label = %percentage_used%%
@@ -221,7 +224,7 @@ label = %percentage_used%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = %{F#0a81f5}CPU %{F-}
+format-prefix = %{F#0a81f5} %{F-}
 #format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #f90000
 label = %percentage:2%%
@@ -235,9 +238,9 @@ hwmon-path = /sys/class/thermal/thermal_zone9/temp
 format = <ramp> <label>
 #format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+#format-warn-underline = ${self.format-underline}
 
-label = %{F#0a81f5}TMP%{F-} %temperature-c%
+label = %{F#0a81f5} %{F-} %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
@@ -252,20 +255,20 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = %{F#0a81f5}BAT%{F-} <animation-charging> <label-charging>
+format-charging = %{F#b8e60b}%{F-} <animation-charging> <label-charging>
 #format-charging-underline = #ffb52a
 
-format-discharging = %{F#0a81f5}BAT%{F-} <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = %{F#ffa500}%{F-} <animation-discharging> <label-discharging>
+#format-discharging-underline = #ffb52a
 
-format-full-prefix = %{F#0a81f5}BAT%{F-}
+format-full-prefix = %{F#00cc00}%{F-}
 #format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+#format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground =  #de0037
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -286,7 +289,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 #format-connected-underline = #9f78e1
-label-connected = %{F#0a81f5}%essid%%{F-} %signal%% %{F#6aa84f}%local_ip%%{F-}
+label-connected = %{F#769D76}%essid%%{F-} %signal%% | %{F#769D76}%local_ip%%{F-}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -353,16 +356,16 @@ label = %date% %{F#0a81f5}|%{F-} %time%
 type = custom/menu
 expand-right = true
 
-label-open = %{F#f44336}PWR%{F-} 
+label-open = %{F#ffa500}%{F-} 
 label-close = X
 label-separator = |
 format-spacing = 1
 
-menu-0-0 = %{F#f44336}reboot%{F-}
+menu-0-0 = %{F#ffa500}reboot%{F-}
 menu-0-0-exec = systemctl reboot
-menu-0-1 = %{F#f44336}stutdown%{F-}
+menu-0-1 = %{F#ffa500}stutdown%{F-}
 menu-0-1-exec = systemctl poweroff
-menu-0-2 = %{F#f44336}logout%{F-}
+menu-0-2 = %{F#ffa500}logout%{F-}
 menu-0-2-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
 
 #label-open = Menu
