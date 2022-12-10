@@ -5,10 +5,10 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin lxterminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen gnome-keyring shotwell galculator light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf firefox-esr -y
+apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin gnome-keyring light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf -y
 
 # apps & utilities
-apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
+apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lxterminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr -y
 
 # audio
 apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse -y
