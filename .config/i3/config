@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -203,7 +203,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # Workspaces
 assign [class="Google-chrome"] 1 CHR
 assign [class="Thunar"] 2 THU
-assign [class="Terminal"] 3 TER
+assign [class="Lxterminal"] 3 TER
 assign [class="Code"] 4 COD
 assign [class="Firefox-esr"] 5 FIR
 assign [class="libreoffice-startcenter"] 6 LIB
