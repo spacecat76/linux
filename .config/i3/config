@@ -180,6 +180,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # Resolution
 exec --no-startup-id xrandr -s 1920x1080 &
 
+# Picom
+exec_always --no-startup-id picom &
+
 # Nitrogen
 exec_always --no-startup-id nitrogen --restore &
 
