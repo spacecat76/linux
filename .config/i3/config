@@ -210,3 +210,5 @@ assign [class="Lxterminal"] 3 TER
 assign [class="Code"] 4 COD
 assign [class="Firefox-esr"] 5 FIR
 assign [class="libreoffice-startcenter"] 6 LIB
+
+for_window [urgent="latest"] focus
