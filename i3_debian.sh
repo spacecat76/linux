@@ -97,6 +97,7 @@ echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
 
 # greeter
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=slick-greeter/g' /etc/lightdm/lightdm.conf
+sed -i 's/#greeter-hide-users=false/greeter-hide-users=false/g' /etc/lightdm/lightdm.conf
 tee -a /etc/lightdm/slick-greeter.conf << END
 [Greeter]
 background=/home/fabri/Git/linux/img/greeter.png

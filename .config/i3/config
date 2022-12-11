@@ -195,8 +195,8 @@ for_window [window_role="About"] floating enable
 for_window [title="galculator"] floating enable
 
 # Handle backlight.
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 &
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 &
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 

@@ -69,7 +69,7 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome:pixelsize=11;1
 
-modules-left = i3
+modules-left = chrome thunar terminal code firefox libreoffice i3
 modules-center = xwindow
 modules-right = pulseaudio xbacklight screenshot updates cpu temperature battery wlan xkeyboard clickdate menu-apps
 
@@ -91,6 +91,42 @@ tray-padding = 2
 cursor-click = pointer
 #cursor-scroll = ns-resize
 
+[module/chrome]
+type = custom/text
+content = %{F#ffb52a}%{F-}
+tail = true
+click-left = google-chrome
+
+[module/thunar]
+type = custom/text
+content = %{F#ffb52a}%{F-}
+tail = true
+click-left = thunar
+
+[module/terminal]
+type = custom/text
+content = %{F#ffb52a}%{F-}
+tail = true
+click-left = lxterminal
+
+[module/code]
+type = custom/text
+content = %{F#ffb52a}%{F-}
+tail = true
+click-left = code
+
+[module/firefox]
+type = custom/text
+content = %{F#ffb52a}%{F-}
+tail = true
+click-left = firefox-esr
+
+[module/libreoffice]
+type = custom/text
+content = %{F#ffb52a}%{F-}
+tail = true
+click-left = libreoffice
+
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -111,11 +147,11 @@ label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name% %icon%
+label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name% %icon%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
@@ -133,7 +169,7 @@ ws-icon-1 = 2 THU;%{F#ffb52a}%{F-}
 ws-icon-2 = 3 TER;%{F#ffb52a}%{F-}
 ws-icon-3 = 4 COD;%{F#ffb52a}%{F-}
 ws-icon-4 = 5 FIR;%{F#ffb52a}%{F-}
-ws-icon-5 = 6 LIB;%{F#ffb52a}%{F-}
+ws-icon-5 = 6 LIB;%{F#ffb52a}%{F-}
 ws-icon-default =
 
 #[module/mpd]
