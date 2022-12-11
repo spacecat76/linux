@@ -111,6 +111,9 @@ tlp start
 # dmenu
 #cp /usr/bin/galculator /usr/local/bin/calculator
 
+# thumbler
+sed -i '/MaxFileSize=/c\MaxFileSize=0' /etc/xdg/tumbler/tumbler.rc
+
 ## Debian 11
 # purge components
 apt purge avahi-autoipd bluez -y
