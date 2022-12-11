@@ -71,7 +71,7 @@ font-2 = FontAwesome:pixelsize=12;1
 
 modules-left = chrome thunar terminal code firefox libreoffice calculator screenshot i3
 modules-center = xwindow
-modules-right = pulseaudio xbacklight updates cpu temperature battery wlan xkeyboard clickdate menu-apps
+modules-right = pulseaudio xbacklight updates cpu temperature wlan battery xkeyboard clickdate menu-apps
 
 tray-position = right
 tray-padding = 2
@@ -306,39 +306,6 @@ ramp-1 =
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 98
-
-format-charging = %{F#b8e60b}%{F-} <animation-charging> <label-charging>
-#format-charging-underline = #ffb52a
-
-format-discharging = %{F#ffa500}%{F-} <animation-discharging> <label-discharging>
-#format-discharging-underline = #ffb52a
-
-format-full-prefix = %{F#00cc00}%{F-}
-#format-full-prefix-foreground = ${colors.foreground-alt}
-#format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground =  #de0037
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
 [module/wlan]
 type = internal/network
 interface = wlp0s20f3
@@ -376,6 +343,41 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-full-prefix = %{F#00cc00}%{F-}
+#format-full-prefix-foreground = ${colors.foreground-alt}
+#format-full-underline = ${self.format-charging-underline}
+
+format-charging = <ramp-capacity> <label-charging>%{B-} <animation-charging> 
+#format-charging-underline = #769D76
+
+format-discharging = <ramp-capacity> <label-discharging>%{B-} <animation-discharging> 
+#format-discharging-underline = #ffb52a
+
+ramp-capacity-0 = %{B#e01212}%{F#FFFF00}
+ramp-capacity-1 = %{F#e06912}
+ramp-capacity-2 = %{F#e0b412}
+ramp-capacity-3 = %{F#b7e012}
+ramp-capacity-4 = %{F#3be012}
+ramp-capacity-foreground =  #de0037
+
+animation-charging-0 = %{F#769D76}
+animation-charging-1 = %{F#769D76}
+animation-charging-2 = %{F#769D76}
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = %{F#E59C16}
+animation-discharging-1 = %{F#E59C16}
+animation-discharging-2 = %{F#E59C16}
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -423,7 +425,7 @@ label = %date% %{F#0a81f5}|%{F-} %time%
 type = custom/menu
 expand-right = true
 
-label-open = %{F#ffa500}%{F-} 
+label-open = %{F#CC0000}%{F-} 
 label-close = X
 label-separator = |
 format-spacing = 1
