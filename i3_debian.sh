@@ -71,7 +71,7 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
 
-# touchpad
+# touchpad X11
 tee -a /etc/X11/xorg.conf.d/90-touchpad.conf << END
 Section "InputClass"
         Identifier "touchpad"
@@ -84,7 +84,7 @@ Section "InputClass"
 EndSection
 END
 
-# Intel Graphics
+# intel graphics X11
 tee -a /etc/X11/xorg.conf.d/20-intel-gpu.conf << END
 Section "Device"
         Identifier  "Intel Graphics"
@@ -93,7 +93,13 @@ Section "Device"
         Option      "DRI"    "3"
 EndSection
 END
-echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
+
+# picom
+tee -a /etc/X11/xorg.conf << END
+Section "Extensions"
+        Option  "Composite" "true"
+EndSection
+END
 
 # greeter
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=slick-greeter/g' /etc/lightdm/lightdm.conf
@@ -105,16 +111,19 @@ END
 sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.socket
 sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.service
 
+# thumbler
+sed -i '/MaxFileSize=/c\MaxFileSize=0' /etc/xdg/tumbler/tumbler.rc
+
 # power management
 tlp start
 
 # dmenu
 #cp /usr/bin/galculator /usr/local/bin/calculator
 
-# thumbler
-sed -i '/MaxFileSize=/c\MaxFileSize=0' /etc/xdg/tumbler/tumbler.rc
-
 ## Debian 11
+# intel graphics kernel
+echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
+
 # purge components
 apt purge avahi-autoipd bluez -y
 apt autoremove -y
