@@ -104,10 +104,13 @@ END
 # greeter
 sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=slick-greeter/g' /etc/lightdm/lightdm.conf
 sed -i 's/#greeter-hide-users=false/greeter-hide-users=false/g' /etc/lightdm/lightdm.conf
+sed -i 's/#allow-user-switching=true/allow-user-switching=true/g' /etc/lightdm/lightdm.conf
+
 tee -a /etc/lightdm/slick-greeter.conf << END
 [Greeter]
 background=/home/fabri/Git/linux/img/greeter.png
 END
+
 sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.socket
 sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.service
 
