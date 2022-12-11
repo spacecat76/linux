@@ -190,9 +190,12 @@ exec_always --no-startup-id nitrogen --restore &
 default_border none
 default_floating_border none
 
-# Floating
+# Windows rules
 for_window [window_role="About"] floating enable
 for_window [title="galculator"] floating enable
+for_window [class="Simple-scan"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [urgent="latest"] focus
 
 # Handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 &
@@ -211,4 +214,3 @@ assign [class="Code"] 4 COD
 assign [class="Firefox-esr"] 5 FIR
 assign [class="libreoffice-startcenter"] 6 LIB
 
-for_window [urgent="latest"] focus
