@@ -42,7 +42,7 @@ alert = #bd2c40
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 28
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -67,9 +67,9 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = FontAwesome:pixelsize=11;1
+font-2 = FontAwesome:pixelsize=12;1
 
-modules-left = chrome thunar terminal code firefox libreoffice screenshot i3
+modules-left = chrome thunar terminal code firefox libreoffice calculator screenshot i3
 modules-center = xwindow
 modules-right = pulseaudio xbacklight updates cpu temperature battery wlan xkeyboard clickdate menu-apps
 
@@ -93,43 +93,49 @@ cursor-click = pointer
 
 [module/chrome]
 type = custom/text
-content = %{F#ffb52a}%{F-}
+content = %{F#C06969}%{F-}
 tail = true
 click-left = google-chrome
 
 [module/thunar]
 type = custom/text
-content = %{F#ffb52a}%{F-}
+content = %{F#43819E}%{F-}
 tail = true
 click-left = thunar
 
 [module/terminal]
 type = custom/text
-content = %{F#ffb52a}%{F-}
+content = %{F#C06969}%{F-}
 tail = true
 click-left = lxterminal
 
 [module/code]
 type = custom/text
-content = %{F#ffb52a}%{F-}
+content = %{F#43819E}%{F-}
 tail = true
 click-left = code
 
 [module/firefox]
 type = custom/text
-content = %{F#ffb52a}%{F-}
+content = %{F#C06969}%{F-}
 tail = true
 click-left = firefox-esr
 
 [module/libreoffice]
 type = custom/text
-content = %{F#ffb52a}%{F-}
+content = %{F#43819E}%{F-}
 tail = true
 click-left = libreoffice
 
+[module/calculator]
+type = custom/text
+content =  %{F#C06969}%{F-}
+tail = true
+click-left = galculator
+
 [module/screenshot]
 type = custom/text
-content =  %{F#ffa500}%{F-}
+content =  %{F#43819E}%{F-}
 tail = true
 click-left = xfce4-screenshooter
 
@@ -199,7 +205,7 @@ label = %title:0:30:...%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =%{F#0a81f5} %{F-} %percentage%%
+label-volume =%{F#43819E} %{F-} %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  %{F#faff99}muted%{F-}
@@ -228,7 +234,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/xbacklight
 
 format = <label> <bar>
-label = %{F#0a81f5}%{F-}
+label = %{F#43819E}%{F-}
 
 bar-width = 10
 bar-indicator = |
@@ -251,7 +257,7 @@ type = custom/script
 tail = true
 exec = ~/.config/polybar/scripts/updates.sh
 interval = 3600
-label = %{F#0a81f5}%{F-} %output%
+label = %{F#43819E}%{F-} %output%
 click-left = lxterminal -e "bash -c \"apt list --upgradable; exec bash\""
 
 [module/filesystem]
@@ -267,7 +273,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = %{F#0a81f5} %{F-}
+format-prefix = %{F#43819E} %{F-}
 #format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #4bffdc
 label = %percentage_used%%
@@ -275,7 +281,7 @@ label = %percentage_used%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = %{F#0a81f5} %{F-}
+format-prefix = %{F#43819E} %{F-}
 #format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #f90000
 label = %percentage:2%%
@@ -291,7 +297,7 @@ format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 #format-warn-underline = ${self.format-underline}
 
-label = %{F#0a81f5} %{F-} %temperature-c%
+label = %{F#43819E} %{F-} %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
@@ -389,8 +395,8 @@ label-indicator-background = ${colors.secondary}
 
 [module/clickdate]
 type = custom/script
-format-prefix = %{F#0a81f5}%{F-}
-format-prefix-foreground = ${colors.accent}
+format-prefix = %{F#43819E}%{F-}
+#format-prefix-foreground = ${colors.accent}
 exec = date +'  %a. %d %b. %Y | %H:%M'
 tail = false
 interval = 5
