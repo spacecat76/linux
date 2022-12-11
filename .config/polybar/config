@@ -350,7 +350,7 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-full-prefix = %{F#00cc00}%{F-}
+format-full-prefix = %{F#00cc00} %{F-}
 #format-full-prefix-foreground = ${colors.foreground-alt}
 #format-full-underline = ${self.format-charging-underline}
 
