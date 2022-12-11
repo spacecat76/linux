@@ -430,17 +430,17 @@ type = custom/menu
 expand-right = true
 
 label-open = %{F#CC0000}%{F-} 
-label-close = X
+label-close = %{F#43819E}X%{F-}
 label-separator = |
 format-spacing = 1
 
-menu-0-0 = %{F#ffa500}%{F-}
+menu-0-0 = %{F#FFFFFF}%{F-}
 menu-0-0-exec = i3lock
-menu-0-1 = %{F#ffa500}%{F-}
+menu-0-1 = %{F#E5E500}%{F-}
 menu-0-1-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
 menu-0-2 = %{F#ffa500}%{F-}
 menu-0-2-exec = systemctl reboot
-menu-0-3 = %{F#ffa500}%{F-}
+menu-0-3 = %{F#CC0000}%{F-}
 menu-0-3-exec = systemctl poweroff
 
 #label-open = Menu
