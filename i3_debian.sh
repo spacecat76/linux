@@ -109,7 +109,7 @@ sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pu
 tlp start
 
 # dmenu
-cp /usr/bin/galculator /usr/local/bin/calculator
+#cp /usr/bin/galculator /usr/local/bin/calculator
 
 ## Debian 11
 # purge components
