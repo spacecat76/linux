@@ -430,12 +430,14 @@ label-close = X
 label-separator = |
 format-spacing = 1
 
-menu-0-0 = %{F#ffa500}reboot%{F-}
-menu-0-0-exec = systemctl reboot
-menu-0-1 = %{F#ffa500}stutdown%{F-}
-menu-0-1-exec = systemctl poweroff
-menu-0-2 = %{F#ffa500}logout%{F-}
-menu-0-2-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+menu-0-0 = %{F#ffa500}%{F-}
+menu-0-0-exec = i3lock
+menu-0-1 = %{F#ffa500}%{F-}
+menu-0-1-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+menu-0-2 = %{F#ffa500}%{F-}
+menu-0-2-exec = systemctl reboot
+menu-0-3 = %{F#ffa500}%{F-}
+menu-0-3-exec = systemctl poweroff
 
 #label-open = Menu
 #label-close = X
