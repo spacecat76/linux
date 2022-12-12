@@ -3,8 +3,8 @@
 <action>
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
-	<unique-id>1670592735601147-1</unique-id>
-	<command>lxterminal --working-directory=%f</command>
+	<unique-id>1670774274468058-1</unique-id>
+	<command>exo-open --working-directory %f --launch lxterminal</command>
 	<description>Example for a custom action</description>
 	<patterns>*</patterns>
 	<startup-notify/>
