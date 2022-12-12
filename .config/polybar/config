@@ -80,7 +80,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -93,49 +93,49 @@ cursor-click = pointer
 
 [module/chrome]
 type = custom/text
-content = %{F#C06969}%{F-}
+content = %{F#C06969} %{F-}
 tail = true
 click-left = google-chrome
 
 [module/thunar]
 type = custom/text
-content = %{F#43819E}%{F-}
+content = %{F#43819E} %{F-}
 tail = true
 click-left = thunar
 
 [module/terminal]
 type = custom/text
-content = %{F#C06969}%{F-}
+content = %{F#C06969} %{F-}
 tail = true
 click-left = lxterminal
 
 [module/code]
 type = custom/text
-content = %{F#43819E}%{F-}
+content = %{F#43819E} %{F-}
 tail = true
 click-left = code
 
 [module/firefox]
 type = custom/text
-content = %{F#C06969}%{F-}
+content = %{F#C06969} %{F-}
 tail = true
 click-left = firefox-esr
 
 [module/libreoffice]
 type = custom/text
-content = %{F#43819E}%{F-}
+content = %{F#43819E} %{F-}
 tail = true
 click-left = libreoffice
 
 [module/calculator]
 type = custom/text
-content =  %{F#C06969}%{F-}
+content =  %{F#C06969} %{F-}
 tail = true
 click-left = galculator
 
 [module/screenshot]
 type = custom/text
-content =  %{F#43819E}%{F-}
+content =  %{F#43819E} %{F-}
 tail = true
 click-left = xfce4-screenshooter
 
