@@ -29,7 +29,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet &
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -180,6 +180,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # Resolution
 exec --no-startup-id xrandr -s 1920x1080 &
 
+# volumeicon
+exec --no-startup-id volumeicon &
+
 # Picom
 exec_always --no-startup-id picom &
 
@@ -195,6 +198,7 @@ for_window [window_role="About"] floating enable
 for_window [title="galculator"] floating enable
 for_window [class="Simple-scan"] floating enable
 for_window [title="File Transfer*"] floating enable
+for_window [title="Copying*"] floating enable
 for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
 for_window [class="libreoffice-startcenter"] focus
@@ -215,4 +219,5 @@ assign [class="Lxterminal"] 3 TER
 assign [class="Code"] 4 COD
 assign [class="Firefox-esr"] 5 FIR
 assign [class="libreoffice-startcenter"] 6 LIB
+
 

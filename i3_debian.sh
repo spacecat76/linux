@@ -11,7 +11,7 @@ apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin gnome-ke
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lxterminal xfce4-screenshooter mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr onboard -y
 
 # audio
-apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse -y
+apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse volumeicon-alsa -y
 
 # fonts & icons
 apt install fonts-font-awesome ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
