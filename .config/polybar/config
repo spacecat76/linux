@@ -137,7 +137,7 @@ click-left = galculator
 type = custom/text
 content =  %{F#43819E} %{F-}
 tail = true
-click-left = xfce4-screenshooter
+click-left = flatpak run org.flameshot.Flameshot gui
 
 [module/i3]
 type = internal/i3
