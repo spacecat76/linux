@@ -69,9 +69,9 @@ font-0 = fixed:pixelsize=11;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;3
 font-2 = FontAwesome:pixelsize=13;3
 
-modules-left = menu-apps i3
+modules-left = i3
 modules-center = chrome thunar terminal code firefox libreoffice calculator screenshot
-modules-right = pulseaudio xbacklight updates cpu temperature wlan battery xkeyboard clickdate
+modules-right = pulseaudio xbacklight updates cpu temperature wlan battery xkeyboard clickdate menu-apps
 
 tray-position = right
 tray-padding = 2
@@ -433,7 +433,7 @@ expand-right = true
 label-open = %{F#CC0000}%{F-} 
 label-close = %{F#43819E}X%{F-}
 label-separator = |
-format-spacing = 1
+format-spacing = 2
 
 menu-0-0 = %{F#FFFFFF}%{F-}
 menu-0-0-exec = i3lock
