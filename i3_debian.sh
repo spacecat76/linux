@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin gnome-keyring light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf dbus-x11 -y
+apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin gnome-keyring light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf dbus-x11 rofi policykit-1-gnome mousetweaks -y
 
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lxterminal mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr -y

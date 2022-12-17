@@ -180,11 +180,14 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # Resolution
 exec --no-startup-id xrandr -s 1920x1080 &
 
-# volumeicon
+# Volumeicon
 exec --no-startup-id volumeicon &
 
 # Picom
 exec_always --no-startup-id picom &
+
+# Polkit
+exec_always --no-startup-id  /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 # Nitrogen
 exec_always --no-startup-id nitrogen --restore &
@@ -201,7 +204,8 @@ for_window [title="File Transfer*"] floating enable
 for_window [title="Copying*"] floating enable
 for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
-for_window [class="libreoffice-startcenter"] focus
+for_window [class="libreoffice"] move container to workspace $ws6
+for_window [class="libreoffice"] focus
 
 # Handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 &
@@ -218,5 +222,8 @@ assign [class="Thunar"] 2 THU
 assign [class="Lxterminal"] 3 TER
 assign [class="Code"] 4 COD
 assign [class="Firefox-esr"] 5 FIR
-assign [class="libreoffice-startcenter"] 6 LIB
+
+# Rofi
+bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons &
+bindsym Super_L exec --no-startup-id rofi -show drun -show-icons &
 

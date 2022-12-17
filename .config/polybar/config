@@ -69,8 +69,8 @@ font-0 = fixed:pixelsize=11;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;3
 font-2 = FontAwesome:pixelsize=13;3
 
-modules-left = i3
-modules-center = chrome thunar terminal code firefox libreoffice calculator screenshot
+modules-left = rofi i3
+modules-center = chrome thunar terminal code firefox libreoffice virt-manager calculator screenshot
 modules-right = pulseaudio xbacklight updates cpu temperature wlan battery xkeyboard clickdate menu-apps
 
 tray-position = right
@@ -85,57 +85,69 @@ tray-padding = 2
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 #cursor-scroll = ns-resize
+
+[module/rofi]
+type = custom/text
+tail = true
+content = %{F#43819E}%{F-}
+click-left = rofi -show drun -show-icons &
 
 [module/chrome]
 type = custom/text
 content = %{F#C06969} %{F-}
 tail = true
-click-left = google-chrome
+click-left = pgrep chrome >/dev/null && wmctrl -x -a Google-chrome || google-chrome &
 
 [module/thunar]
 type = custom/text
 content = %{F#43819E} %{F-}
 tail = true
-click-left = thunar
+click-left = pgrep thunar >/dev/null && wmctrl -x -a Thunar || thunar &
 
 [module/terminal]
 type = custom/text
 content = %{F#C06969} %{F-}
 tail = true
-click-left = lxterminal
+click-left = pgrep lxterminal >/dev/null && wmctrl -x -a Lxterminal || lxterminal &
 
 [module/code]
 type = custom/text
 content = %{F#43819E} %{F-}
 tail = true
-click-left = code
+click-left = pgrep firefox >/dev/null && wmctrl -x -a Code || code &
 
 [module/firefox]
 type = custom/text
 content = %{F#C06969} %{F-}
 tail = true
-click-left = firefox-esr
+click-left = pgrep firefox >/dev/null && wmctrl -x -a Firefox-esr || firefox-esr &
 
 [module/libreoffice]
 type = custom/text
 content = %{F#43819E} %{F-}
 tail = true
-click-left = libreoffice
+click-left = pgrep bwrap >/dev/null && wmctrl -x -a LibreOffice Writer || libreoffice --writer & 
+
+[module/virt-manager]
+type = custom/text
+content = %{F#C06969} %{F-}
+tail = true
+click-left = pgrep virt-manager >/dev/null && wmctrl -x -a Virt-manager || virt-manager &
 
 [module/calculator]
 type = custom/text
-content =  %{F#C06969} %{F-}
+content =  %{F#43819E} %{F-}
 tail = true
-click-left = galculator
+click-left = pgrep galculator >/dev/null && wmctrl -x -a galculator || galculator &
 
 [module/screenshot]
 type = custom/text
-content =  %{F#43819E} %{F-}
+content =  %{F#C06969} %{F-}
 tail = true
 click-left = flatpak run org.flameshot.Flameshot gui
 
