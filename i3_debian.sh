@@ -131,8 +131,9 @@ echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
 apt purge avahi-autoipd bluez -y
 apt autoremove -y
 
-# disable pipewire
+# audio
 systemctl disable --global pipewire
+sed -i 's/load-module module-suspend-on-idle/#load-module module-suspend-on-idle/g' /etc/pulse/default.pa
 rm -rf /home/fabri/.config/pulse
 
 # swappiness

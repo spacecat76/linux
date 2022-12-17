@@ -119,7 +119,7 @@ click-left = pgrep lxterminal >/dev/null && wmctrl -x -a Lxterminal || lxtermina
 type = custom/text
 content = %{F#43819E} %{F-}
 tail = true
-click-left = pgrep firefox >/dev/null && wmctrl -x -a Code || code &
+click-left = pgrep code >/dev/null && wmctrl -x -a Code || code &
 
 [module/firefox]
 type = custom/text
