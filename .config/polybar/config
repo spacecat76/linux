@@ -131,7 +131,8 @@ click-left = pgrep firefox >/dev/null && wmctrl -x -a Firefox-esr || firefox-esr
 type = custom/text
 content = %{F#43819E} %{F-}
 tail = true
-click-left = pgrep bwrap >/dev/null && wmctrl -x -a LibreOffice Writer || libreoffice --writer & 
+click-left = pgrep soffice.bin >/dev/null && wmctrl -x -a LibreOffice || libreoffice --writer &
+#click-left = pgrep soffice.bin >/dev/null && wmctrl -x -a LibreOffice || (i3-msg workspace "6 LIB" && libreoffice --writer &)
 
 [module/virt-manager]
 type = custom/text

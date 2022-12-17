@@ -204,7 +204,6 @@ for_window [title="File Transfer*"] floating enable
 for_window [title="Copying*"] floating enable
 for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
-for_window [class="libreoffice"] move container to workspace $ws6
 for_window [class="libreoffice"] focus
 
 # Handle backlight.
@@ -222,6 +221,7 @@ assign [class="Thunar"] 2 THU
 assign [class="Lxterminal"] 3 TER
 assign [class="Code"] 4 COD
 assign [class="Firefox-esr"] 5 FIR
+assign [title="LibreOffice"] 6 LIB
 
 # Rofi
 bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons &
