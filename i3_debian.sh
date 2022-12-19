@@ -17,7 +17,7 @@ apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreame
 apt install fonts-font-awesome ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
 # network
-apt install network-manager avahi-daemon ufw -y
+apt install network-manager-gnome avahi-daemon ufw -y
 systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
