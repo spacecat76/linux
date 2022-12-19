@@ -200,8 +200,11 @@ default_floating_border none
 for_window [window_role="About"] floating enable
 for_window [title="galculator"] floating enable
 for_window [class="Simple-scan"] floating enable
+for_window [class="Simple-scan"] resize set 1024 768
 for_window [title="File Transfer*"] floating enable
 for_window [title="Copying*"] floating enable
+for_window [class="Virt-manager"] floating enable
+for_window [class="Virt-manager"] resize set 1024 768
 for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
 for_window [class="libreoffice"] focus
