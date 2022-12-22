@@ -5,10 +5,10 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin gnome-keyring light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf dbus-x11 rofi policykit-1-gnome mousetweaks -y
+apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin seahorse light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf dbus-x11 rofi policykit-1-gnome mousetweaks -y
 
 # apps & utilities
-apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lxterminal mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr -y
+apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl apt-transport-https apt-file lxterminal mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr -y
 
 # audio
 apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse volumeicon-alsa -y
@@ -22,9 +22,6 @@ systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
 ufw allow mdns
-sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-sed -i 's/Before=network.target/Before=network-pre.target/g' /lib/systemd/system/ufw.service
-sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system/ufw.service
 
 # virt manager
 apt install virt-manager -y
@@ -53,7 +50,6 @@ apt update && apt install code -y
 apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice flathub org.flameshot.Flameshot -y
-ln -s /var/lib/flatpak/exports/bin/org.libreoffice.LibreOffice /usr/bin/libreoffice
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
@@ -121,15 +117,22 @@ sed -i '/MaxFileSize=/c\MaxFileSize=0' /etc/xdg/tumbler/tumbler.rc
 tlp start
 
 # dmenu
-#cp /usr/bin/galculator /usr/local/bin/calculator
-
-## Debian 11
-# intel graphics kernel
-echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
+ln -s /var/lib/flatpak/exports/bin/org.libreoffice.LibreOffice /usr/bin/libreoffice
 
 # purge components
 apt purge avahi-autoipd bluez -y
 apt autoremove -y
+
+
+## Debian 11
+
+# intel graphics kernel
+echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
+
+# network
+sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+sed -i 's/Before=network.target/Before=network-pre.target/g' /lib/systemd/system/ufw.service
+sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system/ufw.service
 
 # audio
 systemctl disable --global pipewire
