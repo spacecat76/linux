@@ -24,7 +24,7 @@ font pango:ubuntu mono regular 12
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
+# screen before suspend. Use loginctl lock--no-startup-id-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -199,12 +199,9 @@ default_floating_border none
 # Windows rules
 for_window [window_role="About"] floating enable
 for_window [title="galculator"] floating enable
-for_window [class="Simple-scan"] floating enable
-for_window [class="Simple-scan"] resize set 1024 768
-for_window [title="File Transfer*"] floating enable
-for_window [title="Copying*"] floating enable
-for_window [class="Virt-manager"] floating enable
-for_window [class="Virt-manager"] resize set 1024 768
+for_window [class="Simple-scan"] floating enable, resize set 1024 768
+for_window [class="Virt-manager"] floating enable, resize set 1024 768
+for_window [class="Transmission"] floating enable, resize set 1024 768
 for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
 for_window [class="libreoffice"] focus
