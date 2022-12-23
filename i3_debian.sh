@@ -8,7 +8,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install i3 polybar picom slick-greeter thunar thunar-archive-plugin seahorse light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra upower xss-lock lm-sensors gtk2-engines-pixbuf dbus-x11 rofi policykit-1-gnome mousetweaks -y
 
 # apps & utilities
-apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl apt-transport-https apt-file lxterminal mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr -y
+apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl apt-transport-https apt-file lxterminal mousepad redshift transmission-gtk nitrogen shotwell galculator firefox-esr plymouth-themes -y
 
 # audio
 apt install pulseaudio pavucontrol vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio libcanberra-pulse volumeicon-alsa -y
@@ -56,7 +56,7 @@ sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
 # grub
-sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
+sed -i 's/quiet/quiet loglevel=3/g splash' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 update-grub
 
@@ -109,6 +109,9 @@ END
 
 sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.socket
 sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.service
+
+# plymouth themes
+plymouth-set-default-theme -R lines
 
 # thumbler
 sed -i '/MaxFileSize=/c\MaxFileSize=0' /etc/xdg/tumbler/tumbler.rc
