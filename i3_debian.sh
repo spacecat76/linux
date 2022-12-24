@@ -49,14 +49,14 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice flathub org.flameshot.Flameshot -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.flameshot.Flameshot -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
 # grub
-sed -i 's/quiet/quiet loglevel=3/g splash' /etc/default/grub
+sed -i 's/quiet/quiet loglevel=3 splash/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 update-grub
 
