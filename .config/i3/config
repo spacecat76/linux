@@ -102,10 +102,10 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 CHR"
 set $ws2 "2 THU"
-set $ws3 "3 TER"
-set $ws4 "4 COD"
+set $ws3 "3 COD"
+set $ws4 "4 LIB"
 set $ws5 "5 FIR"
-set $ws6 "6 LIB"
+set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -204,7 +204,7 @@ for_window [class="Virt-manager"] floating enable, resize set 1024 768
 for_window [class="Transmission"] floating enable, resize set 1024 768
 for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
-for_window [class="libreoffice"] focus
+focus_on_window_activation none
 
 # Handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 &
@@ -218,10 +218,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # Workspaces
 assign [class="Google-chrome"] 1 CHR
 assign [class="Thunar"] 2 THU
-assign [class="Lxterminal"] 3 TER
-assign [class="Code"] 4 COD
+#assign [class="Lxterminal"] 3 TER
+assign [class="Code"] 3 COD
+assign [title="LibreOffice"] 4 LIB
 assign [class="Firefox-esr"] 5 FIR
-assign [title="LibreOffice"] 6 LIB
+
 
 # Rofi
 bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons &
