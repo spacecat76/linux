@@ -206,7 +206,7 @@ for_window [urgent="latest"] focus
 for_window [class="Thunar"] focus
 focus_on_window_activation none
 
-# Handle backlight.
+# Handle backlight
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 &
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 &
 
