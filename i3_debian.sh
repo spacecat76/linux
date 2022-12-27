@@ -122,6 +122,11 @@ tlp start
 # dmenu
 ln -s /var/lib/flatpak/exports/bin/org.libreoffice.LibreOffice /usr/bin/libreoffice
 
+# swappiness
+tee -a /etc/sysctl.conf  << END
+vm.swappiness=10
+END
+
 # purge components
 apt purge avahi-autoipd bluez -y
 apt autoremove -y
@@ -141,11 +146,6 @@ sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system
 systemctl disable --global pipewire
 sed -i 's/load-module module-suspend-on-idle/#load-module module-suspend-on-idle/g' /etc/pulse/default.pa
 rm -rf /home/fabri/.config/pulse
-
-# swappiness
-tee -a /etc/sysctl.conf  << END
-vm.swappiness=10
-END
 
 # iwlwifi
 tee -a /etc/modprobe.d/iwlwifi.conf  << END
