@@ -128,7 +128,7 @@ vm.swappiness=10
 END
 
 # purge components
-apt purge avahi-autoipd bluez -y
+apt purge avahi-autoipd bluez rxvt-unicode -y
 apt autoremove -y
 
 
