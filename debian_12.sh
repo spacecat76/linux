@@ -69,8 +69,3 @@ tee -a /etc/fstab  << END
 # map fastgate usb storage
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
-
-## optional
-# purge components
-apt purge bluez avahi-autoipd -y
-apt autoremove -y

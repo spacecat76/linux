@@ -42,10 +42,6 @@ GRUB_RECORDFAIL_TIMEOUT=5
 END
 update-grub
 
-# purge components
-apt purge bluez -y
-apt autoremove -y
-
 # disable services
 systemctl disable pipewire
 rm -rf /home/fabri/.config/pulse
