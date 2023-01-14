@@ -41,7 +41,3 @@ tee -a /etc/default/grub << END
 GRUB_RECORDFAIL_TIMEOUT=5
 END
 update-grub
-
-# disable services
-systemctl disable pipewire
-rm -rf /home/fabri/.config/pulse
