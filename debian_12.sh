@@ -22,6 +22,7 @@ systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
 ufw allow mdns
+sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
 apt install virt-manager -y
