@@ -1,11 +1,12 @@
 # install applications
-apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager gimp ffmpegthumbnailer gnome-weather gnome-calendar gnome-clocks gnome-screenshot libreoffice libfuse2 lm-sensors -y
+apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager gimp ffmpegthumbnailer gnome-weather gnome-calendar gnome-clocks gnome-screenshot libfuse2 lm-sensors cockpit cockpit-machines virt-viewer -y
 
 # install fonts
 apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode libreoffice-style-breeze papirus-icon-theme -y
 
 # snaps
 snap install code --classic
+snap install libreoffice
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
@@ -18,10 +19,6 @@ sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
 systemctl enable ufw --now
 ufw enable
 ufw allow mdns
-
-# virt manager
-apt install virt-manager -y
-virsh net-autostart default
 
 # printing and scanning
 apt install sane printer-driver-all printer-driver-cups-pdf simple-scan -y
