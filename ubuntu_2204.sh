@@ -1,7 +1,7 @@
 # install applications
 apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager gimp ffmpegthumbnailer gnome-weather gnome-calendar gnome-clocks gnome-screenshot libfuse2 lm-sensors cockpit cockpit-machines virt-viewer libreoffice -y
 
-# install fonts
+# fonts & icons
 apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode libreoffice-style-breeze papirus-icon-theme -y
 
 # snaps
