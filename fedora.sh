@@ -35,7 +35,7 @@ dnf install code -y
 
 # firewall
 dnf install firewall-config -y
-cp /home/fabri/Git/linux/conf/FedoraFW.xml /usr/lib/firewalld/zones
+cp /home/fabri/Git/linux/etc/FedoraFW.xml /usr/lib/firewalld/zones
 firewall-cmd --reload
 firewall-cmd --set-default-zone FedoraFW
 
