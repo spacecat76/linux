@@ -35,11 +35,6 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -
 apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
 rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
-# flatpak
-apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice -y
-
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
