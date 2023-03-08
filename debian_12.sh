@@ -17,8 +17,8 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
 # snaps
+snap install core onlyoffice-desktopeditors
 snap install code --classic
-snap install onlyoffice-desktopeditors
 
 # network
 apt install avahi-daemon ufw -y
