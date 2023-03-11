@@ -17,6 +17,7 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
 # snaps
+snap install core
 snap install code --classic
 
 # network
