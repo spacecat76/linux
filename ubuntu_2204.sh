@@ -1,12 +1,11 @@
 # install applications
-apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager gimp ffmpegthumbnailer gnome-weather gnome-calendar gnome-clocks gnome-screenshot libfuse2 lm-sensors cockpit cockpit-machines virt-viewer -y
+apt install ubuntu-restricted-extras timeshift neofetch curl wget htop shotwell net-tools apt-transport-https vim gnome-tweaks cheese transmission vlc gnome-shell-extension-manager gimp ffmpegthumbnailer gnome-weather gnome-calendar gnome-clocks gnome-screenshot libfuse2 lm-sensors cockpit cockpit-machines virt-viewer libreoffice -y
 
 # fonts & icons
 apt install fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
 # snaps
 snap install code --classic
-snap install onlyoffice-desktopeditors
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
