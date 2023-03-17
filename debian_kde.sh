@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop kcalc kde-spectacle okular libreoffice-kf5 libreoffice-plasma -y
+apt install kde-plasma-desktop ark kcalc kde-spectacle okular libreoffice-kf5 libreoffice-plasma -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes cockpit cockpit-machines virt-viewer snapd libreoffice libreoffice-style-breeze -y
