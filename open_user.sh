@@ -1,8 +1,8 @@
 # create directories
-mkdir -p ~/.config/{i3,polybar/scripts,lxterminal,gtk-3.0,systemd/user,picom,rofi,volumeicon}
+mkdir -p ~/.config/{openbox,polybar/scripts,lxterminal,gtk-3.0,systemd/user,picom,rofi,volumeicon}
 
 # copy files
-cp ~/Git/linux/.config/i3/config ~/.config/i3/config
+#cp ~/Git/linux/.config/i3/config ~/.config/i3/config
 cp ~/Git/linux/.config/polybar/config ~/.config/polybar/config
 cp ~/Git/linux/.config/polybar/launch.sh ~/.config/polybar/launch.sh
 cp ~/Git/linux/.config/polybar/scripts/updates.sh ~/.config/polybar/scripts/updates.sh

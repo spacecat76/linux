@@ -130,24 +130,3 @@ END
 # purge components
 apt purge avahi-autoipd bluez rxvt-unicode -y
 apt autoremove -y
-
-
-## Debian 11
-
-# intel graphics kernel
-echo "dev.i915.perf_stream_paranoid = 0" | tee /etc/sysctl.d/99-i915.conf
-
-# network
-sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-sed -i 's/Before=network.target/Before=network-pre.target/g' /lib/systemd/system/ufw.service
-sed -i 's/DefaultDependencies=no/Wants=network-pre.target/g' /lib/systemd/system/ufw.service
-
-# audio
-systemctl disable --global pipewire
-sed -i 's/load-module module-suspend-on-idle/#load-module module-suspend-on-idle/g' /etc/pulse/default.pa
-rm -rf /home/fabri/.config/pulse
-
-# iwlwifi
-tee -a /etc/modprobe.d/iwlwifi.conf  << END
-options iwlwifi enable_ini=N
-END
