@@ -49,7 +49,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.flameshot.Flameshot -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice org.flameshot.Flameshot org.mozilla.firefox -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
