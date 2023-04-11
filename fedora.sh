@@ -21,7 +21,7 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
 # install packages
-dnf install cockpit google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
+dnf install cockpit cockpit-machines google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
 
 # fonts & icons
 dnf install papirus-icon-theme cabextract xorg-x11-font-utils -y
@@ -47,6 +47,10 @@ tee -a /etc/fstab  << END
 # map fastgate usb storage
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
+
+# extensions
+dnf remove gnome-shell-extensions-* -y
+dnf install gnome-shell-extensions-dash-to-dock -y
 
 # varie
 systemctl enable --now cockpit.socket
