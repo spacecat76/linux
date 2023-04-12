@@ -1,0 +1,20 @@
+[/]
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+appicon-margin=8
+appicon-padding=4
+available-monitors=[0]
+dot-position='BOTTOM'
+dot-style-unfocused='DASHES'
+focus-highlight-opacity=20
+hotkeys-overlay-combo='TEMPORARILY'
+leftbox-padding=-1
+panel-anchors='{"0":"MIDDLE"}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"centered"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-lengths='{"0":100}'
+panel-sizes='{"0":36}'
+primary-monitor=0
+status-icon-padding=-1
+trans-panel-opacity=0.40000000000000002
+trans-use-custom-opacity=false
+tray-padding=-1
+window-preview-title-position='TOP'
