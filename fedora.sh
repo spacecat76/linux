@@ -21,10 +21,10 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
 # install packages
-dnf install cockpit cockpit-machines google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
+dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
 
-# fonts & icons
-dnf install papirus-icon-theme cabextract xorg-x11-font-utils -y
+# themes, fonts & icons
+dnf install yaru-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # vscode
@@ -50,7 +50,7 @@ END
 
 # extensions
 dnf remove gnome-shell-extensions-* -y
-dnf install gnome-shell-extensions-dash-to-dock -y
+dnf install gnome-shell-extensions-dash-to-panel -y
 
 # varie
 systemctl enable --now cockpit.socket
