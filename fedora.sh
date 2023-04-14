@@ -21,7 +21,7 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
 # install packages
-dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app vlc unrar -y
+dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar -y
 
 # themes, fonts & icons
 dnf install yaru-theme papirus-icon-theme cabextract xorg-x11-font-utils -y

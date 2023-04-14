@@ -8,3 +8,5 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 30
 gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+
+gsettings set org.gnome.mutter center-new-windows true
