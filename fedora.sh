@@ -51,6 +51,3 @@ END
 # extensions
 dnf remove gnome-shell-extensions-* -y
 dnf install gnome-shell-extensions-dash-to-panel -y
-
-# varie
-systemctl enable --now cockpit.socket
