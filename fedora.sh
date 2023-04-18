@@ -24,7 +24,7 @@ dnf install ffmpeg-devel -y
 dnf install google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar -y
 
 # themes, fonts & icons
-dnf install yaru-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
+dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # vscode
