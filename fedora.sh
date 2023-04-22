@@ -49,5 +49,5 @@ tee -a /etc/fstab  << END
 END
 
 # extensions
-dnf remove gnome-shell-extension-* -y
+dnf remove gnome-shell-extension-* gnome-photos totem gnome-maps -y
 dnf install gnome-shell-extension-dash-to-dock -y
