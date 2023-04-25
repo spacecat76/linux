@@ -8,7 +8,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install gnome-core gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse libreoffice-gnome -y
 
 # apps & utilities
-apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes cockpit cockpit-machines virt-viewer libreoffice libreoffice-style-breeze -y
+apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes gnome-boxes libreoffice libreoffice-style-breeze -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad -y
