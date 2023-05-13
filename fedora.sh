@@ -18,10 +18,10 @@ dnf install \
 dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
-dnf install ffmpeg-devel ffmpegthumbnailer -y
+dnf install ffmpeg-devel -y
 
 # install packages
-dnf install vlc google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar -y
+dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar -y
 
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y

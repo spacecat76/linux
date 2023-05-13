@@ -1,5 +1,7 @@
 mousewheel.default.delta_multiplier_x	10
-browser.uidensity			            1
 gfx.webrender.all                       true
-apz.gtk.kinetic_scroll.enabled		    false
+apz.gtk.kinetic_scroll.enabled		false
+apz.gtk.touchpad_pinch.enabled		false	
+
 ui.systemUsesDarkTheme                  1
+browser.uidensity			1
