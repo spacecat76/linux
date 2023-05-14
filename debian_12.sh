@@ -52,7 +52,7 @@ plymouth-set-default-theme -R lines
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.mozilla.firefox io.gitlab.librewolf-community org.libreoffice.LibreOffice -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.mozilla.firefox io.gitlab.librewolf-community -y
 
 # fastgate
 apt install cifs-utils smbclient -y
