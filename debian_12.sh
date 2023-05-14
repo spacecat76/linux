@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek chromium -y
 
 # desktop environment
-apt install gnome-core gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
+apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes -y
@@ -14,7 +14,7 @@ apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essentia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad -y
 
 # fonts & icons
-apt install yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
+apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # network
 apt install avahi-daemon ufw -y
@@ -60,8 +60,3 @@ tee -a /etc/fstab  << END
 # map fastgate usb storage
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
-
-# gnome extensions
-apt purge gnome-shell-extensions -y
-apt install gnome-shell-extension-dash-to-panel -y
-apt autoremove -y
