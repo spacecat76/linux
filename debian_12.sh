@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 # firmware
-apt install firmware-linux firmware-sof-signed firmware-realtek chromium -y
+apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
@@ -33,6 +33,11 @@ systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
+# chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+dpkg -i /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
+rm /home/fabri/Downloads/*.deb
+
 # vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -51,11 +56,6 @@ update-grub
 
 # plymouth themes
 plymouth-set-default-theme -R lines
-
-# flatpak
-apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.mozilla.firefox io.gitlab.librewolf-community -y
 
 # fastgate
 apt install cifs-utils smbclient -y
