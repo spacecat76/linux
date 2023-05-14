@@ -18,9 +18,10 @@ fdisk /dev/nvme0n1
 
 #Create 3 partitions (NOT IF REINSTALLING)
 Device             Start       End   Sectors  Size Type
-/dev/nvme0n1p1      2048   1050623   1048576  512M EFI System
-/dev/nvme0n1p2   1050624 105908223 104857600  100G Linux filesystem
-/dev/nvme0n1p3 105908224 500118158 394209935  138G Linux filesystem
+/dev/nvme0n1p1      2048   1230847   1228800  600M EFI System
+/dev/nvme0n1p2   1230848 210946047 209715200  100G Linux filesystem
+/dev/nvme0n1p3 210946048 498255871 287309824  137G Linux filesystem
+
 
 #Format the partition
 mkfs.fat -F32 /dev/nvme0n1p1
@@ -76,7 +77,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #users
 useradd -m -G wheel fabri
 passwd fabri
-EDITOR=nano visudo (uncomment line %wheel ALL=(ALL) ALL)
+EDITOR=nano visudo *uncomment line %wheel ALL=(ALL:ALL) ALL
 
 #verify kernel modules
 mkinitcpio -p linux
