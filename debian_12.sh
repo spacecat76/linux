@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install gnome-core gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse libreoffice -y
+apt install gnome-core gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes gnome-boxes -y
