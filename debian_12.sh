@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek chromium -y
 
 # desktop environment
-apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
+apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes -y
