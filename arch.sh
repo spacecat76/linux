@@ -41,3 +41,10 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 #grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# fastgate
+pacman -S cifs-utils smbclient --noconfirm
+tee -a /etc/fstab  << END
+# map fastgate usb storage
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
+END
