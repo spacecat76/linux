@@ -68,5 +68,5 @@ END
 
 # gnome extensions
 apt purge gnome-shell-extensions -y
-apt install gnome-shell-extension-dashtodock -y
+apt install gnome-shell-extension-dash-to-panel -y
 apt autoremove -y
