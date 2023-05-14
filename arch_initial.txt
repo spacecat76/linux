@@ -20,7 +20,7 @@ fdisk /dev/nvme0n1
 Device             Start       End   Sectors  Size Type
 /dev/nvme0n1p1      2048   1230847   1228800  600M EFI System
 /dev/nvme0n1p2   1230848 210946047 209715200  100G Linux filesystem
-/dev/nvme0n1p3 210946048 498255871 287309824  137G Linux filesystem
+/dev/nvme0n1p3 210946048 498255871 287309824  138G Linux filesystem
 
 
 #Format the partition
