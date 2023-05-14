@@ -20,7 +20,7 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # network
-apt install avahi-daemon ufw -y
+apt install avahi-daemon gufw -y
 systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
