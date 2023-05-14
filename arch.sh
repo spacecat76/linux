@@ -2,13 +2,13 @@
 pacman -S --needed plasma plasma-wayland-session plasma-wayland-protocols sddm ark dolphin konsole okular galculator kate spectacle packagekit-qt5 print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
 
 #remove components
-pacman -Rd --nodeps bluez plasma-browser-integration --noconfirm
+pacman -Rd --nodeps plasma-browser-integration --noconfirm
 
 #sddm
 systemctl enable sddm
 
 #utilities
-pacman -S --needed papirus-icon-theme htop curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg pipewire pipewire-alsa pipewire-jack pipewire-pulse --noconfirm
+pacman -S --needed papirus-icon-theme htop curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack --noconfirm
 
 #fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
