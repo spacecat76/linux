@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 
 # firmware
-apt install firmware-linux firmware-sof-signed firmware-realtek -y
+apt install firmware-linux firmware-sof-signed firmware-realtek chromium -y
 
 # desktop environment
 apt install gnome-core gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
@@ -29,11 +29,6 @@ apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
-
-# google chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
-apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
-rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 # vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
