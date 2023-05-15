@@ -35,7 +35,7 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-dpkg -i /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
+apt install -f /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
 rm /home/fabri/Downloads/*.deb
 
 # vscode
