@@ -33,10 +33,10 @@ systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
-# chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-apt install -f /home/fabri/Downloads/google-chrome-stable_current_amd64.deb -y
-rm /home/fabri/Downloads/*.deb
+# google chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
+apt install -f /home/fabri/google-chrome-stable_current_amd64.deb -y
+rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 # vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
