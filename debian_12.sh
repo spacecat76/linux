@@ -8,7 +8,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
 
 # libreoffice
-apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
+# apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
 
 # apps & utilities
 apt install gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file lm-sensors plymouth-themes -y
@@ -44,6 +44,11 @@ install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 apt update && apt install code -y
+
+# flatpak
+apt install flatpak gnome-software-plugin-flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.system76.Popsicle org.libreoffice.LibreOffice -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
