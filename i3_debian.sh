@@ -22,6 +22,7 @@ systemctl enable avahi-daemon
 systemctl enable ufw --now
 ufw enable
 ufw allow mdns
+sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
 apt install virt-manager -y
@@ -151,3 +152,4 @@ rm -rf /home/fabri/.config/pulse
 tee -a /etc/modprobe.d/iwlwifi.conf  << END
 options iwlwifi enable_ini=N
 END
+bluez
