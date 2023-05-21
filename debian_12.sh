@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse -y
+apt install gnome-core gnome-shell-extension-dash-to-panel gnome-boxes gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell cheese seahorse drawing -y
 
 # libreoffice
 # apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
