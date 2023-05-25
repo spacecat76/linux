@@ -11,7 +11,7 @@ apt install gnome-core gnome-shell-extension-dash-to-panel gnome-weather gnome-c
 # apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
 
 # apps & utilities
-apt install vim htop neofetch unrar net-tools curl build-essential apt-transport-https apt-file plymouth-themes -y
+apt install vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
