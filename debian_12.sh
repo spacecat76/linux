@@ -11,7 +11,7 @@ apt install gnome-core gnome-shell-extension-dash-to-panel gnome-weather gnome-c
 # apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
 
 # apps & utilities
-apt install vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
+apt install gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
@@ -28,7 +28,7 @@ ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # printing and scanning
-apt install sane cups printer-driver-all printer-driver-cups-pdf -y
+apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -48,7 +48,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice org.gnome.Cheese com.github.maoschanz.drawing org.gnome.Boxes org.gimp.GIMP org.gnome.SimpleScan -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice org.gnome.Cheese org.gnome.Boxes -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
