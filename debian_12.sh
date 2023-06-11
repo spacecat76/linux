@@ -7,9 +7,6 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 # desktop environment
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell seahorse -y
 
-# libreoffice
-# apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
-
 # apps & utilities
 apt install gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 

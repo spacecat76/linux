@@ -10,6 +10,9 @@ apt install gnome-core gnome-weather gnome-calendar gnome-clocks gnome-screensho
 # apps & utilities
 apt install tlp gimp vim htop neofetch timeshift unrar net-tools curl build-essential apt-transport-https apt-file -y
 
+# libreoffice
+# apt install libreoffice libreoffice-gnome libreoffice-style-breeze libreoffice-style-sifr -y
+
 # multimedia
 apt install vlc ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-ugly -y
 
