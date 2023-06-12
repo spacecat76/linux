@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop ark kcalc kde-spectacle okular plasma-firewall -y
+apt install kde-plasma-desktop ark kcalc kde-spectacle okular -y
 
 # apps & utilities
 apt install timeshift gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
