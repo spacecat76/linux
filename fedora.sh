@@ -52,5 +52,5 @@ END
 flatpak install flathub io.gitlab.librewolf-community -y
 
 # remove extensions and programs
-dnf remove gnome-shell-extension-* gnome-photos totem gnome-maps gnome-boxes -y
+dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
 dnf install gnome-shell-extension-dash-to-panel -y
