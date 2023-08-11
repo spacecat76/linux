@@ -52,9 +52,6 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
 
-# flatpaks
-#flatpak install flathub io.gitlab.librewolf-community -y
-
 # remove extensions and programs
 dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
 dnf install gnome-shell-extension-dash-to-panel -y
