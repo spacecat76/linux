@@ -23,6 +23,10 @@ dnf install ffmpeg-devel -y
 # install packages
 dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman -y
 
+# enable services
+systemctl enable cockpit
+systemctl enable podman
+
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
@@ -37,7 +41,7 @@ dnf install code -y
 dnf install firewall-config -y
 cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
 firewall-cmd --reload
-firewall-cmd --set-default-zone FFW
+firewall-cmd --set-default-zone ffw
 
 # printing and scanning
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -49,7 +53,7 @@ tee -a /etc/fstab  << END
 END
 
 # flatpaks
-flatpak install flathub io.gitlab.librewolf-community -y
+#flatpak install flathub io.gitlab.librewolf-community -y
 
 # remove extensions and programs
 dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
