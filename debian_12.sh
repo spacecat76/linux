@@ -17,12 +17,12 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # network
-apt install avahi-daemon gufw -y
+apt install avahi-daemon firewalld firewall-config -y
 systemctl enable avahi-daemon
-systemctl enable ufw --now
-ufw enable
-ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
+firewall-cmd --reload
+firewall-cmd --set-default-zone ffw
 
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
