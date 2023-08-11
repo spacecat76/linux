@@ -23,10 +23,6 @@ dnf install ffmpeg-devel -y
 # install packages
 dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman -y
 
-# enable services
-systemctl enable cockpit
-systemctl enable podman
-
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
@@ -55,3 +51,7 @@ END
 # remove extensions and programs
 dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
 dnf install gnome-shell-extension-dash-to-panel -y
+
+# enable services
+systemctl enable cockpit
+systemctl enable podman
