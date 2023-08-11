@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell seahorse -y
+apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell seahorse cheese -y
 
 # apps & utilities
 apt install cockpit cockpit-machines cockpit-podman timeshift gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
@@ -43,7 +43,7 @@ apt update && apt install code -y
 # flatpak
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice org.gnome.Cheese -y
+flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
