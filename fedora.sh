@@ -53,5 +53,4 @@ dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
 dnf install gnome-shell-extension-dash-to-panel -y
 
 # enable services
-systemctl enable cockpit.socket
-systemctl enable podman
+systemctl enable cockpit.socket podman
