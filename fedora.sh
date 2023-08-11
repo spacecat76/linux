@@ -21,7 +21,7 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
 # install packages
-dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar -y
+dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman -y
 
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
@@ -35,9 +35,9 @@ dnf install code -y
 
 # firewall
 dnf install firewall-config -y
-cp /home/fabri/Git/linux/etc/FedoraFW.xml /usr/lib/firewalld/zones
+cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
 firewall-cmd --reload
-firewall-cmd --set-default-zone FedoraFW
+firewall-cmd --set-default-zone FFW
 
 # printing and scanning
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -52,5 +52,5 @@ END
 flatpak install flathub io.gitlab.librewolf-community -y
 
 # remove extensions and programs
-dnf remove gnome-shell-extension-* gnome-photos totem gnome-maps -y
+dnf remove gnome-shell-extension-* gnome-photos totem gnome-maps gnome-boxes -y
 dnf install gnome-shell-extension-dash-to-panel -y

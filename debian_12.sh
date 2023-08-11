@@ -8,7 +8,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell seahorse -y
 
 # apps & utilities
-apt install cockpit cockpit-machines timeshift gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
+apt install cockpit cockpit-machines cockpit-podman timeshift gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
