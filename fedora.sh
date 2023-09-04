@@ -20,8 +20,8 @@ dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
-# install packages
-dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman virt-viewer -y
+# apps
+dnf install vlc ffmpegthumbnailer google-chrome-stable gimp drawing neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman virt-viewer -y
 
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
@@ -49,7 +49,7 @@ tee -a /etc/fstab  << END
 END
 
 # flatpaks
-flatpak install flathub io.gitlab.librewolf-community -y
+flatpak install flathub io.gitlab.librewolf-community com.system76.Popsicle -y
 
 # remove extensions and programs
 dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
