@@ -49,7 +49,7 @@ tee -a /etc/fstab  << END
 END
 
 # flatpaks
-flatpak install flathub com.brave.Browser -y
+flatpak install flathub io.gitlab.librewolf-community -y
 
 # remove extensions and programs
 dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
