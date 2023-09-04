@@ -1,1 +1,1 @@
-# my linux install script
+# my linux install scripts
