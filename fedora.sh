@@ -7,6 +7,9 @@ END
 # update
 dnf update -y
 
+# remove extensions and programs
+dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
+
 # rpm fusion
 dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
@@ -21,7 +24,7 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
 # apps
-dnf install vlc ffmpegthumbnailer google-chrome-stable gimp drawing neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman virt-viewer -y
+dnf install vlc ffmpegthumbnailer google-chrome-stable gimp drawing neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar cockpit cockpit-machines cockpit-podman virt-viewer gnome-shell-extension-dash-to-panel -y
 
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
@@ -49,11 +52,7 @@ tee -a /etc/fstab  << END
 END
 
 # flatpaks
-flatpak install flathub io.gitlab.librewolf-community com.system76.Popsicle -y
-
-# remove extensions and programs
-dnf remove gnome-shell-extension-* gnome-photos gnome-maps gnome-boxes -y
-dnf install gnome-shell-extension-dash-to-panel -y
+flatpak install flathub com.system76.Popsicle -y
 
 # enable services
 systemctl enable cockpit.socket podman
