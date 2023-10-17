@@ -1,12 +1,12 @@
 # install applications
-apt install ubuntu-restricted-extras gnome-shell-extension-manager gnome-weather gnome-calendar gnome-clocks gnome-tweaks vlc ffmpegthumbnailer timeshift neofetch curl wget htop net-tools apt-transport-https vim cheese shotwell transmission -y
+apt install ubuntu-restricted-extras gnome-shell-extension-manager gnome-weather gnome-calendar gnome-clocks gnome-tweaks celluloid ffmpegthumbnailer timeshift neofetch curl wget htop net-tools apt-transport-https vim cheese shotwell transmission libreoffice -y
 
 # fonts & icons
 apt install fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
 snap install code --classic
-snap install gnome-boxes gimp onlyoffice-desktopeditors pinta
+snap install gnome-boxes gimp pinta
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
