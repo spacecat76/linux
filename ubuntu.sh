@@ -6,7 +6,7 @@ apt install fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
 snap install code --classic
-snap install gnome-boxes gimp onlyoffice-desktopeditors
+snap install gnome-boxes gimp onlyoffice-desktopeditors pinta
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
