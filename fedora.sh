@@ -24,7 +24,7 @@ dnf group upgrade --with-optional Multimedia -y
 dnf install ffmpeg-devel -y
 
 # apps
-dnf install vlc ffmpegthumbnailer google-chrome-stable gimp drawing neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar gnome-shell-extension-dash-to-panel -y
+dnf install vlc ffmpegthumbnailer google-chrome-stable gimp neofetch htop shotwell vim gnome-tweaks transmission gnome-extensions-app unrar gnome-shell-extension-dash-to-panel -y
 
 # themes, fonts & icons
 dnf install yaru-icon-theme papirus-icon-theme cabextract xorg-x11-font-utils -y
