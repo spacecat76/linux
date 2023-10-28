@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell seahorse cheese -y
+apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller seahorse transmission-gtk shotwell cheese -y
 
 # apps & utilities
 apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
@@ -17,8 +17,9 @@ apt install celluloid ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstrea
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
+sudo apt install snapd
+snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
 snap install code --classic
-snap install gnome-boxes gimp pinta onlyoffice-desktopeditors
 
 # network
 apt install avahi-daemon firewalld firewall-config -y
