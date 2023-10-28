@@ -17,7 +17,7 @@ apt install celluloid ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstrea
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
-sudo apt install snapd
+apt install snapd -y
 snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors brave
 snap install code --classic
 
