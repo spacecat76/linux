@@ -8,13 +8,17 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller transmission-gtk shotwell seahorse cheese -y
 
 # apps & utilities
-apt install cockpit cockpit-machines cockpit-podman timeshift gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
+apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
 # multimedia
-apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
+apt install celluloid ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
 
 # fonts & icons
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
+
+# snaps
+snap install code --classic
+snap install gnome-boxes gimp pinta onlyoffice-desktopeditors
 
 # network
 apt install avahi-daemon firewalld firewall-config -y
@@ -32,18 +36,6 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
 apt install -f /home/fabri/google-chrome-stable_current_amd64.deb -y
 rm -f /home/fabri/google-chrome-stable_current_amd64.deb
-
-# vscode
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-apt update && apt install code -y
-
-# flatpak
-apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
@@ -65,4 +57,4 @@ tee -a /etc/fstab  << END
 END
 
 # enable services
-systemctl enable cockpit.socket podman cups avahi-daemon firewalld
+systemctl enable cups avahi-daemon firewalld
