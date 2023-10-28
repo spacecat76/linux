@@ -18,7 +18,7 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 
 # snaps
 sudo apt install snapd
-snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
+snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors brave
 snap install code --classic
 
 # network
@@ -32,11 +32,6 @@ firewall-cmd --set-default-zone ffw
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
-
-# google chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
-apt install -f /home/fabri/google-chrome-stable_current_amd64.deb -y
-rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
