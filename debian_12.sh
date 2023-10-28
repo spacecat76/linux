@@ -18,8 +18,13 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 
 # snaps
 apt install snapd -y
-snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors brave
+snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
 snap install code --classic
+
+# chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+dpkg -i /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
+rm /home/fabri/Downloads/*.deb
 
 # network
 apt install avahi-daemon firewalld firewall-config -y
