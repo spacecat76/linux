@@ -18,11 +18,6 @@ apt install firewalld firewall-config -y
 cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
 firewall-cmd --reload
 firewall-cmd --set-default-zone ffw
-# apt install ufw -y
-# sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
-# systemctl enable ufw --now
-# ufw enable
-# ufw allow mdns
 
 # printing and scanning
 apt install sane printer-driver-all printer-driver-cups-pdf simple-scan -y
