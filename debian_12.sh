@@ -17,9 +17,9 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
-apt install snapd -y
-snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
-snap install code --classic
+#apt install snapd -y
+#snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
+#snap install code --classic
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
