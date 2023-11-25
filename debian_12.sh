@@ -18,13 +18,8 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 
 # snaps
 apt install snapd -y
-snap install core gnome-boxes gimp pinta
+snap install core gnome-boxes gimp pinta libreoffice
 snap install code --classic
-
-# flatpak
-apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark com.system76.Popsicle org.libreoffice.LibreOffice -y
 
 # chrome
 apt install libu2f-udev -y
