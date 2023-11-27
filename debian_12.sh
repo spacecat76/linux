@@ -18,7 +18,7 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 
 # snaps
 apt install snapd -y
-snap install core gnome-boxes gimp pinta libreoffice
+snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
 snap install code --classic
 
 # chrome
