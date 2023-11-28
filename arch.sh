@@ -21,10 +21,8 @@ pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --n
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
-# snaps
-pacman -S --needed snapd --noconfirm
-snap install core gnome-boxes
-snap install code --classic
+# ditrobox
+pacman -S --needed podman distrobox --noconfirm
 
 #firewall
 pacman -S firewalld --noconfirm
