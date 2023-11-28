@@ -8,21 +8,25 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install kde-plasma-desktop ark kcalc kde-spectacle okular -y
 
 # apps & utilities
-apt install timeshift gimp drawing vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
+apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
 
 # fonts & icons
-apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
+apt install yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
+
+# snaps
+apt install snapd -y
+snap install core gimp pinta onlyoffice-desktopeditors
+snap install code --classic
 
 # network
-apt install avahi-daemon ufw -y
-systemctl enable avahi-daemon
-systemctl enable ufw --now
-ufw enable
-ufw allow mdns
+apt install avahi-daemon firewalld firewall-config -y
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
+firewall-cmd --reload
+firewall-cmd --set-default-zone ffw
 
 # virt manager
 apt install virt-manager -y
@@ -39,18 +43,6 @@ echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
 apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
 rm -f /home/fabri/google-chrome-stable_current_amd64.deb
-
-# vscode
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-apt update && apt install code -y
-
-# flatpak
-apt install flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Adwaita-dark org.libreoffice.LibreOffice io.gitlab.librewolf-community -y
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
@@ -70,3 +62,6 @@ tee -a /etc/fstab  << END
 # map fastgate usb storage
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
+
+# enable services
+systemctl enable cups avahi-daemon firewalld
