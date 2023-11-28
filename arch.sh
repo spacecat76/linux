@@ -28,7 +28,6 @@ snap install code --classic
 
 #firewall
 pacman -S firewalld --noconfirm
-systemctl enable firewalld.service
 cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
 firewall-cmd --reload
 firewall-cmd --set-default-zone ffw
