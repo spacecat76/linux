@@ -8,29 +8,30 @@ pacman -Rd --nodeps plasma-browser-integration --noconfirm
 systemctl enable sddm
 
 #utilities
-pacman -S --needed papirus-icon-theme htop curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack --noconfirm
+pacman -S --needed papirus-icon-theme htop curl neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse ffmpeg pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack --noconfirm
 
 #fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 #applications
-pacman -S --needed firefox chromium vim nano vlc gimp transmission-qt --noconfirm
+pacman -S --needed firefox vim nano vlc gimp transmission-qt pinta libreoffice-still --noconfirm
 
 #network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
-#virt manager
-pacman -S --needed virt-manager libvirt iptables-nft qemu dnsmasq --noconfirm
-systemctl enable libvirtd
-usermod -aG libvirt fabri
+# snaps
+pacman -S --needed snapd --noconfirm
+snap install core gnome-boxes
+snap install code --classic
 
 #firewall
-pacman -S ufw --noconfirm
-systemctl enable ufw
-sed -i 's/ENABLED=no/ENABLED=yes/g' /etc/ufw/ufw.conf
-ufw allow mdns
+pacman -S firewalld --noconfirm
+systemctl enable firewalld.service
+cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
+firewall-cmd --reload
+firewall-cmd --set-default-zone ffw
 
 #printing and scanning
 pacman -S --needed sane cups gutenprint simple-scan --noconfirm
