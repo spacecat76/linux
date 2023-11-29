@@ -43,9 +43,9 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # google chrome
-# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
-# apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
-# rm -f /home/fabri/google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
+apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
+rm -f /home/fabri/google-chrome-stable_current_amd64.deb
 
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
