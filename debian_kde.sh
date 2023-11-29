@@ -18,7 +18,7 @@ apt install yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosext
 
 # snaps
 apt install snapd -y
-snap install core gimp pinta onlyoffice-desktopeditors
+snap install core firefox gimp pinta onlyoffice-desktopeditors
 snap install code --classic
 
 # network
