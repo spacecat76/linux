@@ -5,10 +5,10 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop ark kcalc kde-spectacle okular -y
+apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
 
 #remove components
-apt purge plasma-browser-integration -y
+apt purge plasma-browser-integration konqueror -y
 
 # apps & utilities
 apt install tlp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
@@ -69,4 +69,5 @@ END
 systemctl enable cups avahi-daemon ufw
 
 # various
+apt autoremove -y
 tlp start
