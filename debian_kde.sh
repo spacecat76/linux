@@ -5,19 +5,19 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop ark kcalc kde-spectacle okular print-manager -y
+apt install kde-plasma-desktop ark kcalc kde-spectacle okular -y
 
 #remove components
 apt purge plasma-browser-integration -y
 
 # apps & utilities
-apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
+apt install tlp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
 
 # fonts & icons
-apt install yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
+apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
 # snaps
 apt install snapd -y
@@ -25,11 +25,10 @@ snap install core firefox gimp pinta onlyoffice-desktopeditors
 snap install code --classic
 
 # network
-apt install avahi-daemon firewalld firewall-config -y
+apt install avahi-daemon ufw plasma-firewall -y
+ufw enable
+ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
-firewall-cmd --reload
-firewall-cmd --set-default-zone ffw
 
 # virt manager
 # apt install virt-manager -y
@@ -37,7 +36,7 @@ firewall-cmd --set-default-zone ffw
 # virsh net-autostart default
 
 # printing and scanning
-apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
+apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan print-manager -y
 systemctl enable cups
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
@@ -67,4 +66,7 @@ tee -a /etc/fstab  << END
 END
 
 # enable services
-systemctl enable cups avahi-daemon firewalld
+systemctl enable cups avahi-daemon ufw
+
+# various
+tlp start
