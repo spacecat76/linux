@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop ark kcalc kde-spectacle okular -y
+apt install kde-plasma-desktop ark kcalc kde-spectacle okular print-manager -y
 
 #remove components
 apt purge plasma-browser-integration -y
