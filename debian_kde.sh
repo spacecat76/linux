@@ -7,6 +7,9 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 # desktop environment
 apt install kde-plasma-desktop ark kcalc kde-spectacle okular -y
 
+#remove components
+apt purge plasma-browser-integration -y
+
 # apps & utilities
 apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes -y
 
