@@ -31,9 +31,9 @@ ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
-# apt install virt-manager -y
-# adduser fabri libvirt
-# virsh net-autostart default
+apt install virt-manager -y
+adduser fabri libvirt
+virsh net-autostart default
 
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan print-manager -y
