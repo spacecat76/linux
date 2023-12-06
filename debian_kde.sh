@@ -11,7 +11,7 @@ apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
 apt purge plasma-browser-integration konqueror zutty -y
 
 # apps & utilities
-apt install shotwell tlp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
+apt install shotwell tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
