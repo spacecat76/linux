@@ -8,7 +8,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
 
 #remove components
-apt purge plasma-browser-integration konqueror -y
+apt purge plasma-browser-integration konqueror zutty -y
 
 # apps & utilities
 apt install tlp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
@@ -21,7 +21,7 @@ apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts
 
 # snaps
 apt install snapd -y
-snap install core firefox gimp pinta onlyoffice-desktopeditors
+snap install core firefox gimp pinta libreoffice
 snap install code --classic
 
 # network
