@@ -56,6 +56,10 @@ plymouth-set-default-theme -R lines
 # fastgate
 apt install cifs-utils smbclient -y
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
+tee -a /etc/fstab  << END
+# map fastgate usb storage
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,noauto,x-systemd.automount,user 0 0
+END
 
 # enable services
 systemctl enable cups avahi-daemon ufw
