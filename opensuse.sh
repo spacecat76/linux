@@ -11,6 +11,9 @@ zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
 zypper refresh
 zypper install code
 
+# apps
+zypper install neofetch htop shotwell
+
 # fastgate
 tee -a /etc/fstab  << END
 # map fastgate usb storage
