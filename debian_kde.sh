@@ -21,8 +21,14 @@ apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts
 
 # snaps
 apt install snapd -y
-snap install core firefox gimp pinta libreoffice
+snap install core firefox gimp pinta onlyoffice-desktopeditors
 snap install code --classic
+
+# chrome
+apt install libu2f-udev -y
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+dpkg -i --force-all /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
+rm /home/fabri/Downloads/*.deb
 
 # network
 apt install avahi-daemon ufw plasma-firewall -y
