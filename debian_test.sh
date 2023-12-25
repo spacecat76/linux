@@ -16,10 +16,9 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 # fonts & icons
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
-# snaps
-apt install snapd -y
-snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
-snap install code --classic
+# distrobox
+apt install distrobox -y
+#distrobox create -i quay.io/toolbx-images/archlinux-toolbox:latest -n arco
 
 # chrome
 apt install libu2f-udev -y
