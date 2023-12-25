@@ -18,7 +18,6 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 
 # distrobox
 apt install distrobox -y
-#distrobox create -i quay.io/toolbx-images/archlinux-toolbox:latest -n arco
 
 # chrome
 apt install libu2f-udev -y

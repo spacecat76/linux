@@ -1,0 +1,2 @@
+distrobox create -i quay.io/toolbx-images/archlinux-toolbox:latest -n arco
+distrobox enter arco
