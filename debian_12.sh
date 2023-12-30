@@ -18,7 +18,7 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 
 # snaps
 apt install snapd -y
-snap install core gnome-boxes gimp pinta onlyoffice-desktopeditors
+snap install core gnome-boxes gimp
 snap install code --classic
 
 # chrome
@@ -28,11 +28,11 @@ dpkg -i --force-all /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
 rm /home/fabri/Downloads/*.deb
 
 # network
-apt install avahi-daemon firewalld firewall-config -y
+apt install avahi-daemon ufw -y
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
-firewall-cmd --reload
-firewall-cmd --set-default-zone ffw
+systemctl enable ufw --now
+ufw enable
+ufw allow mdns
 
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
