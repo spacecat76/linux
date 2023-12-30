@@ -19,13 +19,19 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 # snaps
 apt install snapd -y
 snap install core gnome-boxes gimp
-snap install code --classic
 
 # chrome
 apt install libu2f-udev -y
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i --force-all /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
-rm /home/fabri/Downloads/*.deb
+rm -f google-chrome-stable_current_amd64.deb
+
+# code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update && apt install code -y
 
 # network
 apt install avahi-daemon ufw -y
