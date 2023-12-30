@@ -59,4 +59,4 @@ tee -a /etc/fstab  << END
 END
 
 # enable services
-systemctl enable cups avahi-daemon firewalld
+systemctl enable cups avahi-daemon
