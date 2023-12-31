@@ -19,7 +19,7 @@ apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fon
 # chrome
 apt install libu2f-udev -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i --force-all /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
+dpkg -i --force-all ./google-chrome-stable_current_amd64.deb
 rm -f google-chrome-stable_current_amd64.deb
 
 # code

@@ -21,9 +21,9 @@ apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts
 
 # chrome
 apt install libu2f-udev -y
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
-dpkg -i --force-all /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
-rm /home/fabri/Downloads/*.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i --force-all ./google-chrome-stable_current_amd64.deb
+rm -f google-chrome-stable_current_amd64.deb
 
 # code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
