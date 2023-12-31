@@ -7,6 +7,9 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 # desktop environment
 apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
 
+# pipewire
+apt install pipewire pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse -y
+
 #remove components
 apt purge plasma-browser-integration konqueror zutty -y
 
