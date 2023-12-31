@@ -11,7 +11,7 @@ apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
 apt purge plasma-browser-integration konqueror zutty -y
 
 # apps & utilities
-apt install shotwell tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
+apt install firefox-esr gimp shotwell tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
@@ -19,16 +19,18 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 # fonts & icons
 apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea fonts-firacode papirus-icon-theme -y
 
-# snaps
-apt install snapd -y
-snap install core firefox gimp pinta onlyoffice-desktopeditors
-snap install code --classic
-
 # chrome
 apt install libu2f-udev -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
 dpkg -i --force-all /home/fabri/Downloads/google-chrome-stable_current_amd64.deb
 rm /home/fabri/Downloads/*.deb
+
+# code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update && apt install code -y
 
 # network
 apt install avahi-daemon ufw plasma-firewall -y
