@@ -5,8 +5,8 @@ apt install ubuntu-restricted-extras gnome-shell-extension-manager gnome-weather
 apt install fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
+snap install gnome-boxes gimp onlyoffice-desktopeditors
 snap install code --classic
-snap install gnome-boxes gimp
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri/Downloads
