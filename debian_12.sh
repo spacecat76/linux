@@ -5,10 +5,10 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller seahorse transmission-gtk shotwell cheese gnome-boxes -y
+apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller seahorse transmission-gtk shotwell cheese -y
 
 # apps & utilities
-apt install gimp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
+apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
@@ -16,18 +16,16 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 # fonts & icons
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
+# snaps
+apt install snapd -y
+snap install core gnome-boxes gimp onlyoffice-desktopeditors
+snap install code --classic
+
 # chrome
 apt install libu2f-udev -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i --force-all ./google-chrome-stable_current_amd64.deb
 rm -f google-chrome-stable_current_amd64.deb
-
-# code
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-apt update && apt install code -y
 
 # network
 apt install avahi-daemon ufw -y
