@@ -1,6 +1,10 @@
 # update repositories
 apt update && apt upgrade -y
 
+# locale
+sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
+locale-gen
+
 # firmware
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
@@ -8,7 +12,7 @@ apt install firmware-linux firmware-sof-signed firmware-realtek -y
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller seahorse transmission-gtk shotwell cheese -y
 
 # apps & utilities
-apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
+apt install gimp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
@@ -16,32 +20,41 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 # fonts & icons
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
-# snaps
-apt install snapd -y
-snap install core gnome-boxes gimp onlyoffice-desktopeditors
-snap install code --classic
+# only-office
+mkdir -p -m 700 ~/.gnupg
+gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
+chmod 644 /tmp/onlyoffice.gpg
+chown root:root /tmp/onlyoffice.gpg
+mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
+echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
+apt update && apt install onlyoffice-desktopeditors -y
 
 # chrome
-apt install libu2f-udev -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i --force-all ./google-chrome-stable_current_amd64.deb
+apt install -f ./google-chrome-stable_current_amd64.deb -y
 rm -f google-chrome-stable_current_amd64.deb
 
-# network
-apt install avahi-daemon ufw -y
+# vscode
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update && apt install code -y
+
+# firewall
+apt install ufw -y
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 systemctl enable ufw --now
 ufw enable
 ufw allow mdns
 
+# virtual
+apt install cockpit cockpit-machines virt-viewer -y
+
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
-
-# locale
-sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
-locale-gen
 
 # grub
 sed -i 's/quiet/quiet loglevel=3 splash/g' /etc/default/grub
@@ -58,5 +71,3 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
 
-# enable services
-systemctl enable cups avahi-daemon

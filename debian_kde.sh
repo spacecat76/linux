@@ -28,9 +28,8 @@ snap install core firefox gimp onlyoffice-desktopeditors
 snap install code --classic
 
 # chrome
-apt install libu2f-udev -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i --force-all ./google-chrome-stable_current_amd64.deb
+apt install -f ./google-chrome-stable_current_amd64.deb -y
 rm -f google-chrome-stable_current_amd64.deb
 
 # network
@@ -67,7 +66,7 @@ apt install cifs-utils smbclient -y
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 
 # enable services
-systemctl enable cups avahi-daemon ufw
+systemctl enable cups avahi-daemon
 
 # various
 apt autoremove -y

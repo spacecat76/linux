@@ -41,9 +41,9 @@ usermod -a -G lpadmin fabri
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # google chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /home/fabri
-apt install /home/fabri/google-chrome-stable_current_amd64.deb -y
-rm -f /home/fabri/google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install -f ./google-chrome-stable_current_amd64.deb -y
+rm -f google-chrome-stable_current_amd64.deb
 
 # vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
