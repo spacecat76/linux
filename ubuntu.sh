@@ -5,7 +5,7 @@ apt install ubuntu-restricted-extras gnome-shell-extension-manager gnome-weather
 apt install fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # snaps
-snap install gnome-boxes gimp onlyoffice-desktopeditors
+snap install gimp onlyoffice-desktopeditors
 snap install code --classic
 
 # chrome

@@ -20,9 +20,15 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 # fonts & icons
 apt install yaru-theme-gnome-shell yaru-theme-icon ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
+# virt manager
+apt install virt-manager -y
+adduser fabri libvirt
+sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
+sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
+
 # snaps
 apt install snapd -y
-snap install core firefox gimp onlyoffice-desktopeditors
+snap install core gimp onlyoffice-desktopeditors
 snap install code --classic
 
 # chrome
@@ -37,12 +43,9 @@ systemctl enable ufw --now
 ufw enable
 ufw allow mdns
 
-# virtual
-apt install cockpit cockpit-machines virt-viewer -y
-
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
-usermod -a -G lpadmin fabri
+adduser fabri lpadmin
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # grub
