@@ -39,7 +39,6 @@ rm -f google-chrome-stable_current_amd64.deb
 # firewall
 apt install ufw -y
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-systemctl enable ufw --now
 ufw enable
 ufw allow mdns
 

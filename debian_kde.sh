@@ -41,7 +41,8 @@ sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 # virt manager
 apt install virt-manager -y
 adduser fabri libvirt
-virsh net-autostart default
+sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
+sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan print-manager -y
