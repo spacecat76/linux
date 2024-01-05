@@ -25,12 +25,18 @@ apt install ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts
 # snaps
 apt install snapd -y
 snap install core firefox gimp onlyoffice-desktopeditors
-snap install code --classic
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 apt install -f ./google-chrome-stable_current_amd64.deb -y
 rm -f google-chrome-stable_current_amd64.deb
+
+# vscode
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update && apt install code -y
 
 # network
 apt install avahi-daemon ufw plasma-firewall -y
