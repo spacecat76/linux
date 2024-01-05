@@ -72,9 +72,6 @@ plymouth-set-default-theme -R lines
 apt install cifs-utils smbclient -y
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 
-# enable services
-systemctl enable cups avahi-daemon
-
 # various
 apt autoremove -y
 tlp start
