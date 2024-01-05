@@ -54,7 +54,7 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan print-manager -y
 systemctl enable cups
-usermod -a -G lpadmin fabri
+adduser fabri lpadmin
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # locale
