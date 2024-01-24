@@ -78,5 +78,7 @@ tee -a /etc/fstab  << END
 END
 
 # various
+sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/system.conf
+sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/user.conf
 apt autoremove -y
 tlp start
