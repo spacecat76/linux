@@ -42,9 +42,13 @@ apt update && apt install code -y
 
 # only-office
 apt install desktop-file-utils -y
-wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
-apt install -f ./onlyoffice-desktopeditors_amd64.deb -y
-rm -f onlyoffice-desktopeditors_amd64.deb
+mkdir -p -m 700 ~/.gnupg
+gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
+chmod 644 /tmp/onlyoffice.gpg
+sudo chown root:root /tmp/onlyoffice.gpg
+sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
+echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
+apt update && apt install onlyoffice-desktopeditors -y
 
 # network
 apt install avahi-daemon ufw plasma-firewall -y
