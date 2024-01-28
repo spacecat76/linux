@@ -41,6 +41,7 @@ rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
 # only-office
+apt install desktop-file-utils -y
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
 apt install -f ./onlyoffice-desktopeditors_amd64.deb -y
 rm -f onlyoffice-desktopeditors_amd64.deb
