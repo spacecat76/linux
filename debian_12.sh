@@ -18,7 +18,7 @@ apt update && apt install firefox -y
 apt install gnome-core gnome-shell-extension-dash-to-panel gnome-shell-extension-dashtodock gnome-weather gnome-calendar gnome-clocks gnome-tweaks file-roller seahorse transmission-gtk shotwell cheese -y
 
 # apps & utilities
-apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
+apt install gimp timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
@@ -32,10 +32,6 @@ adduser fabri libvirt
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
-
-# snaps
-apt install snapd -y
-snap install core gimp onlyoffice-desktopeditors
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -58,7 +54,6 @@ sudo chown root:root /tmp/onlyoffice.gpg
 sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
 echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
 apt update && apt install onlyoffice-desktopeditors -y
-
 
 # firewall
 apt install ufw -y
