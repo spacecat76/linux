@@ -10,9 +10,6 @@ apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
 # pipewire
 apt install pipewire pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse -y
 
-#remove components
-apt purge plasma-browser-integration konqueror zutty -y
-
 # apps & utilities
 apt install gimp shotwell tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
 
@@ -89,8 +86,11 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,x-systemd.after=network-online.target,user 0 0
 END
 
+#remove components
+apt purge plasma-browser-integration konqueror zutty avahi-autoipd  -y
+apt autoremove -y
+
 # various
 sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/system.conf
 sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/user.conf
-apt autoremove -y
 tlp start
