@@ -45,7 +45,7 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
-# only-office
+# onlyoffice
 apt install desktop-file-utils -y
 mkdir -p -m 700 ~/.gnupg
 gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
