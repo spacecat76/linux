@@ -5,7 +5,7 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop ark galculator kde-spectacle okular -y
+apt install kde-plasma-desktop ark galculator kde-spectacle okular ksystemlog -y
 
 # pipewire
 apt install pipewire pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse -y
