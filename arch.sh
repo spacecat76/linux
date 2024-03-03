@@ -14,7 +14,7 @@ pacman -S --needed papirus-icon-theme htop curl neofetch rust wget linux-lts-hea
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 #applications
-pacman -S --needed firefox vim nano vlc gimp transmission-qt pinta libreoffice-still --noconfirm
+pacman -S --needed firefox vim nano vlc gimp transmission-qt pinta neofetch libreoffice-still --noconfirm
 
 #network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
@@ -42,7 +42,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # fastgate
 pacman -S cifs-utils smbclient --noconfirm
+cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 tee -a /etc/fstab  << END
 # map fastgate usb storage
-//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,x-systemd.after=network-online.target,user 0 0
 END
