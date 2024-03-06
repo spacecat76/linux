@@ -34,6 +34,7 @@ pacman -S --needed podman distrobox --noconfirm
 
 # flatpak
 pacman -S --needed flatpak --noconfirm
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.onlyoffice.desktopeditors -y
 
 #firewall
