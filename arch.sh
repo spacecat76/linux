@@ -8,7 +8,7 @@ pacman -Rd --nodeps plasma-browser-integration --noconfirm
 systemctl enable sddm
 
 #utilities
-pacman -S --needed papirus-icon-theme curl neofetch rust wget linux-lts-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
+pacman -S --needed papirus-icon-theme curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
 
 #fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
