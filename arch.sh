@@ -52,7 +52,7 @@ sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # fastgate
-pacman -S cifs-utils smbclient --noconfirm
+pacman -S --needed cifs-utils smbclient --noconfirm
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 tee -a /etc/fstab  << END
 # map fastgate usb storage
