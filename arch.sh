@@ -37,7 +37,7 @@ pacman -S --needed flatpak --noconfirm
 flatpak install flathub org.onlyoffice.desktopeditors -y
 
 #firewall
-pacman -S ufw --noconfirm
+pacman -S --needed ufw --noconfirm
 ufw enable
 ufw allow mdns
 
