@@ -22,7 +22,7 @@ systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
-pacman -S virt-manager --noconfirm
+pacman -S --needed virt-manager --noconfirm
 systemctl enable libvirtd.socket
 adduser fabri libvirt
 virsh net-autostart default
@@ -33,7 +33,7 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 pacman -S --needed podman distrobox --noconfirm
 
 # flatpak
-pacman -S flatpak
+pacman -S --needed flatpak --noconfirm
 flatpak install flathub org.onlyoffice.desktopeditors -y
 
 #firewall
