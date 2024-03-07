@@ -14,7 +14,7 @@ pacman -S --needed papirus-icon-theme curl neofetch rust wget linux-headers bash
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 #applications
-pacman -S --needed firefox vim nano vlc gimp transmission-qt htop neofetch --noconfirm
+pacman -S --needed firefox vim nano vlc gimp pinta transmission-qt htop neofetch --noconfirm
 
 #network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
