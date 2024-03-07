@@ -24,7 +24,7 @@ sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 # virt manager
 pacman -S --needed virt-manager --noconfirm
 systemctl enable libvirtd.socket
-adduser fabri libvirt
+usermod -a -G libvirt fabri
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
