@@ -11,7 +11,7 @@ apt install kde-plasma-desktop ark kalk kde-spectacle okular ksystemlog -y
 apt install pipewire pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse -y
 
 # apps & utilities
-apt install gimp shotwell tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
+apt install gimp gwenview tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
