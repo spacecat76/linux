@@ -32,10 +32,13 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 # ditrobox
 pacman -S --needed podman distrobox --noconfirm
 
-# flatpak
-#pacman -S --needed flatpak --noconfirm
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#flatpak install flathub org.onlyoffice.desktopeditors -y
+# snap
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si
+systemctl enable --now snapd.socket
+ln -s /var/lib/snapd/snap /snap
+rm -rf snapd.git
 
 # firewall
 pacman -S --needed ufw --noconfirm
