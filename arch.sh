@@ -32,6 +32,11 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 # ditrobox
 pacman -S --needed podman distrobox --noconfirm
 
+# flatpak
+pacman -S --needed flatpak --noconfirm
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
+flatpak install org.onlyoffice.desktopeditors -y
+
 # firewall
 pacman -S --needed ufw --noconfirm
 ufw enable
