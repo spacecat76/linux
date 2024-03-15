@@ -1,5 +1,5 @@
 # kde
-pacman -S --needed plasma plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle packagekit-qt5 packagekit-qt6 kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
+pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle packagekit-qt5 packagekit-qt6 kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
 
 # remove components
 pacman -Rd --nodeps plasma-browser-integration --noconfirm
@@ -8,7 +8,7 @@ pacman -Rd --nodeps plasma-browser-integration --noconfirm
 systemctl enable sddm
 
 # utilities
-pacman -S --needed base-devel papirus-icon-theme curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
+pacman -S --needed speech-dispatcher base-devel papirus-icon-theme curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
 
 # fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
