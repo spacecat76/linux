@@ -29,9 +29,17 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
 END
 
+# locale
+sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
+locale-gen
+
 # grub
 sed -i 's/quiet/quiet loglevel=3/g' /etc/default/grub
 tee -a /etc/default/grub << END
 GRUB_RECORDFAIL_TIMEOUT=5
 END
 update-grub
+
+# various
+sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/system.conf
+sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/user.conf
