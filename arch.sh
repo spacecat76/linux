@@ -8,7 +8,7 @@ pacman -Rd --nodeps plasma-browser-integration --noconfirm
 systemctl enable sddm
 
 # utilities
-pacman -S --needed speech-dispatcher base-devel papirus-icon-theme curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
+pacman -S --needed speech-dispatcher base-devel papirus-icon-theme curl neofetch rust wget linux-headers bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
 
 # fonts
 pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
@@ -53,7 +53,7 @@ sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # fastgate
-pacman -S --needed cifs-utils smbclient --noconfirm
+pacman -S --needed cifs-utils samba smbclient --noconfirm
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 tee -a /etc/fstab  << END
 # map fastgate usb storage
