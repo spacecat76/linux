@@ -76,7 +76,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #users
 useradd -m -G wheel fabri
 passwd fabri
-EDITOR=nano visudo *uncomment line %wheel ALL=(ALL:ALL) ALL
+EDITOR=nano visudo
+*uncomment line %wheel ALL=(ALL:ALL) ALL
 
 #verify kernel modules
 mkinitcpio -p linux
