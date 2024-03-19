@@ -55,6 +55,3 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
-
-# various
-sed -i 's/Slice=session.slice/Slice=-.slice/g' /usr/lib/systemd/user/plasma-ksmserver.service
