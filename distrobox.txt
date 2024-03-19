@@ -1,4 +1,4 @@
-distrobox create --name test --init --image debian:latest --additional-packages "systemd libpam-systemd git"
+distrobox create --name debian --init --image debian:latest --additional-packages "systemd libpam-systemd git gnome-keyring"
 
 # vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
