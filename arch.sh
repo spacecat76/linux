@@ -22,7 +22,7 @@ systemctl enable avahi-daemon
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
-pacman -S --needed virt-manager --noconfirm
+pacman -S --needed qemu virt-manager dnsmasq --noconfirm
 systemctl enable libvirtd.socket
 usermod -a -G libvirt fabri
 virsh net-autostart default
@@ -35,7 +35,7 @@ pacman -S --needed podman distrobox --noconfirm
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
-flatpak install org.onlyoffice.desktopeditors -y
+flatpak install org.onlyoffice.desktopeditors com.brave.Browser -y
 
 # firewall
 pacman -S --needed ufw --noconfirm
@@ -54,4 +54,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
+cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 
+# various
+sed -i 's/Slice=session.slice/Slice=-.slice/g' /usr/lib/systemd/user/plasma-ksmserver.service
