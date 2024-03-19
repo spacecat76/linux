@@ -55,3 +55,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
 cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
+
+# variuos
+sed -i 's/#KillOnlyUsers=/KillOnlyUsers=fabri/g' /etc/systemd/logind.conf
