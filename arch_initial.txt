@@ -36,7 +36,7 @@ mkdir /mnt/home
 mount /dev/nvme0n1p2 /mnt/home
 
 #Install base system
-pacstrap /mnt base base-devel linux-lts linux-firmware linux-lts-headers nano intel-ucode
+pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
