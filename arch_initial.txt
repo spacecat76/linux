@@ -71,7 +71,7 @@ systemctl enable NetworkManager
 
 # ENCRYPTED
 nano /etc/mkinitcpio.conf
-*after "block" type "encrypt"
+*HOOKS= after "block" type "encrypt"
 mkinitcpio -p linux-lts
 
 #grub
