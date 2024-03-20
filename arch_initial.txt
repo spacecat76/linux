@@ -21,17 +21,33 @@ Device             Start       End   Sectors  Size Type
 /dev/nvme0n1p2   1050624 210765823 209715200  100G Linux filesystem
 /dev/nvme0n1p3 210765824 500117503 289351680  138G Linux filesystem
 
+# NOT ENCRYPTED
+
 #Format the partition
 mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.btrfs /dev/nvme0n1p2 (NOT IF REINSTALLING)
 mkfs.btrfs /dev/nvme0n1p3 
-
 #Mount the partitions
 mount /dev/nvme0n1p3 /mnt
-mkdir -p /mnt/boot/EFI
-mount /dev/nvme0n1p1 /mnt/boot/EFI
+mkdir -p /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
 mkdir /mnt/home
 mount /dev/nvme0n1p2 /mnt/home
+
+# ENCRYPTED
+
+mkfs.fat -F32 /dev/nvme0n1p1
+mkdir -p /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
+cryptsetup -y -v luksFormat /dev/nvme0n1p2
+cryptsetup open /dev/nvme0n1p2 crypthome
+mkfs.btrfs /dev/nvme0n1p2 (NOT IF REINSTALLING)
+mount /dev/mapper/crypthome /mnt
+cryptsetup -y -v luksFormat /dev/nvme0n1p3
+cryptsetup open /dev/nvme0n1p3 cryptroot
+mkfs.btrfs /dev/nvme0n1p3
+mkdir /mnt/home
+mount /dev/mapper/cryptroot /mnt
 
 #Install base system
 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
@@ -68,9 +84,20 @@ pacman -S grub grub-btrfs sbctl efibootmgr networkmanager xdg-user-dirs git
 #Netowrk Manager
 systemctl enable NetworkManager
 
+# ENCRYPTED
+nano /etc/mkinitcpio.conf
+#after "block" type "encrypt"
+# it should look like this "HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt filesystems fsck)"
+
 #grub
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# ENCRYPTED
+blkid
+#copy the UUID of both encrypted partition /dev/nvme0n1p2 and /dev/nvme0n1p3
+nano /etc/default/grub
+# GRUB_CMDLINE_LINUX="cryptdevice=UUID=device-UUID:cryptroot root=/dev/mapper/cryptroot"
 
 #secure boot keys (RESET SECURE BOOT KEYS FROM BIOS FIRST)
 sbctl create-keys
