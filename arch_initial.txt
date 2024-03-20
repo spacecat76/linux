@@ -50,7 +50,7 @@ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 hwclock --systohc
 
 #Locale 
-nano /etc/locale.gen (uncomment US and IT)
+nano /etc/locale.gen *(uncomment US and IT)
 locale-gen
 echo "LANG=en_US.UTF-8" | tee -a /etc/locale.conf
 
@@ -71,14 +71,14 @@ systemctl enable NetworkManager
 
 # ENCRYPTED
 nano /etc/mkinitcpio.conf
-#after "block" type "encrypt"
+*after "block" type "encrypt"
 mkinitcpio -p linux-lts
 
 #grub
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
-#blkid copy the UUID of the root partition /dev/nvme0n1p3
+*blkid copy the UUID of the root partition /dev/nvme0n1p3
 nano /etc/default/grub
-#GRUB_CMDLINE_LINUX="cryptdevice=UUID=xxxxx:cryptroot root=/dev/mapper/cryptroot"
+*GRUB_CMDLINE_LINUX="cryptdevice=UUID=xxxxx:cryptroot root=/dev/mapper/cryptroot"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #secure boot keys (RESET SECURE BOOT KEYS FROM BIOS FIRST)

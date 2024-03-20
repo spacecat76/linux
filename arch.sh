@@ -1,3 +1,7 @@
+# enrolling the TPM
+#systemd-cryptenroll /dev/sda2 --recovery-key
+#systemd-cryptenroll /dev/sda2 --wipe-slot=empty --tpm2-device=auto
+
 # kde
 pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle packagekit-qt5 packagekit-qt6 libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
 
