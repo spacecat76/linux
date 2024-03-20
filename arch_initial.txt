@@ -26,25 +26,12 @@ mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.btrfs /dev/nvme0n1p2 (NOT IF REINSTALLING)
 mkfs.btrfs /dev/nvme0n1p3 
 
-#Mount the partitions (NO ENCRYPTION)
+#Mount the partitions
 mount /dev/nvme0n1p3 /mnt
 mkdir -p /mnt/boot/EFI
 mount /dev/nvme0n1p1 /mnt/boot/EFI
 mkdir /mnt/home
 mount /dev/nvme0n1p2 /mnt/home
-
-#Mount the partitions(ENCRYPTED)
-mkfs.fat -F32 /dev/nvme0n1p1
-mkdir -p /mnt/boot/EFI
-mount /dev/nvme0n1p1 /mnt/boot/EFI
-cryptsetup -y -v luksFormat /dev/nvme0n1p2
-cryptsetup open /dev/nvme0n1p2 home
-mkfs.btrfs /dev/mapper/home
-mount /dev/mapper/home /mnt/home
-cryptsetup -y -v luksFormat /dev/nvme0n1p3
-cryptsetup open /dev/nvme0n1p3 root
-mkfs.btrfs /dev/mapper/root
-mount /dev/mapper/root /mnt
 
 #Install base system
 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
