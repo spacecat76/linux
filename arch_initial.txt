@@ -22,7 +22,6 @@ Device             Start       End   Sectors  Size Type
 /dev/nvme0n1p3 210765824 500117503 289351680  138G Linux filesystem
 
 #Encrypt and mount partitions
-
 cryptsetup -y -v luksFormat /dev/nvme0n1p2
 cryptsetup open /dev/nvme0n1p2 crypthome
 mkfs.btrfs /dev/mapper/crypthome
