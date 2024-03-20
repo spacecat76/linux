@@ -86,8 +86,6 @@ sbctl create-keys
 sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux-lts
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
-sbctl verify
-sbctl status
 
 #users
 useradd -m -G wheel fabri
