@@ -21,7 +21,7 @@ Device             Start       End   Sectors  Size Type
 /dev/nvme0n1p2   1050624 210765823 209715200  100G Linux filesystem
 /dev/nvme0n1p3 210765824 500117503 289351680  138G Linux filesystem
 
-#Format the partition (NOT IF ENCRYPTED)
+#Format the partition
 mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.btrfs /dev/nvme0n1p2 (NOT IF REINSTALLING)
 mkfs.btrfs /dev/nvme0n1p3 
