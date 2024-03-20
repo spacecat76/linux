@@ -4,6 +4,7 @@ loadkeys it.map.gz
 ##Enable SSH from remote if needed
 #Set root password
 passwd
+
 #Enable SSH service
 systemctl start sshd.service
 
@@ -65,10 +66,10 @@ END
 #packages
 pacman -S grub grub-btrfs sbctl efibootmgr networkmanager xdg-user-dirs git
 
-#Netowrk Manager
+#netowork manager
 systemctl enable NetworkManager
 
-# ENCRYPTED
+#mkinitcpio
 nano /etc/mkinitcpio.conf
 *HOOKS= after "block" type "encrypt"
 mkinitcpio -p linux-lts
