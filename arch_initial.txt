@@ -34,7 +34,7 @@ mount /dev/mapper/cryptroot /mnt
 mkfs.fat -F32 /dev/nvme0n1p1
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 
-#Install base system
+#install base system
 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
 
 #Generate fstab
@@ -93,7 +93,7 @@ sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux-lts
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 
-# enrolling the TPM
+#enrolling the TPM
 systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
 systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
 systemd-cryptenroll /dev/nvme0n1p3 --recovery-key
