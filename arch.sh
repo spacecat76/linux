@@ -39,6 +39,7 @@ flatpak install org.onlyoffice.desktopeditors com.brave.Browser -y
 
 # firewall
 pacman -S --needed ufw --noconfirm
+systemctl enable ufw
 ufw enable
 ufw allow mdns
 
