@@ -13,18 +13,16 @@ timedatectl set-ntp true
 #View disks and partitions
 lsblk
 
-#Fdisk into physical disc (NOT IF REINSTALLING)
-#fdisk -l will facilitate or cfdisk /dev/nvme0n1
-fdisk /dev/nvme0n1
-
 #Create 3 partitions (NOT IF REINSTALLING)
+#fdisk /dev/nvme0n1 or cfdisk /dev/nvme0n1
+
 Device             Start       End   Sectors  Size Type
-/dev/nvme0n1p1      2048   1230847   1228800  600M EFI System
-/dev/nvme0n1p2   1230848 210946047 209715200  100G Linux filesystem
-/dev/nvme0n1p3 210946048 498255871 287309824  138G Linux filesystem
+/dev/nvme0n1p1      2048   1050623   1048576  512M EFI System
+/dev/nvme0n1p2   1050624 210765823 209715200  100G Linux filesystem
+/dev/nvme0n1p3 210765824 500117503 289351680  138G Linux filesystem
 
 #Format the partition
-mkfs.fat -F32 /dev/nvme0n1p1
+mkfs.fat -F32 /dev/nvme0n1p1 (NOT IF REINSTALLING)
 mkfs.ext4 /dev/nvme0n1p2 (NOT IF REINSTALLING)
 mkfs.ext4 /dev/nvme0n1p3 
 
@@ -65,14 +63,22 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub efibootmgr networkmanager xdg-user-dirs git
+pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git
 
 #Netowrk Manager
 systemctl enable NetworkManager
 
 #grub
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
 grub-mkconfig -o /boot/grub/grub.cfg
+
+#secure boot keys
+sbctl create-keys
+sbctl enroll-keys -m
+sbctl sign -s /boot/vmlinuz-linux-lts
+sbctl sign -s /boot/EFI/EFI/GRUB/grubx64.efi
+sbctl verify
+sbctl status
 
 #users
 useradd -m -G wheel fabri
@@ -81,7 +87,7 @@ EDITOR=nano visudo
 *uncomment line %wheel ALL=(ALL:ALL) ALL
 
 #verify kernel modules
-mkinitcpio -p linux
+mkinitcpio -p linux-lts
 
 #exit and unmount
 exit
