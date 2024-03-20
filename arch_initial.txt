@@ -14,6 +14,7 @@ timedatectl set-ntp true
 lsblk
 
 #Fdisk into physical disc (NOT IF REINSTALLING)
+#fdisk -l will facilitate or cfdisk /dev/nvme0n1
 fdisk /dev/nvme0n1
 
 #Create 3 partitions (NOT IF REINSTALLING)
@@ -35,7 +36,7 @@ mkdir /mnt/home
 mount /dev/nvme0n1p2 /mnt/home
 
 #Install base system
-pacstrap /mnt base base-devel linux-lts linux-firmware nano intel-ucode
+pacstrap /mnt base base-devel linux-lts linux-firmware linux-lts-headers nano intel-ucode
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
