@@ -13,7 +13,7 @@ timedatectl set-ntp true
 #View disks and partitions
 lsblk
 
-#Create 3 partitions (NOT IF REINSTALLING)
+#Create 3 partitions
 #fdisk /dev/nvme0n1 or cfdisk /dev/nvme0n1
 
 Device             Start       End   Sectors  Size Type
@@ -22,7 +22,7 @@ Device             Start       End   Sectors  Size Type
 /dev/nvme0n1p3 210765824 500117503 289351680  138G Linux filesystem
 
 #Format the partition
-mkfs.fat -F32 /dev/nvme0n1p1 (NOT IF REINSTALLING)
+mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.ext4 /dev/nvme0n1p2 (NOT IF REINSTALLING)
 mkfs.ext4 /dev/nvme0n1p3 
 
