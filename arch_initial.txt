@@ -80,17 +80,23 @@ nano /etc/default/grub
 *GRUB_CMDLINE_LINUX="cryptdevice=UUID=xxxxx:cryptroot root=/dev/mapper/cryptroot"
 grub-mkconfig -o /boot/grub/grub.cfg
 
+#users
+useradd -m -G wheel fabri
+passwd fabri
+EDITOR=nano visudo
+*uncomment line %wheel ALL=(ALL:ALL) ALL
+
 #secure boot keys (RESET SECURE BOOT KEYS FROM BIOS FIRST)
 sbctl create-keys
 sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux-lts
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 
-#users
-useradd -m -G wheel fabri
-passwd fabri
-EDITOR=nano visudo
-*uncomment line %wheel ALL=(ALL:ALL) ALL
+# enrolling the TPM
+systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
+systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
+systemd-cryptenroll /dev/nvme0n1p3 --recovery-key
+systemd-cryptenroll /dev/nvme0n1p3 --wipe-slot=empty --tpm2-device=auto
 
 #exit and unmount
 exit
