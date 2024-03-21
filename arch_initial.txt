@@ -77,9 +77,9 @@ mkinitcpio -p linux-lts
 #grub
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
-*blkid copy the UUID of the root partition /dev/nvme0n1p3
+*blkid copy the UUID of the root partition /dev/nvme0n1p2
 nano /etc/default/grub
-*GRUB_CMDLINE_LINUX="cryptdevice=UUID=xxxxx:cryptroot root=/dev/mapper/cryptroot"
+*GRUB_CMDLINE_LINUX="cryptdevice=UUID=2b1efdf5-3b9c-4c17-8779-fb58c0721a30:luks root=/dev/mapper/luks"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #users
