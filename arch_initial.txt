@@ -15,27 +15,27 @@ timedatectl set-ntp true
 lsblk
 
 #Create 3 partitions
-#fdisk /dev/nvme0n1 or cfdisk /dev/nvme0n1
+cfdisk /dev/nvme0n1
 
 Device             Start       End   Sectors  Size Type
 /dev/nvme0n1p1      2048   1050623   1048576  512M EFI System
-/dev/nvme0n1p2   1050624 210765823 209715200  100G Linux filesystem
-/dev/nvme0n1p3 210765824 500117503 289351680  138G Linux filesystem
+/dev/nvme0n1p2   1050624 500117503 499066880  238G Linux filesystem
 
-#Encrypt and mount partitions
 cryptsetup -y -v luksFormat /dev/nvme0n1p2
-cryptsetup open /dev/nvme0n1p2 crypthome
-mkfs.btrfs /dev/mapper/crypthome
-mount --mkdir /dev/mapper/crypthome /mnt/home
-cryptsetup -y -v luksFormat /dev/nvme0n1p3
-cryptsetup open /dev/nvme0n1p3 cryptroot
-mkfs.btrfs /dev/mapper/cryptroot
-mount /dev/mapper/cryptroot /mnt
+cryptsetup open /dev/nvme0n1p2 luks
+pvcreate /dev/mapper/luks  *create the physical volume
+vgcreate main /dev/mapper/luks   *create the volume group
+lvcreate -L 100G main -n home
+lvcreate -l 100%FREE main -n root
+mkfs.btrfs /dev/mapper/main-home
+mkfs.btrfs /dev/mapper/main-root
 mkfs.fat -F32 /dev/nvme0n1p1
+mount /dev/mapper/main-root /mnt
+mount --mkdir /dev/mapper/main-home /mnt/home
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 
 #install base system
-pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
+pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode lvm2
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -71,7 +71,7 @@ systemctl enable NetworkManager
 
 #mkinitcpio
 nano /etc/mkinitcpio.conf
-*HOOKS= after "block" type "encrypt"
+*HOOKS= after "block" type "encrypt" "lvm2"
 mkinitcpio -p linux-lts
 
 #grub
