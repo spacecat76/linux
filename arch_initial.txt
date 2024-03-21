@@ -27,8 +27,8 @@ pvcreate /dev/mapper/luks  *create the physical volume
 vgcreate main /dev/mapper/luks   *create the volume group
 lvcreate -L 100G main -n home
 lvcreate -l 100%FREE main -n root
-mkfs.btrfs /dev/mapper/main-home
-mkfs.btrfs /dev/mapper/main-root
+mkfs.ext4 /dev/mapper/main-home
+mkfs.ext4 /dev/mapper/main-root
 mkfs.fat -F32 /dev/nvme0n1p1
 mount /dev/mapper/main-root /mnt
 mount --mkdir /dev/mapper/main-home /mnt/home
@@ -64,7 +64,7 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub grub-btrfs sbctl efibootmgr networkmanager xdg-user-dirs git
+pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git
 
 #netowork manager
 systemctl enable NetworkManager
