@@ -88,7 +88,7 @@ passwd fabri
 EDITOR=nano visudo
 *uncomment line %wheel ALL=(ALL:ALL) ALL
 
-#secure boot keys (RESET SECURE BOOT KEYS FROM BIOS FIRST)
+#secure boot keys (RESET SECURE BOOT KEYS AND TPM FROM BIOS FIRST)
 sbctl create-keys
 sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux-lts
