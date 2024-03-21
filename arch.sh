@@ -1,3 +1,6 @@
+# refresh mirrors
+pacman -Syyu
+
 # kde
 pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle packagekit-qt5 packagekit-qt6 libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
 
@@ -19,13 +22,12 @@ pacman -S --needed firefox vim nano vlc gimp pinta transmission-qt htop neofetch
 # network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
-sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
 # virt manager
 pacman -S --needed qemu virt-manager dnsmasq --noconfirm
 systemctl enable libvirtd.socket
 usermod -a -G libvirt fabri
-virsh net-autostart default
+
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
@@ -40,7 +42,6 @@ flatpak install org.onlyoffice.desktopeditors com.brave.Browser -y
 # firewall
 pacman -S --needed ufw --noconfirm
 systemctl enable ufw
-ufw enable
 ufw allow mdns
 
 # printing and scanning
@@ -49,13 +50,8 @@ systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
-# grub
-sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
-grub-mkconfig -o /boot/grub/grub.cfg
-
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
-cp /home/fabri/Git/linux/etc/smb.conf /etc/samba/smb.conf -rf
 tee -a /etc/fstab  << END
 # map fastgate usb storage
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
