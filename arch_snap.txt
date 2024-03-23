@@ -1,0 +1,12 @@
+#clone snapd
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si
+sudo systemctl enable --now snapd.socket
+sudo systemctl enable --now snapd.apparmor
+sudo ln -s /var/lib/snapd/snap /snap
+rm -rf snapd
+
+#reboot
+sudo snap install core gimp onlyoffice-desktopeditors brave
+sudo snap install code --classic
