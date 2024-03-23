@@ -99,7 +99,7 @@ exit
 umount -a
 reboot
 
-#enrolling the TPM,
+#enrolling the TPM
 systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
 systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
 
