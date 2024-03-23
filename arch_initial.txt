@@ -23,8 +23,8 @@ Device             Start       End   Sectors  Size Type
 
 cryptsetup -y -v luksFormat /dev/nvme0n1p2
 cryptsetup open /dev/nvme0n1p2 luks
-pvcreate /dev/mapper/luks  *create the physical volume
-vgcreate main /dev/mapper/luks   *create the volume group
+pvcreate /dev/mapper/luks 
+vgcreate main /dev/mapper/luks
 lvcreate -L 100G main -n home
 lvcreate -l 100%FREE main -n root
 mkfs.ext4 /dev/mapper/main-home
@@ -79,7 +79,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --mo
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 *blkid copy the UUID of the root partition /dev/nvme0n1p2
 nano /etc/default/grub
-*GRUB_CMDLINE_LINUX="cryptdevice=UUID=xxxxxxxx:luks root=/dev/mapper/main-root"
+*GRUB_CMDLINE_LINUX="cryptdevice=UUID=0a4b4088-7d61-4098-8089-b00d57fd1047:luks root=/dev/mapper/main-root"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #users
@@ -97,8 +97,6 @@ sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 #enrolling the TPM
 systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
 systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
-systemd-cryptenroll /dev/nvme0n1p3 --recovery-key
-systemd-cryptenroll /dev/nvme0n1p3 --wipe-slot=empty --tpm2-device=auto
 
 #exit and unmount
 exit
