@@ -9,6 +9,7 @@ pacman -Rd --nodeps plasma-browser-integration --noconfirm
 
 # sddm
 systemctl enable sddm
+echo "setxkbmap it" | sudo tee -a /usr/share/sddm/scripts/Xsetup
 
 # utilities
 pacman -S --needed timeshift profile-sync-daemon speech-dispatcher papirus-icon-theme curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
