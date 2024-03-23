@@ -35,7 +35,7 @@ mount --mkdir /dev/mapper/main-home /mnt/home
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 
 #install base system
-pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode lvm2
+pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode lvm2 cryptsetup
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -79,7 +79,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --mo
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 *blkid copy the UUID of the root partition /dev/nvme0n1p2
 nano /etc/default/grub
-*GRUB_CMDLINE_LINUX="cryptdevice=UUID=0a4b4088-7d61-4098-8089-b00d57fd1047:luks root=/dev/mapper/main-root"
+*GRUB_CMDLINE_LINUX="cryptdevice=UUID=e694102a-0adb-4010-867f-8bc79ab3f963:luks root=/dev/mapper/main-root"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #users
@@ -94,11 +94,11 @@ sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux-lts
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 
-#enrolling the TPM
-systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
-systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
-
 #exit and unmount
 exit
 umount -a
 reboot
+
+#enrolling the TPM
+systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
+systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
