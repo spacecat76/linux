@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # kde
-pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
+pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse sassc --noconfirm
 
 # gdm
 systemctl enable gdm
