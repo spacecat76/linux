@@ -2,13 +2,16 @@
 pacman -Syyu
 
 # kde
-pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese --noconfirm
+pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
+
+# gdm
+systemctl enable gdm
 
 # applications
 pacman -S --needed firefox chromium vim nano vlc gimp transmission htop neofetch --noconfirm
 
 # utilities
-pacman -S --needed timeshift speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
+pacman -S --needed timeshift speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs --noconfirm
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
