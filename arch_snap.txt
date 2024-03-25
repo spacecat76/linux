@@ -8,5 +8,6 @@ sudo ln -s /var/lib/snapd/snap /snap
 rm -rf snapd
 
 #reboot
-sudo snap install core onlyoffice-desktopeditors
+sudo snap install core
+sudo snap install onlyoffice-desktopeditors
 sudo snap install code --classic
