@@ -11,14 +11,17 @@ pacman -Rd --nodeps plasma-browser-integration --noconfirm
 systemctl enable sddm
 echo "setxkbmap it" | sudo tee -a /usr/share/sddm/scripts/Xsetup
 
-# utilities
-pacman -S --needed timeshift profile-sync-daemon speech-dispatcher papirus-icon-theme curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
-
-# fonts
-pacman -S --needed ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
+# audio
+pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber --noconfirm
 
 # applications
-pacman -S --needed firefox chromium vim nano vlc gimp pinta transmission-qt htop neofetch --noconfirm
+pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
+
+# utilities
+pacman -S --needed speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs sassc --noconfirm
+
+# fonts & icons
+pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 # network
 pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
@@ -38,7 +41,7 @@ ufw enable
 ufw allow mdns
 
 # printing and scanning
-pacman -S --needed sane cups gutenprint simple-scan --noconfirm
+pacman -S --needed sane cups gutenprint --noconfirm
 systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
