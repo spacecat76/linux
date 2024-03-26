@@ -1,17 +1,23 @@
 # refresh mirrors
 pacman -Syyu
 
-# kde
-pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse sassc --noconfirm
+# gnome
+pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese transmission-gtk --noconfirm
 
 # gdm
 systemctl enable gdm
 
+# remove components
+pacman -Rd --nodeps ephifany --noconfirm
+
+# audio
+pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber --noconfirm
+
 # applications
-pacman -S --needed firefox chromium vim nano vlc gimp transmission-gtk htop neofetch --noconfirm
+pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
 
 # utilities
-pacman -S --needed timeshift speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs --noconfirm
+pacman -S --needed speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs sassc --noconfirm
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
