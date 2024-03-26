@@ -35,7 +35,7 @@ mount --mkdir /dev/mapper/main-home /mnt/home
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 
 #install base system
-pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode lvm2 cryptsetup
+pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode lvm2 cryptsetup
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -72,7 +72,7 @@ systemctl enable NetworkManager
 #mkinitcpio
 nano /etc/mkinitcpio.conf
 *HOOKS= after "block" type "encrypt" "lvm2"
-mkinitcpio -p linux-lts
+mkinitcpio -p linux
 
 #grub
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
@@ -91,7 +91,7 @@ EDITOR=nano visudo
 #secure boot keys (RESET SECURE BOOT KEYS AND TPM FROM BIOS FIRST)
 sbctl create-keys
 sbctl enroll-keys -m
-sbctl sign -s /boot/vmlinuz-linux-lts
+sbctl sign -s /boot/vmlinuz-linux
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 
 #exit and unmount
