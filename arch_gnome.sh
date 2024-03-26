@@ -8,7 +8,7 @@ pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese pipew
 systemctl enable gdm
 
 # applications
-pacman -S --needed firefox chromium vim nano vlc gimp transmission htop neofetch --noconfirm
+pacman -S --needed firefox chromium vim nano vlc gimp transmission-gtk htop neofetch --noconfirm
 
 # utilities
 pacman -S --needed timeshift speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs --noconfirm
