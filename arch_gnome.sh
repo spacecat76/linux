@@ -17,7 +17,7 @@ pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplum
 pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
 
 # utilities
-pacman -S --needed openssh speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs sassc --noconfirm
+pacman -S --needed speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs sassc --noconfirm
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
@@ -36,7 +36,6 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 # firewall
 pacman -S --needed ufw --noconfirm
 systemctl enable ufw
-ufw enable
 ufw allow mdns
 
 # printing and scanning
