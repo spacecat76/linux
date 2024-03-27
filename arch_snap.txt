@@ -10,3 +10,6 @@ rm -rf snapd
 #reboot
 sudo snap install onlyoffice-desktopeditors
 sudo snap install code --classic
+
+# fine sessione ssh
+sudo ufw enable

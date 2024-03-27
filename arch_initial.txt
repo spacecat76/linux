@@ -64,7 +64,7 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git
+pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh
 
 #netowork manager
 systemctl enable NetworkManager
