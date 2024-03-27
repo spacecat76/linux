@@ -14,5 +14,3 @@ sudo snap install code --classic
 
 # fine sessione ssh
 sudo ufw enable
-
-sudo systemctl enable --now snapd.seeded.service
