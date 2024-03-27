@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # gnome
-pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese transmission-gtk gnome-themes-extra --noconfirm
+pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese transmission-gtk gnome-themes-extra sassc fwupd --noconfirm
 
 # gdm
 systemctl enable gdm
@@ -14,7 +14,7 @@ pacman -Rd --nodeps epiphany --noconfirm
 pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
 
 # utilities
-pacman -S --needed speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs sassc --noconfirm
+pacman -S --needed speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs --noconfirm
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
