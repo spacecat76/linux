@@ -8,7 +8,7 @@ pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese trans
 systemctl enable gdm
 
 # remove components
-pacman -Rd --nodeps ephifany --noconfirm
+pacman -Rd --nodeps epiphany --noconfirm
 
 # audio
 pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber --noconfirm
@@ -19,7 +19,7 @@ pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman dist
 # utilities
 pacman -S --needed speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs sassc --noconfirm
 
-# fonts & icons
+# fonts & iconscd..
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 # network
