@@ -1,0 +1,33 @@
+#clone snapd
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si
+sudo systemctl enable --now snapd.socket
+sudo systemctl enable --now snapd.apparmor
+sudo systemctl enable --now snapd.seeded.service
+sudo ln -s /var/lib/snapd/snap /snap
+rm -rf snapd
+
+#reboot
+sudo snap install onlyoffice-desktopeditors
+sudo snap install code --classic
+
+#dash-to-dock
+git clone https://github.com/micheleg/dash-to-dock.git
+cd dash-to-dock
+make
+make install
+
+#distrobox
+distrobox create -n fedora
+distrobox enter fedora
+##brave
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+sudo dnf install brave-browser
+
+distrobox-export --app brave
+
+# fine sessione ssh
+sudo ufw enable
