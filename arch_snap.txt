@@ -4,6 +4,7 @@ cd snapd
 makepkg -si
 sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor
+sudo systemctl enable --now snapd.seeded.service
 sudo ln -s /var/lib/snapd/snap /snap
 rm -rf snapd
 
@@ -13,3 +14,5 @@ sudo snap install code --classic
 
 # fine sessione ssh
 sudo ufw enable
+
+sudo systemctl enable --now snapd.seeded.service
