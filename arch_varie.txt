@@ -6,7 +6,6 @@ sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor
 sudo systemctl enable --now snapd.seeded.service
 sudo ln -s /var/lib/snapd/snap /snap
-rm -rf snapd
 
 #reboot
 sudo snap install onlyoffice-desktopeditors
