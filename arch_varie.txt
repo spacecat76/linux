@@ -1,15 +1,15 @@
-#clone snapd
+#snap
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
 makepkg -si
 sudo systemctl enable --now snapd.socket
-sudo systemctl enable --now snapd.apparmor
-sudo systemctl enable --now snapd.seeded.service
-sudo ln -s /var/lib/snapd/snap /snap
+sudo systemctl enable --now snapd.apparmor.service
+ssudo ln -s /var/lib/snapd/snap /snap
 
-#reboot
-sudo snap install onlyoffice-desktopeditors
+reboot
+sudo systemctl enable --now snapd.seeded.service
 sudo snap install code --classic
+sudo snap install onlyoffice-desktopeditors
 
 #dash-to-dock
 git clone https://github.com/micheleg/dash-to-dock.git
@@ -22,16 +22,8 @@ distrobox create -n debian -i debian:latest --additional-packages "nano build-es
 distrobox enter debian
 
 #locale
-sudo sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
-sudo locale-gen
-
-#brave
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update && sudo apt install brave-browser
-
-exit
-distrobox-export --app brave
+sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
+locale-gen
 
 # fine sessione ssh
 sudo ufw enable
