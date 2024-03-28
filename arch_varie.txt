@@ -22,7 +22,7 @@ distrobox create -n debian -i debian:latest --additional-packages "nano build-es
 distrobox enter debian
 
 #locale
-sudo ed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
+sudo sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 sudo locale-gen
 
 #brave
