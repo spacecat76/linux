@@ -24,7 +24,7 @@ pacman -S --needed fuse-overlayfs speech-dispatcher curl neofetch rust wget bash
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
 
 # network
-pacman -S --needed network-manager-applet nss-mdns inetutils net-tools avahi --noconfirm
+pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 
 # virt manager
