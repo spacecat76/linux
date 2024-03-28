@@ -2,8 +2,8 @@
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
 makepkg -si
-sudo systemctl enable --now snapd.socket
-sudo systemctl enable --now snapd.apparmor.service
+sudo systemctl enable snapd.socket
+sudo systemctl enable snapd.apparmor.service
 ssudo ln -s /var/lib/snapd/snap /snap
 
 reboot
