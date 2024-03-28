@@ -1,4 +1,3 @@
-
 #dash-to-dock
 git clone https://github.com/micheleg/dash-to-dock.git
 cd dash-to-dock
@@ -12,16 +11,13 @@ makepkg -si
 sudo systemctl enable snapd.socket
 sudo systemctl enable snapd.apparmor.service
 sudo ln -s /var/lib/snapd/snap /snap
-
-reboot
+#reboot
 sudo systemctl enable --now snapd.seeded.service
 sudo snap install code --classic
-sudo snap install onlyoffice-desktopeditors
 
 #distrobox
 distrobox create -n debian -i debian:latest --additional-packages "nano build-essential git net-tools curl neofetch"
 distrobox enter debian
-
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen

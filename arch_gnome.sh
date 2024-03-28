@@ -11,14 +11,14 @@ systemctl enable gdm
 pacman -Rd --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
+pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox libreoffice-fresh --noconfirm
 
 # utilities
 pacman -S --needed fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav --noconfirm
 updatedb
 
 # fonts & icons
-pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-fira-code ttf-fira-mono ttf-fira-sans --noconfirm
+pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts --noconfirm
 
 # network
 pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
