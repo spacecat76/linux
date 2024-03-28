@@ -23,7 +23,7 @@ distrobox enter debian
 
 #locale
 sudo ed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
-sudo ocale-gen
+sudo locale-gen
 
 #brave
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
