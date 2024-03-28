@@ -15,7 +15,7 @@ echo "setxkbmap it" | sudo tee -a /usr/share/sddm/scripts/Xsetup
 pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox libreoffice-fresh --noconfirm
+pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
 
 # utilities
 pacman -S --needed fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav --noconfirm
