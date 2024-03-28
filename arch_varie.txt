@@ -1,21 +1,22 @@
-#snap
-git clone https://aur.archlinux.org/snapd.git
-cd snapd
-makepkg -si
-sudo systemctl enable snapd.socket
-sudo systemctl enable snapd.apparmor.service
-ssudo ln -s /var/lib/snapd/snap /snap
-
-reboot
-sudo systemctl enable --now snapd.seeded.service
-sudo snap install code --classic
-sudo snap install onlyoffice-desktopeditors
 
 #dash-to-dock
 git clone https://github.com/micheleg/dash-to-dock.git
 cd dash-to-dock
 make
 make install
+
+#snap
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si
+sudo systemctl enable snapd.socket
+sudo systemctl enable snapd.apparmor.service
+sudo ln -s /var/lib/snapd/snap /snap
+
+reboot
+sudo systemctl enable --now snapd.seeded.service
+sudo snap install code --classic
+sudo snap install onlyoffice-desktopeditors
 
 #distrobox
 distrobox create -n debian -i debian:latest --additional-packages "nano build-essential git net-tools curl neofetch"
