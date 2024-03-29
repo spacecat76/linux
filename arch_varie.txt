@@ -17,7 +17,7 @@ sudo snap install code --classic
 sudo snap install onlyoffice-desktopeditors
 
 #distrobox
-distrobox create -n debian -i debian:latest --additional-packages "nano build-essential git net-tools curl neofetch"
+distrobox create -n debian -i debian:latest --additional-packages "build-essential nano git net-tools curl neofetch"
 distrobox enter debian
 #locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
