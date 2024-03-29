@@ -11,7 +11,7 @@ systemctl enable gdm
 pacman -Rd --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox --noconfirm
+pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
 
 # utilities
 pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav --noconfirm
