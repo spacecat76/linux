@@ -23,5 +23,5 @@ distrobox enter debian
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
-# fine sessione ssh
+#fine sessione ssh
 sudo ufw enable
