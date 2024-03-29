@@ -19,7 +19,7 @@ pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wge
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --user flathub com.brave.Browser org.onlyoffice.desktopeditors -y
+flatpak install --system flathub com.brave.Browser org.onlyoffice.desktopeditors -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts --noconfirm
