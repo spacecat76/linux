@@ -15,7 +15,6 @@ pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman dist
 
 # utilities
 pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav --noconfirm
-updatedb
 
 # flatpak
 pacman -S --needed flatpak --noconfirm

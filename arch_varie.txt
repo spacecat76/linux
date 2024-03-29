@@ -47,5 +47,6 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
-#fine sessione ssh
+#fine sessione
+updatedb
 sudo ufw enable
