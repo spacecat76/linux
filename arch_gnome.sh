@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # gnome
-pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell cheese transmission-gtk gnome-themes-extra sassc fwupd --noconfirm
+pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell transmission-gtk gnome-themes-extra sassc fwupd --noconfirm
 
 # gdm
 systemctl enable gdm
