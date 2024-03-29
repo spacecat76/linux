@@ -11,6 +11,7 @@ error_symbol = "[✖](bold red) "
 
 [container]
 format = '[$symbol \[$name\]]($style) '
+style = 'bold green'
 
 [localip]
 ssh_only = false
@@ -79,17 +80,23 @@ style = "bold green"
 time_format = "%T"
 format = "$time($style) "
 style = "bright-white"
-disabled = false
+disabled = true
 
 [username]
-style_user = "bold dimmed blue"
+style_user = "bold blue"
 show_always = true
 
 [nodejs]
 format = "via [🤖 $version](bold green) "
 
 [os]
-format = "on [($name )]($style)"
-style = "bold blue"
+format = "on $name [$symbol]($style)"
+style = "bold red"
 disabled = false
+
+[os.symbols]
+Arch = "󰣇 "
+Debian =  " "
+
+
 
