@@ -12,9 +12,15 @@ pacman -Rd --nodeps epiphany --noconfirm
 
 # applications
 pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
-
+systemctl enable cronie 
+ 
 # utilities
 pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav gst-plugins-ugly --noconfirm
+
+# flatpak
+pacman -S --needed flatpak --noconfirm
+flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install --system flathub com.brave.Browser org.onlyoffice.desktopeditors -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
