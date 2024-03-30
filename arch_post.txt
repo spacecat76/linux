@@ -11,20 +11,14 @@ END
 cp ~/Git/linux/etc/starship.toml ~/.config
 
 #distrobox
-distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl neofetch gnome-keyring desktop-file-utils ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea"
+distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl neofetch gnome-keyring desktop-file-utils"
 distrobox enter debian
-# add non-free non-free-firmware contrib
 ##locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
 #starship
 curl -sS https://starship.rs/install.sh | sh
-
-#brave
-curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
-apt update && apt install brave-browser -y
 
 #chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub > linux_signing_key.pub
@@ -40,5 +34,5 @@ rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
 #fine sessione
-updatedb
+sudo pdatedb
 sudo ufw enable
