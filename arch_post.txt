@@ -5,14 +5,14 @@ make
 make install
 
 #starship
-tee -a .bashrc  << END
-eval "$(starship init bash)"
-END
+*nano .bashrc and add - eval "$(starship init bash)" >> .bashrc
 cp ~/Git/linux/etc/starship.toml ~/.config
 
 #distrobox
 distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl neofetch gnome-keyring desktop-file-utils"
 distrobox enter debian
+
+#SUDO SU
 ##locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
@@ -24,7 +24,7 @@ curl -sS https://starship.rs/install.sh | sh
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub > linux_signing_key.pub
 install -D -o root -g root -m 644 linux_signing_key.pub /etc/apt/keyrings/linux_signing_key.pub
 sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/linux_signing_key.pub] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
-apt update && apt install google-chrome-stable -y
+apt update && apt install -f google-chrome-stable -y
 
 #vcode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -33,6 +33,12 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
+#EXIT
+distrobox-export --app code
+distrobox-export --app google-chrome-stabl
+exit
+
 #fine sessione
-sudo pdatedb
+sudo updatedb
 sudo ufw enable
+sudo reboot
