@@ -39,6 +39,7 @@ distrobox-export --app google-chrome-stabl
 exit
 
 #fine sessione
+sudo localectl set-keymap it
 sudo updatedb
 sudo ufw enable
 sudo reboot
