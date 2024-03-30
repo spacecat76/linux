@@ -6,13 +6,6 @@ pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell transmission
 
 # gdm
 systemctl enable gdm
-tee -a /etc/X11/xorg.conf.d/30-keyboard.conf << END
-Section "InputClass"
-        Identifier "system-keyboard"
-        MatchIsKeyboard "on"
-        Option "XkbLayout" "it"
-EndSection
-END
 
 # remove components
 pacman -Rd --nodeps epiphany --noconfirm
