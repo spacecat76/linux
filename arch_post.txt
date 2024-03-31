@@ -40,5 +40,6 @@ exit
 
 #fine sessione
 sudo localectl set-keymap it
+sudo firewall-cmd --zone=home --remove-service ssh
 sudo updatedb
 sudo reboot
