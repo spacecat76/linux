@@ -35,7 +35,7 @@ apt update && apt install code -y
 
 #EXIT
 distrobox-export --app code
-distrobox-export --app google-chrome-stabl
+distrobox-export --app google-chrome-stable
 exit
 
 #fine sessione
