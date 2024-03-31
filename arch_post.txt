@@ -5,7 +5,7 @@ make
 make install
 
 #starship
-*nano .bashrc and add - eval "$(starship init bash)" >> .bashrc
+*nano .bashrc and add - eval "$(starship init bash)" to .bashrc
 cp ~/Git/linux/etc/starship.toml ~/.config
 
 #distrobox
