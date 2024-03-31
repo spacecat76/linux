@@ -24,7 +24,7 @@ pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wge
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub com.brave.Browser org.onlyoffice.desktopeditors -y
+flatpak install --system flathub com.github.tchx84.Flatseal com.brave.Browser org.onlyoffice.desktopeditors -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
@@ -41,9 +41,9 @@ sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
 # firewall
-pacman -S --needed ufw --noconfirm
-systemctl enable ufw
-ufw allow mdns
+pacman -S --needed firewalld --noconfirm
+nmcli connection modify FASTWEB connection.zone home
+systemctl enable firewalld.service
 
 # printing and scanning
 pacman -S --needed sane cups gutenprint --noconfirm
