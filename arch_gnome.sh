@@ -11,7 +11,7 @@ systemctl enable gdm
 pacman -Rd --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
+pacman -S --needed firefox chromium vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
 systemctl enable cronie 
  
 # utilities
@@ -20,7 +20,7 @@ pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wge
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub com.github.tchx84.Flatseal com.brave.Browser org.onlyoffice.desktopeditors -y
+flatpak install --system flathub org.onlyoffice.desktopeditors -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
