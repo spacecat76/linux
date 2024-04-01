@@ -39,7 +39,7 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 # firewall
 pacman -S --needed firewalld --noconfirm
 nmcli connection modify FASTWEB connection.zone home
-systemctl enable firewalld.service
+systemctl enable firewalld.service --now
 
 # printing and scanning
 pacman -S --needed sane cups cups-pdf gutenprint --noconfirm
