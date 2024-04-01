@@ -42,7 +42,7 @@ nmcli connection modify FASTWEB connection.zone home
 systemctl enable firewalld.service
 
 # printing and scanning
-pacman -S --needed sane cups cups-pdf gutenprint foomatic-db-gutenprint-ppds --noconfirm
+pacman -S --needed sane cups cups-pdf gutenprint --noconfirm
 systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf

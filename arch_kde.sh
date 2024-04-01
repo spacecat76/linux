@@ -50,7 +50,7 @@ pacman -S --needed sane cups cups-pdf gutenprint --noconfirm
 systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
-echo "Out /home/${USER}/Documents" | tee -a /etc/cups/cups-pdf.conf
+sed -i 's+#Out /var/spool/cups-pdf/${USER}+Out /home/${USER}/Documents+g' /etc/cups/cups-pdf.conf
 
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
