@@ -12,7 +12,8 @@ pacman -Rd --nodeps epiphany --noconfirm
 
 # applications
 pacman -S --needed firefox chromium vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
-systemctl enable cronie 
+systemctl enable cronie
+usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
 # utilities
 pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav gst-plugins-ugly --noconfirm
