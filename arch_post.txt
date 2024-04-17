@@ -32,6 +32,7 @@ distrobox-export --app code
 exit
 
 #fine sessione
+sudo chown -R fabri:fabri /home/fabri/.local/share/containers
 sudo localectl set-keymap it
 sudo updatedb
 sudo firewall-cmd --permanent --zone=public --remove-service ssh
