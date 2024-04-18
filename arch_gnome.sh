@@ -11,7 +11,7 @@ systemctl enable gdm
 pacman -Rd --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
+pacman -S --needed firefox vim nano vlc htop neofetch timeshift podman distrobox starship --noconfirm
 systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
