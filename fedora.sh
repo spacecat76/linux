@@ -42,9 +42,6 @@ cp /home/fabri/Git/linux/etc/ffw.xml /usr/lib/firewalld/zones
 firewall-cmd --reload
 firewall-cmd --set-default-zone ffw
 
-# printing and scanning
-echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
-
 # fastgate
 tee -a /etc/fstab  << END
 # map fastgate usb storage

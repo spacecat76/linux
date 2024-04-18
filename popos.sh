@@ -13,7 +13,6 @@ ufw allow mdns
 
 # printing and scanning
 apt install printer-driver-cups-pdf -y
-echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # fastgate
 apt install cifs-utils smbclient -y
