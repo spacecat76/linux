@@ -52,7 +52,6 @@ ufw allow mdns
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
 adduser fabri lpadmin
-echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # grub
 sed -i 's/quiet/quiet loglevel=3 splash/g' /etc/default/grub

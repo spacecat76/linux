@@ -27,7 +27,6 @@ ufw allow mdns
 # printing and scanning
 apt install sane printer-driver-all printer-driver-cups-pdf simple-scan -y
 adduser fabri lpadmin
-echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 
 # fastgate
 apt install cifs-utils smbclient -y
