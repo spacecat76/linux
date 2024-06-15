@@ -64,7 +64,7 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh plymouth
+pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh plymouth shim
 
 #netowork manager
 systemctl enable NetworkManager
@@ -98,6 +98,9 @@ sbctl create-keys
 sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
+sbctl sign -s /usr/lib/fwupd/efi/fwupdx64.efi -o /usr/lib/fwupd/efi/fwupdx64.efi.signed
+cp /usr/share/shim/shimx64.efi /boot/EFI/arch/
+sbctl sign -s /boot/EFI/arch/shimx64.efi
 
 #exit and unmount
 exit
