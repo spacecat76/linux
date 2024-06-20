@@ -5,11 +5,11 @@ make
 make install
 
 #starship
-*nano .bashrc and add - eval "$(starship init bash)"
+##nano .bashrc and add -> eval "$(starship init bash)"
 cp ~/Git/linux/etc/starship.toml ~/.config
 
 #distrobox
-distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl neofetch gnome-keyring desktop-file-utils"
+distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl gnome-keyring desktop-file-utils"
 distrobox enter debian
 
 #SUDO SU
