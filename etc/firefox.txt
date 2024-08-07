@@ -3,5 +3,6 @@ gfx.webrender.all                                                   true
 apz.gtk.kinetic_scroll.enabled		                     false
 apz.gtk.touchpad_pinch.enabled		                false
 browser.sessionstore.resume_from_crash  false
+gfx.webrenderer.debug.gpu-cache false
 
 browser.uidensity			1
