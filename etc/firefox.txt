@@ -1,2 +1,1 @@
-mousewheel.default.delta_multiplier_x	      10
-apz.gtk.kinetic_scroll.enabled		          false
+mousewheel.default.delta_multiplier_y	      50
