@@ -8,7 +8,7 @@ pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell gnome-themes
 systemctl enable gdm
 
 # remove components
-pacman -Rd --nodeps epiphany totem --noconfirm
+pacman -Rs --nodeps epiphany totem --noconfirm
 
 # applications
 pacman -S --needed firefox vim nano vlc htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
