@@ -11,7 +11,7 @@ systemctl enable gdm
 pacman -Rs --nodeps epiphany totem --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano vlc htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
+pacman -S --needed showtime firefox vim nano htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
 systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
@@ -21,7 +21,7 @@ pacman -S --needed fwupd speech-dispatcher curl neofetch rust wget bash-completi
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub org.onlyoffice.desktopeditors com.brave.Browser org.gimp.GIMP com.system76.Popsicle com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager com.spotify.Client -y
+flatpak install --system flathub org.onlyoffice.desktopeditors org.gimp.GIMP com.mattjakeman.ExtensionManager com.spotify.Client -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
