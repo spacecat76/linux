@@ -16,7 +16,7 @@ systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
 # utilities
-pacman -S --needed fwupd speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream plocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs ffmpegthumbnailer gst-libav gst-plugins-ugly dnsutils --noconfirm
+pacman -S --needed fwupd speech-dispatcher curl fastfetch rust wget bash-completion sof-firmware appstream plocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs ffmpegthumbnailer gst-libav gst-plugins-ugly dnsutils --noconfirm
 
 # flatpak
 pacman -S --needed flatpak --noconfirm
