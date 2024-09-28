@@ -100,8 +100,8 @@ sbctl enroll-keys -m
 sbctl sign -s /boot/vmlinuz-linux
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 sbctl sign -s /usr/lib/fwupd/efi/fwupdx64.efi -o /usr/lib/fwupd/efi/fwupdx64.efi.signed
-cp /usr/share/shim/shimx64.efi /boot/EFI/arch/
-sbctl sign -s /boot/EFI/arch/shimx64.efi
+cp /usr/share/shim/shimx64.efi /boot/GRUB/arch/
+sbctl sign -s /boot/EFI/GRUB/shimx64.efi
 
 #exit and unmount
 exit
