@@ -14,7 +14,7 @@ timedatectl set-ntp true
 #View disks and partitions
 lsblk
 
-#Create 3 partitions
+#Create 3 partitions (Remove existing!)
 cfdisk /dev/nvme0n1
 
 Device             Start       End   Sectors  Size Type
@@ -64,7 +64,7 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh plymouth shim apparmor
+pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh plymouth shim apparmor fwupd
 
 #netowork manager
 systemctl enable NetworkManager
