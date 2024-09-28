@@ -40,7 +40,7 @@ rm -f google-chrome-stable_current_amd64.deb
 
 # snap
 apt install snapd -y
-snap install core gimp onlyoffice-desktopeditors
+snap install core gimp onlyoffice-desktopeditors spotify
 snap install code --classic
 
 # firewall
