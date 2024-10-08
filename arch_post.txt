@@ -9,7 +9,7 @@ make install
 cp ~/Git/linux/etc/starship.toml ~/.config
 
 #distrobox
-distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl gnome-keyring desktop-file-utils"
+distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl gnome-keyring desktop-file-utils pipewire bluez"
 distrobox enter debian
 
 #SUDO SU
