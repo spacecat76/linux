@@ -9,7 +9,7 @@ systemctl enable gdm
 systemctl enable bluetooth
 
 # remove components
-pacman -Rs --nodeps epiphany totem gnome-music gnome-maps --noconfirm
+pacman -Rs --nodeps epiphany --noconfirm
 
 # applications
 pacman -S --needed showtime firefox vim nano htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
