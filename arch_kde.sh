@@ -25,7 +25,7 @@ pacman -S --needed speech-dispatcher curl fastfetch rust wget bash-completion so
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub org.onlyoffice.desktopeditors org.gimp.GIMP com.mattjakeman.ExtensionManager com.spotify.Client -y
+flatpak install --system flathub org.onlyoffice.desktopeditors org.gimp.GIMP com.spotify.Client -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
