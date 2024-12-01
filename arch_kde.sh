@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # kde
-pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview --noconfirm
+pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview power-profiles-deamon --noconfirm
 
 # remove components
 pacman -Rd --nodeps plasma-browser-integration --noconfirm
