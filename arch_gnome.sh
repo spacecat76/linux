@@ -32,8 +32,9 @@ pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 
 # virt manager
-pacman -S --needed qemu virt-manager dnsmasq --noconfirm
+pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer --noconfirm
 systemctl enable libvirtd.socket
+systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
