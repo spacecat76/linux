@@ -15,16 +15,17 @@ echo "setxkbmap it" | sudo tee -a /usr/share/sddm/scripts/Xsetup
 pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber --noconfirm
 
 # applications
-pacman -S --needed firefox chromium vim nano vlc gimp htop neofetch timeshift podman distrobox starship --noconfirm
+pacman -S --needed firefox vim nano htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
 systemctl enable cronie
- 
+usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
+
 # utilities
-pacman -S --needed fwupd fuse-overlayfs speech-dispatcher curl neofetch rust wget bash-completion sof-firmware appstream mlocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs gst-libav gst-plugins-ugly --noconfirm
+pacman -S --needed speech-dispatcher curl fastfetch rust wget bash-completion sof-firmware appstream plocate unrar unzip p7zip fuse2 ffmpeg ffmpegthumbs ffmpegthumbnailer gst-libav gst-plugins-ugly dnsutils --noconfirm
 
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub org.onlyoffice.desktopeditors -y
+flatpak install --system flathub org.onlyoffice.desktopeditors org.gimp.GIMP com.mattjakeman.ExtensionManager com.spotify.Client -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
@@ -37,19 +38,23 @@ systemctl enable avahi-daemon
 pacman -S --needed qemu virt-manager dnsmasq --noconfirm
 systemctl enable libvirtd.socket
 usermod -a -G libvirt fabri
+virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
 # firewall
 pacman -S --needed firewalld --noconfirm
-systemctl enable firewalld.service
+systemctl enable firewalld.service --now
 
 # printing and scanning
-pacman -S --needed sane cups cups-pdf gutenprint --noconfirm
+pacman -S --needed sane cups cups-pdf --noconfirm
 systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
-echo "bjnp://192.168.1.94" | tee -a /etc/sane.d/pixma.conf
 sed -i 's+#Out /var/spool/cups-pdf/${USER}+Out /home/${USER}/Documents+g' /etc/cups/cups-pdf.conf
+
+# lid setting
+sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
 
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
