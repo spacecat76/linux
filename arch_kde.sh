@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # kde
-pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview power-profiles-deamon --noconfirm
+pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview power-profiles-daemon --noconfirm
 
 # remove components
 pacman -Rd --nodeps plasma-browser-integration --noconfirm
@@ -39,7 +39,6 @@ pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-st
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
-virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
@@ -56,10 +55,3 @@ sed -i 's+#Out /var/spool/cups-pdf/${USER}+Out /home/${USER}/Documents+g' /etc/c
 # lid setting
 sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
-
-# fastgate
-pacman -S --needed cifs-utils samba smbclient --noconfirm
-tee -a /etc/fstab  << END
-# map fastgate usb storage
-//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin
-END
