@@ -33,6 +33,7 @@ pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-ca
 # network
 pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
+systemctl enable bluetooth.service
 
 # virt manager
 pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer --noconfirm
@@ -55,3 +56,10 @@ sed -i 's+#Out /var/spool/cups-pdf/${USER}+Out /home/${USER}/Documents+g' /etc/c
 # lid setting
 sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
+
+# fastgate
+pacman -S --needed cifs-utils samba smbclient --noconfirm
+tee -a /etc/fstab  << END
+# map fastgate usb storage
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate       cifs    vers=1.0,nobrl,domain=lan,username=admin,password=admin,x-systemd.automount,x-systemd.requires=network-online.target,_netdev,uid=1000,gid=1000,rw      0       0
+END
