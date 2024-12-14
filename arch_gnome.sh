@@ -12,7 +12,7 @@ systemctl enable bluetooth
 pacman -Rs --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed firefox vim nano htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
+pacman -S --needed firefox vim nano htop fastfetch timeshift podman distrobox starship --noconfirm
 systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
@@ -22,7 +22,7 @@ pacman -S --needed speech-dispatcher curl fastfetch rust wget bash-completion so
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub org.onlyoffice.desktopeditors org.gimp.GIMP com.mattjakeman.ExtensionManager com.spotify.Client -y
+flatpak install --system flathub org.onlyoffice.desktopeditors com.mattjakeman.ExtensionManager com.spotify.Client com.transmissionbt.Transmission -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
@@ -31,7 +31,7 @@ pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-ca
 pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 
-# virt manager
+# cockpit
 pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer --noconfirm
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
