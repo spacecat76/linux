@@ -32,11 +32,7 @@ pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 
 # cockpit
-<<<<<<< HEAD
 pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer pcp --noconfirm
-=======
-pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer pcp --noconfirm
->>>>>>> 1b8bc03d54333be9cc53fe3d1a053a04519389f6
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
