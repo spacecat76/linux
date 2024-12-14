@@ -35,8 +35,8 @@ pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 systemctl enable bluetooth.service
 
-# virt manager
-pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer --noconfirm
+# cockpit
+pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer pcp --noconfirm
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
