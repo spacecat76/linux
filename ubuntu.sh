@@ -9,7 +9,7 @@ snap install onlyoffice-desktopeditors spotify
 snap install code --classic
 
 # cockpit
-apt install cockpit cockpit-podman cockipit-machines bridge-utils pcp -y
+apt install cockpit cockpit-podman cockpit-machines bridge-utils pcp -y
 adduser fabri libvirt
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
