@@ -70,6 +70,10 @@ update-grub
 # plymouth themes
 plymouth-set-default-theme -R lines
 
+# lid setting
+sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
+
 # fastgate
 apt install cifs-utils smbclient -y
 tee -a /etc/fstab  << END
