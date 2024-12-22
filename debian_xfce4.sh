@@ -17,10 +17,10 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install firefox -y
 
 # desktop environment
-apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez bluetooth slick-greeter lightdm-settings transmission-gtk shotwell seahorse cheese galculator redshift-gtk -y
+apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez bluetooth slick-greeter lightdm-settings redshift-gtk light xbindkeys gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra -y
 
 # apps & utilities
-apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
+apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https gparted transmission-gtk shotwell seahorse cheese galculator -y
 
 # docklite
 wget https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb
@@ -107,16 +107,6 @@ Section "InputClass"
         Option "TappingButtonMap" "lrm"
         Option "NaturalScrolling" "on"
         Option "ScrollMethod" "twofinger"
-EndSection
-END
-
-# intel graphics X11
-tee -a /etc/X11/xorg.conf.d/20-intel-gpu.conf << END
-Section "Device"
-        Identifier  "Intel Graphics"
-        Driver      "intel"
-        Option      "TearFree"  "true"
-        Option      "DRI"    "3"
 EndSection
 END
 
