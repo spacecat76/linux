@@ -24,8 +24,8 @@ apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-t
 
 # docklite
 wget https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb
-apt install xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb -y
-rm -r xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb
+apt install ./xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb -y
+rm -r ./xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
