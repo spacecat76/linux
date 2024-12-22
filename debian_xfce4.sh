@@ -4,6 +4,8 @@ apt update && apt upgrade -y
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
+sed -i 's/en_US.UTF-8/it_IT.UTF-8/g' /etc/default/locale
+sed -i 's/LANG="it_IT.UTF-8/LANG="en_US.UTF-8"/g' /etc/default/locale
 
 # firmware
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
@@ -24,7 +26,7 @@ apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-t
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
 
 # fonts & icons
-apt install yaru-theme-gnome-shell yaru-theme-icon papirus-icon-theme ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
+apt install papirus-icon-theme ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # vcode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -52,11 +54,20 @@ curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 apt update && apt install spotify-client -y
 
-# firewall
-apt install ufw -y
+# network
+apt install ufw network-manager-gnome -y
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 ufw enable
 ufw allow mdns
+set timedatectl set-ntp true
+set timedatectl set-timezone "Europe/Rome"
+
+# cockpit
+apt install cockpit cockpit-podman cockpit-machines bridge-utils pcp -y
+adduser fabri libvirt
+virsh net-autostart default
+sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
+sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
 # printing and scanning
 apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
