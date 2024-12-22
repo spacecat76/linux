@@ -17,7 +17,7 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install firefox -y
 
 # desktop environment
-apt install xfce4 xfce4-goodies mugshot menulibre bluez bluetooth slick-greeter lightdm-settings transmission-gtk shotwell seahorse cheese galculator -y
+apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez bluetooth slick-greeter lightdm-settings transmission-gtk shotwell seahorse cheese galculator redshift-gtk -y
 
 # apps & utilities
 apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https -y
@@ -31,7 +31,7 @@ rm -r ./xfce4*.deb
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
 
 # fonts & icons
-apt install papirus-icon-theme ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
+apt install papirus-icon-theme deepin-icon-theme ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # vcode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -97,6 +97,44 @@ tee -a /etc/fstab  << END
 //192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,x-systemd.after=network-online.target,x-systemd.automount,user 0 0
 END
 
+# touchpad X11
+tee -a /etc/X11/xorg.conf.d/90-touchpad.conf << END
+Section "InputClass"
+        Identifier "touchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "Tapping" "on"
+        Option "TappingButtonMap" "lrm"
+        Option "NaturalScrolling" "on"
+        Option "ScrollMethod" "twofinger"
+EndSection
+END
+
+# intel graphics X11
+tee -a /etc/X11/xorg.conf.d/20-intel-gpu.conf << END
+Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "TearFree"  "true"
+        Option      "DRI"    "3"
+EndSection
+END
+
+# greeter
+sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=slick-greeter/g' /etc/lightdm/lightdm.conf
+sed -i 's/#greeter-hide-users=false/greeter-hide-users=false/g' /etc/lightdm/lightdm.conf
+sed -i 's/#allow-user-switching=true/allow-user-switching=true/g' /etc/lightdm/lightdm.conf
+
+tee -a /etc/lightdm/slick-greeter.conf << END
+[Greeter]
+background=/home/fabri/Git/linux/etc/greeter.png
+END
+
+sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.socket
+sed -i 's/ConditionUser=!root/ConditionUser=!lightdm/g' /usr/lib/systemd/user/pulseaudio.service
+
 # various
 sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/system.conf
 sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/user.conf
+
+tlp start
