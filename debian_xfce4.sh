@@ -4,7 +4,6 @@ apt update && apt upgrade -y
 # locale
 sed -i 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
-sudo update-locale LC_CTYPE=it_IT.UTF-8 LC_NUMERIC=it_IT.UTF-8 LC_TIME=it_IT.UTF-8 LC_COLLATE=it_IT.UTF-8 LC_MONETARY=it_IT.UTF-8 LC_MESSAGES=it_IT.UTF-8 LC_PAPER=it_IT.UTF-8 LC_NAME=it_IT.UTF-8 LC_ADDRESS=it_IT.UTF-8 LC_TELEPHONE=it_IT.UTF-8 LC_MEASUREMENT=it_IT.UTF-8 LC_IDENTIFICATION=it_IT.UTF-8
 
 # firmware
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
