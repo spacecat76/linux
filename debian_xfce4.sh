@@ -68,7 +68,7 @@ set timedatectl set-ntp true
 set timedatectl set-timezone "Europe/Rome"
 
 # cockpit
-apt install cockpit cockpit-podman cockpit-machines bridge-utils pcp -y
+apt install cockpit cockpit-podman cockpit-machines pcp -y
 adduser fabri libvirt
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
