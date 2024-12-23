@@ -15,7 +15,7 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install firefox -y
 
 # desktop environment
-apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez blueman slick-greeter lightdm-settings redshift-gtk gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra onboard mousetweaks system-config-printer -y
+apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez blueman slick-greeter lightdm-settings redshift-gtk gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra onboard mousetweaks system-config-printer fuse -y
 
 # apps & utilities
 apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https gparted transmission-gtk shotwell seahorse cheese galculator gimp -y
