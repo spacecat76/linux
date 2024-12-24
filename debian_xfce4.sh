@@ -15,12 +15,12 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install firefox -y
 
 # desktop environment
-apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez blueman slick-greeter lightdm-settings redshift-gtk gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra onboard mousetweaks system-config-printer fuse -y
+apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez blueman slick-greeter lightdm-settings redshift-gtk gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra onboard mousetweaks system-config-printer fuse pipewire fwupd -y
 
 # apps & utilities
-apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https gparted transmission-gtk shotwell seahorse cheese galculator gimp -y
+apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https gparted transmission-gtk shotwell seahorse cheese galculator gimp gnome-firmware -y
 
-# docklite
+# docklike
 wget https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb
 apt install ./xfce4-docklike-plugin_0.4.0+git20211128-1~mx21+1_amd64.deb -y
 rm -r ./xfce4*.deb
