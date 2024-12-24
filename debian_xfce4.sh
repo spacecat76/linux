@@ -15,7 +15,7 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install firefox -y
 
 # desktop environment
-apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez blueman slick-greeter lightdm-settings redshift-gtk gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra onboard mousetweaks system-config-printer fuse pipewire fwupd apt-show-versions -y
+apt install xfce4 xfce4-goodies tlp mugshot menulibre bluez blueman slick-greeter lightdm-settings redshift-gtk gvfs-backends ffmpegthumbnailer tumbler tumbler-plugins-extra onboard mousetweaks system-config-printer fuse pipewire fwupd apt-show-versions thunar-font-manager -y
 
 # apps & utilities
 apt install timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes apt-transport-https gparted transmission-gtk shotwell seahorse cheese galculator gimp gnome-firmware gnome-package-updater -y
@@ -29,7 +29,7 @@ rm -r ./xfce4*.deb
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
 
 # fonts & icons
-apt install papirus-icon-theme yaru-theme-gtk ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
+apt install papirus-icon-theme gnome-themes-extra yaru-theme-gtk ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
 # vcode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
