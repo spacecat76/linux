@@ -26,8 +26,8 @@ apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0
 # fonts & icons
 apt install yaru-theme-gnome-shell yaru-theme-icon papirus-icon-theme ttf-mscorefonts-installer fonts-ubuntu fonts-crosextra-carlito fonts-crosextra-caladea -y
 
-# virt manager
-apt install virt-manager bridge-utils -y
+# cockpit
+apt install cockpit cockpit-podman cockpit-machines pcp -y
 adduser fabri libvirt
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
@@ -60,6 +60,10 @@ update-grub
 
 # plymouth themes
 plymouth-set-default-theme -R lines
+
+# lid setting
+sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
 
 # fastgate
 apt install cifs-utils smbclient -y
