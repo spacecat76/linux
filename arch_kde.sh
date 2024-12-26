@@ -22,11 +22,6 @@ usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 # utilities
 pacman -S --needed speech-dispatcher curl fastfetch rust wget bash-completion sof-firmware appstream plocate unrar unzip 7zip fuse2 ffmpeg ffmpegthumbs ffmpegthumbnailer gst-libav gst-plugins-ugly dnsutils --noconfirm
 
-# flatpak
-pacman -S --needed flatpak --noconfirm
-flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub org.onlyoffice.desktopeditors org.gimp.GIMP com.spotify.Client -y
-
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
 
@@ -59,7 +54,7 @@ sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ign
 
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
-tee -a /etc/fstab  << END
+#tee -a /etc/fstab  << END
 # map fastgate usb storage
-//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,x-systemd.after=network-online.target,x-systemd.automount,user 0 0
-END
+#//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,x-systemd.after=network-online.target,x-systemd.automount,user 0 0
+#END
