@@ -24,15 +24,15 @@ pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --system flathub org.onlyoffice.desktopeditors com.mattjakeman.ExtensionManager com.spotify.Client com.transmissionbt.Transmission -y
 
-# fonts & icons
-pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
+# fonts, icons & themes
+pacman -S --needed yaru-gtk-theme papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
 
 # network
 pacman -S --needed nss-mdns inetutils net-tools avahi --noconfirm
 systemctl enable avahi-daemon
 
 # cockpit
-pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer pcp --noconfirm
+pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged cockpit-files qemu-base dnsmasq virt-viewer pcp --noconfirm
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
