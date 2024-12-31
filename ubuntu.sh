@@ -8,7 +8,7 @@ apt install papirus-icon-theme fonts-crosextra-carlito fonts-crosextra-caladea -
 snap install onlyoffice-desktopeditors spotify
 
 # cockpit
-apt install cockpit cockpit-podman cockpit-machines bridge-utils pcp -y
+apt install cockpit cockpit-podman cockpit-machines pcp cockpit-sosreport  -y
 adduser fabri libvirt
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
