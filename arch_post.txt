@@ -3,7 +3,7 @@
 cp ~/Git/linux/etc/starship.toml ~/.config
 
 #distrobox
-distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl gnome-keyring desktop-file-utils pipewire bluez"
+distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl gnome-keyring desktop-file-utils"
 distrobox enter debian
 
 #SUDO SU
@@ -21,30 +21,8 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
-#chrome
-curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
-echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
-apt update && apt install google-chrome-stable -y
-
-# onlyoffice
-mkdir -p -m 700 ~/.gnupg
-gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
-chmod 644 /tmp/onlyoffice.gpg
-chown root:root /tmp/onlyoffice.gpg
-mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
-echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
-apt update && apt install onlyoffice-desktopeditors -y
-
-# spotify
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-apt update && apt install spotify-client -y
-
 exit
 distrobox-export --app code
-distrobox-export --app google-chrome-stable
-distrobox-export --app spotify-client
-distrobox-export --app onlyoffice-desktopeditors
 exit
 
 #fine sessione
