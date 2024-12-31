@@ -51,7 +51,7 @@ ufw enable
 ufw allow mdns
 
 # printing and scanning
-apt install sane cups printer-driver-all printer-driver-cups-pdf simple-scan -y
+apt install sane cups printer-driver-cups-pdf simple-scan -y
 adduser fabri lpadmin
 
 # grub
