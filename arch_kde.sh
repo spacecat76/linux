@@ -31,7 +31,7 @@ systemctl enable avahi-daemon
 systemctl enable bluetooth.service
 
 # cockpit
-pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged qemu-base dnsmasq virt-viewer pcp --noconfirm
+pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-storaged cockpit-files qemu-base dnsmasq virt-viewer pcp --noconfirm
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
