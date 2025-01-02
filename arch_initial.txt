@@ -35,7 +35,7 @@ mount --mkdir /dev/mapper/main-home /mnt/home
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 
 #install base system
-pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode lvm2 cryptsetup
+pacstrap /mnt base base-devel linux linux-headers linux-lts linux-lts-headers linux-firmware nano intel-ucode lvm2 cryptsetup
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -80,9 +80,15 @@ mkinitcpio -p linux
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=3/g' /etc/default/grub
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 splash"/g' /etc/default/grub
+sed -i 's/#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/g' /etc/default/grub
+sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
+echo "GRUB_SAVEDEFAULT="true"" | tee -a /etc/default/grub
+
+
 *blkid copy id of /dev/nvme0n1p2
 nano /etc/default/grub
 *GRUB_CMDLINE_LINUX="cryptdevice=UUID=b1f676ba-580c-4f93-bfdc-c4d505475970:luks root=/dev/mapper/main-root lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
+
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #plymouth
