@@ -82,7 +82,7 @@ sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=3/g' /etc/default/grub
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 splash"/g' /etc/default/grub
 *blkid copy id of /dev/nvme0n1p2
 nano /etc/default/grub
-*GRUB_CMDLINE_LINUX="cryptdevice=UUID=0d4b797c-a196-4185-a5fe-e0ace85e14c5:luks root=/dev/mapper/main-root lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
+*GRUB_CMDLINE_LINUX="cryptdevice=UUID=b1f676ba-580c-4f93-bfdc-c4d505475970:luks root=/dev/mapper/main-root lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #plymouth
