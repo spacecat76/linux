@@ -18,8 +18,8 @@ lsblk
 cfdisk /dev/nvme0n1
 
 Device             Start       End   Sectors  Size Type
-/dev/nvme0n1p1      2048   1050623   1048576  512M EFI System
-/dev/nvme0n1p2   1050624 500117503 499066880  238G Linux filesystem
+/dev/nvme0n1p1      2048   1050623   1048576  1G EFI System
+/dev/nvme0n1p2   1050624 500117503 499066880  237.5G Linux filesystem
 
 cryptsetup -y -v luksFormat /dev/nvme0n1p2
 cryptsetup open /dev/nvme0n1p2 luks
