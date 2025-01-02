@@ -96,12 +96,15 @@ EDITOR=nano visudo
 
 #secure boot keys (RESET SECURE BOOT KEYS AND TPM FROM BIOS FIRST)
 sbctl create-keys
-sbctl enroll-keys -m
+sbctl enroll-keys -m #Output will be !!File is immutable - perform a chattr -i /sys/xxxxx
+
 sbctl sign -s /boot/vmlinuz-linux
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
 sbctl sign -s /usr/lib/fwupd/efi/fwupdx64.efi -o /usr/lib/fwupd/efi/fwupdx64.efi.signed
 cp /usr/share/shim/shimx64.efi /boot/EFI/GRUB/
 sbctl sign -s /boot/EFI/GRUB/shimx64.efi
+sbctl sign -s /boot/grub/x86_64-efi/core.efi
+sbctl sign -s /boot/grub/x86_64-efi/grub.efi
 
 #exit and unmount
 exit
