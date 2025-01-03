@@ -83,18 +83,11 @@ sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=3/g' /etc/default/grub
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 splash"/g' /etc/default/grub
 sed -i 's/#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/g' /etc/default/grub
 sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
-sed -i '/#GRUB_BACKGROUND=/c\GRUB_BACKGROUND="/boot/grub/themes/arch-linux/background.png"' /etc/default/grub
-sed -i '/#GRUB_THEME=/c\GRUB_THEME="/boot/grub/themes/arch-linux/theme.txt"' /etc/default/grub
 echo "GRUB_SAVEDEFAULT="true"" | tee -a /etc/default/grub
 
 *blkid copy id of /dev/nvme0n1p2
 nano /etc/default/grub
 *GRUB_CMDLINE_LINUX="cryptdevice=UUID=b1f676ba-580c-4f93-bfdc-c4d505475970:luks root=/dev/mapper/main-root lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
-
-tee -a /etc/grub.d/40_custom <<END
-set superusers="fabri"
-password_pbkdf2 fabri grub.pbkdf2.sha512.10000.A3C392F531AC9C3615C2126D7B3F06E98FAB44E81EEC1225DDF447F2E9B3179033D3DB72A151F2E50720B1F370A589E89D0A47A04D87AB447AA993423A01C751.03AB973B7972ED17BE0D594B3C63228123368236BA53ECDFC106EF3B60A942E295F34D8C87F81941DEB8287D48A71B0F37930ADA36F1A76DB90BB5E33B36D499
-END
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
