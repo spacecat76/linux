@@ -74,7 +74,7 @@ systemctl enable apparmor.service
 #mkinitcpio
 nano /etc/mkinitcpio.conf
 *HOOKS= after "block" type "encrypt" "lvm2" "plymouth"
-mkinitcpio -p linux
+mkinitcpio -P
 
 #grub
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
