@@ -40,8 +40,9 @@ sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
 # firewall
-pacman -S --needed firewalld --noconfirm
-systemctl enable firewalld.service --now
+pacman -S --needed gufw --noconfirm
+ufw enable
+ufw allow mdns
 
 # printing and scanning
 pacman -S --needed sane cups cups-pdf --noconfirm
@@ -57,5 +58,5 @@ sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ign
 pacman -S --needed cifs-utils samba smbclient --noconfirm
 tee -a /etc/fstab  << END
 # map fastgate usb storage
-//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs _netdev,vers=1.0,user=admin,pass=admin,file_mode=0777,dir_mode=0777  0 0
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs _netdev,vers=1.0,user=admin,pass=admin,iocharset=utf8,file_mode=0777,dir_mode=0777,x-systemd.automount	0 0
 END

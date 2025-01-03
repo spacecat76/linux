@@ -43,6 +43,4 @@ exit
 #fine sessione
 sudo localectl set-keymap it
 sudo updatedb
-sudo firewall-cmd --permanent --zone=public --remove-service ssh
-nmcli connection modify FASTWEB connection.zone home
 sudo reboot
