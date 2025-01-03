@@ -15,7 +15,7 @@ echo "setxkbmap it" | sudo tee -a /usr/share/sddm/scripts/Xsetup
 pacman -S --needed pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber --noconfirm
 
 # applications
-pacman -S --needed firefox chromium vim nano htop fastfetch timeshift podman distrobox starship transmission-qt isoimagewriter --noconfirm
+pacman -S --needed firefox chromium vim nano less htop fastfetch timeshift podman distrobox starship transmission-qt isoimagewriter --noconfirm
 systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
@@ -59,7 +59,7 @@ sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ign
 
 # fastgate
 pacman -S --needed cifs-utils samba smbclient --noconfirm
-#tee -a /etc/fstab  << END
+tee -a /etc/fstab  << END
 # map fastgate usb storage
-#//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs user=admin,vers=1.0,dir_mode=0777,file_mode=0777,pass=admin,x-systemd.after=network-online.target,x-systemd.automount,user 0 0
-#END
+//192.168.1.254/samba/usb1_1 /home/fabri/Fastgate cifs vers=1.0,user=admin,pass=admin,file_mode=0777,dir_mode=0777
+END
