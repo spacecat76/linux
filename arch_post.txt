@@ -11,6 +11,11 @@ sed -i '/#GRUB_THEME=/c\GRUB_THEME="/boot/grub/themes/arch-linux/theme.txt"' /et
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
+#plymouth
+
+cp /home/fabri/Git/linux/etc/background-tile.png /usr/share/plymouth/themes/spinner/background-tile.png
+plymouth-set-default-theme -R spinner
+
 ##exit
 #distrobox
 distrobox create -n debian -i debian:latest --hostname "$(uname -n)" --additional-packages "build-essential nano git net-tools curl gnome-keyring desktop-file-utils"

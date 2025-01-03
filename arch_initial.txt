@@ -91,9 +91,6 @@ nano /etc/default/grub
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-#plymouth
-plymouth-set-default-theme -R spinner
-
 #users
 useradd -m -G wheel fabri
 passwd fabri
