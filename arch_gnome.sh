@@ -41,6 +41,7 @@ sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
 # firewall
 pacman -S --needed gufw --noconfirm
+systemctl enable ufw.service
 ufw enable
 ufw allow mdns
 
