@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # kde
-pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview power-profiles-daemon dmidecode geoclue2 skanpage --noconfirm
+pacman -S --needed plasma kwalletmanager plasma-wayland-protocols sddm ark dolphin konsole okular kalk kate spectacle libxvmc kdialog print-manager system-config-printer ksystemlog partitionmanager kamoso gwenview power-profiles-daemon dmidecode geoclue2 --noconfirm
 
 # remove components
 pacman -Rd --nodeps plasma-browser-integration --noconfirm
@@ -49,7 +49,7 @@ ufw enable
 ufw allow mdns
 
 # printing and scanning
-pacman -S --needed sane cups cups-pdf --noconfirm
+pacman -S --needed sane skanlite cups cups-pdf --noconfirm
 systemctl enable cups
 sed -i 's/resolve/mdns_minimal [NOTFOUND=return] resolve/g' /etc/nsswitch.conf
 sed -i 's+#Out /var/spool/cups-pdf/${USER}+Out /home/${USER}/Documents+g' /etc/cups/cups-pdf.conf
