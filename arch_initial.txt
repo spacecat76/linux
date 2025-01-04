@@ -35,7 +35,7 @@ mount --mkdir /dev/mapper/main-home /mnt/home
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 
 #install base system
-pacstrap /mnt base base-devel linux linux-headers linux-lts linux-lts-headers linux-firmware nano intel-ucode lvm2 cryptsetup
+pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode lvm2 cryptsetup
 
 #Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -64,7 +64,7 @@ tee -a /etc/hosts  << END
 END
 
 #packages
-pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh plymouth shim apparmor fwupd
+pacman -S grub sbctl efibootmgr networkmanager xdg-user-dirs git openssh plymouth shim apparmor fwupd exfatprogs
 
 #services
 systemctl enable NetworkManager
