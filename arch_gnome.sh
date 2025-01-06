@@ -2,7 +2,7 @@
 pacman -Syyu
 
 # gnome
-pacman -S --needed gnome gnome-tweaks file-roller seahorse shotwell gnome-themes-extra sassc bluez dmidecode --noconfirm
+pacman -S --needed gnome gnome-tweaks file-roller seahorse gnome-themes-extra sassc bluez dmidecode --noconfirm
 
 # gdm
 systemctl enable gdm
@@ -12,7 +12,7 @@ systemctl enable bluetooth
 pacman -Rs --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed firefox chromium vim nano less htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
+pacman -S --needed vlc firefox chromium vim nano less htop fastfetch timeshift podman distrobox starship transmission-gtk --noconfirm
 systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
