@@ -87,7 +87,7 @@ echo "GRUB_SAVEDEFAULT="true"" | tee -a /etc/default/grub
 
 *blkid copy id of /dev/nvme0n1p2
 nano /etc/default/grub
-*GRUB_CMDLINE_LINUX="cryptdevice=UUID=b1f676ba-580c-4f93-bfdc-c4d505475970:luks root=/dev/mapper/main-root lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
+*GRUB_CMDLINE_LINUX="cryptdevice=UUID=686c1b2e-1e3e-47cc-8576-94bc5631adcf:luks root=/dev/mapper/main-root lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -99,7 +99,7 @@ EDITOR=nano visudo
 
 #secure boot keys (RESET SECURE BOOT KEYS AND TPM FROM BIOS FIRST)
 sbctl create-keys
-sbctl enroll-keys -m #Output will be !!File is immutable - perform a chattr -i /sys/xxxxx
+sbctl enroll-keys -m (#Output will be !!File is immutable - perform a chattr -i /sys/xxxxx)
 
 sbctl sign -s /boot/vmlinuz-linux
 sbctl sign -s /boot/EFI/GRUB/grubx64.efi
@@ -115,6 +115,7 @@ umount -a
 reboot
 
 #enrolling the TPM
+##SUDO SU
 systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto
 systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
 
