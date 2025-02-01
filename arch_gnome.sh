@@ -12,7 +12,7 @@ systemctl enable bluetooth
 pacman -Rs --nodeps epiphany --noconfirm
 
 # applications
-pacman -S --needed libreoffice-fresh vlc firefox chromium vim nano less htop fastfetch timeshift podman distrobox starship transmission-gtk gimp --noconfirm
+pacman -S --needed libreoffice-fresh vlc firefox chromium vim nano less htop fastfetch timeshift podman distrobox starship transmission-gtk gimp pinta --noconfirm
 systemctl enable cronie
 usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 
