@@ -5,13 +5,13 @@ apt update && apt upgrade -y
 apt install firmware-linux firmware-sof-signed firmware-realtek -y
 
 # desktop environment
-apt install kde-plasma-desktop ark kalk kde-spectacle okular ksystemlog -y
+apt install kde-plasma-desktop ark kalk kde-spectacle okular ksystemlog skanlite -y
 
 # pipewire
 apt install pipewire pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse -y
 
 # apps & utilities
-apt install gimp gwenview tlp pkexec timeshift vim htop neofetch unrar net-tools curl apt-file plymouth-themes transmission-qt -y
+apt install gimp gwenview pkexec timeshift vim htop fastfetch unrar net-tools curl apt-file plymouth-themes transmission-qt gimp libreoffice libreoffice-plasma kolourpaint -y
 
 # multimedia
 apt install vlc ffmpeg ffmpegfs libavcodec-extra gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
@@ -37,24 +37,14 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt update && apt install code -y
 
-# onlyoffice
-apt install desktop-file-utils -y
-mkdir -p -m 700 ~/.gnupg
-gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
-chmod 644 /tmp/onlyoffice.gpg
-sudo chown root:root /tmp/onlyoffice.gpg
-sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
-echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
-apt update && apt install onlyoffice-desktopeditors -y
-
 # network
 apt install avahi-daemon ufw plasma-firewall -y
 ufw enable
 ufw allow mdns
 sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
 
-# virt manager
-apt install virt-manager -y
+# cockpit
+apt install cockpit cockpit-podman cockpit-machines cockpit-sosreport -y
 adduser fabri libvirt
 virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
@@ -90,7 +80,6 @@ END
 apt purge plasma-browser-integration konqueror zutty avahi-autoipd -y
 apt autoremove -y
 
-# various
-sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/system.conf
-sed -i 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=30s/g' /etc/systemd/user.conf
-tlp start
+# lid setting
+sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
