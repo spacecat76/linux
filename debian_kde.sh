@@ -76,7 +76,7 @@ tee -a /etc/fstab  << END
 END
 
 # remove components
-apt purge plasma-browser-integration konqueror zutty avahi-autoipd -y
+#apt purge plasma-browser-integration konqueror zutty avahi-autoipd -y
 apt autoremove -y
 
 # lid setting
