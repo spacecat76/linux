@@ -22,11 +22,6 @@ usermod --add-subuids 100000-165535 --add-subgids 100000-165535 fabri
 # utilities
 pacman -S --needed speech-dispatcher curl fastfetch rust wget bash-completion sof-firmware appstream plocate unrar unzip 7zip fuse2 ffmpeg ffmpegthumbs ffmpegthumbnailer gst-libav gst-plugins-ugly dnsutils whois --noconfirm
 
-# flatpak
-pacman -S --needed flatpak --noconfirm
-flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub com.spotify.Client -y
-
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
 

@@ -22,7 +22,7 @@ pacman -S --needed speech-dispatcher curl fastfetch rust wget bash-completion so
 # flatpak
 pacman -S --needed flatpak --noconfirm
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --system flathub com.mattjakeman.ExtensionManager com.spotify.Client -y
+flatpak install --system flathub com.mattjakeman.ExtensionManager -y
 
 # fonts & icons
 pacman -S --needed papirus-icon-theme ttf-ubuntu-font-family ttf-opensans ttf-carlito ttf-caladea ttf-liberation ttf-inconsolata ttf-dejavu noto-fonts adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts nerd-fonts --noconfirm
@@ -36,6 +36,7 @@ pacman -S --needed cockpit-machines cockpit-podman cockpit-packagekit cockpit-st
 systemctl enable libvirtd.socket
 systemctl enable cockpit.socket
 usermod -a -G libvirt fabri
+virsh net-autostart default
 sed -i 's/#user = "libvirt-qemu"/user = "fabri"/g' /etc/libvirt/qemu.conf
 sed -i 's/#group = "libvirt-qemu"/group = "libvirt"/g' /etc/libvirt/qemu.conf
 
